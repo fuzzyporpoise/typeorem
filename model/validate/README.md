@@ -49,10 +49,11 @@ verify with `node model/validate/fetch-fixtures.mjs`.
     node model/validate/replay.mjs --form min
     node model/validate/reranker.test.mjs
 
-The harnesses need the site checkout (TSK-016), because they score the metric the
-browser ships and read the corpus the site serves. `TYPEOREM_SITE_DIR` wins when set;
-otherwise the first of `<this repo>/site`, `../site`, `../typeorem-site` that holds an
-`index.html` is used, exactly as `model/paths.py` resolves it for the Python side.
+The harnesses need the app checkout (TSK-016), because they score the metric the
+browser ships and read the corpus the app serves. `TYPEOREM_SITE_DIR` wins when set
+(the app checkout root, the directory that holds `site/index.html`); otherwise the
+first of `<this repo>`, `../`, and `../typeorem-site` that holds one is used, exactly
+as `model/paths.py` resolves it for the Python side.
 
 The vector math itself is unit-tested in the site's `tests/vectors.test.mjs`, and the
 re-ranker's JS/Python parity in `reranker.test.mjs` here.

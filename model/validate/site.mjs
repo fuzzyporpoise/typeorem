@@ -1,12 +1,12 @@
-// Where the science finds the site checkout (TSK-016).
+// Where the science finds the app checkout (TSK-016).
 //
 // The harnesses in this directory score the metric the browser actually runs,
-// so they import it from the site's `site/js/` rather than keeping a copy that
-// could drift. The corpus they read is the shipped one, also in the site tree.
+// so they import it from the app's `site/js/` rather than keeping a copy that
+// could drift. The corpus they read is the shipped one, also in the app tree.
 //
-// Resolution mirrors model/paths.py: TYPEOREM_SITE_DIR when set, else the first
-// of <this repo>/site, <this repo>/../site, <this repo>/../typeorem-site that
-// looks like a checkout.
+// Resolution mirrors model/paths.py: TYPEOREM_SITE_DIR (the app checkout root)
+// when set, else the first of <this repo>, <this repo>/.., and
+// <this repo>/../typeorem-site that holds a site/index.html.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -16,29 +16,27 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(HERE, '..', '..');
 
 function isCheckout(dir) {
-  return fs.existsSync(path.join(dir, 'index.html'));
+  return fs.existsSync(path.join(dir, 'site', 'index.html'));
 }
 
-function resolveSiteDir() {
+function resolveAppRoot() {
   if (process.env.TYPEOREM_SITE_DIR) return path.resolve(process.env.TYPEOREM_SITE_DIR);
-  const candidates = [
-    path.join(REPO, 'site'),
-    path.resolve(REPO, '..', 'site'),
-    path.resolve(REPO, '..', 'typeorem-site'),
-  ];
+  const candidates = [REPO, path.resolve(REPO, '..'), path.resolve(REPO, '..', 'typeorem-site')];
   return candidates.find(isCheckout) || candidates[0];
 }
 
-export const SITE_DIR = resolveSiteDir();
+const APP_ROOT = resolveAppRoot();
+
+export const SITE_DIR = path.join(APP_ROOT, 'site');
 
 export const SITE_DATA = path.join(SITE_DIR, 'data');
 
 export function requireSite(purpose) {
-  if (!isCheckout(SITE_DIR)) {
+  if (!isCheckout(APP_ROOT)) {
     console.error(
-      `no site checkout at ${SITE_DIR} (${purpose}).\n` +
-      `Clone the site next to this repo, or point TYPEOREM_SITE_DIR at it:\n` +
-      `    TYPEOREM_SITE_DIR=/path/to/typeorem-site node model/validate/benchmark.mjs`);
+      `no app checkout at ${APP_ROOT} (${purpose}).\n` +
+      `Clone the app next to this repo, or point TYPEOREM_SITE_DIR at it:\n` +
+      `    TYPEOREM_SITE_DIR=/path/to/typeorem node model/validate/benchmark.mjs`);
     process.exit(2);
   }
   return SITE_DIR;
