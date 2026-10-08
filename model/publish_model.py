@@ -40,7 +40,9 @@ def sha256(path):
     return h.hexdigest()
 
 
-def upload(repo, path, create):
+def upload(repo, path, create, revision):
+    """Upload the graph and the model card to `revision`. The revision has to reach
+    upload_file, or the pointer below names a revision the artifact is not on."""
     from huggingface_hub import HfApi
     api = HfApi()
     if create:
@@ -51,21 +53,50 @@ def upload(repo, path, create):
         files.append((card, "README.md"))
     for local, remote in files:
         try:
-            api.upload_file(path_or_fileobj=str(local), path_in_repo=remote, repo_id=repo, repo_type="model")
+            api.upload_file(path_or_fileobj=str(local), path_in_repo=remote, repo_id=repo,
+                            repo_type="model", revision=revision)
         except Exception as e:  # noqa: BLE001 - surface the fix, not the traceback
             raise SystemExit(
                 f"upload failed: {e}\n"
-                f"Create the model repo once (web, or --create-repo with a token that may "
-                f"create repos), then re-run: https://huggingface.co/new"
+                f"Check HF_TOKEN (a write token for {repo}), and that the model repo exists "
+                f"(create it once on the web, or pass --create-repo with a token that may "
+                f"create repos): https://huggingface.co/new"
             )
-        print(f"uploaded {remote} to {repo}")
+        print(f"uploaded {remote} to {repo}@{revision}")
+    return api
+
+
+def verify_remote(api, repo, revision, local_sha, local_bytes):
+    """The pointer names a sha256 the browser trusts, so check the published blob is
+    that file before writing it."""
+    try:
+        info = api.get_paths_info(repo_id=repo, paths=[FILE], revision=revision, repo_type="model")
+    except Exception as e:  # noqa: BLE001 - verification is a guard, not the job
+        print(f"could not verify the published blob ({e}); the pointer records {local_sha}")
+        return None
+    if not info:
+        raise SystemExit(f"{FILE} is not on {repo}@{revision} after the upload")
+    entry = info[0]
+    lfs = getattr(entry, "lfs", None)
+    remote_sha = getattr(lfs, "sha256", None) or getattr(entry, "blob_id", None)
+    remote_bytes = getattr(entry, "size", None)
+    if remote_sha and remote_sha != local_sha:
+        raise SystemExit(
+            f"the published blob's sha256 ({remote_sha}) is not the local file's ({local_sha}); "
+            f"do not point the site at it"
+        )
+    if remote_bytes is not None and remote_bytes != local_bytes:
+        raise SystemExit(f"the published blob is {remote_bytes} bytes, the local file is {local_bytes}")
+    print(f"verified {FILE} on {repo}@{revision} ({remote_bytes} bytes, sha256 {local_sha[:16]}...)")
+    return remote_sha
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--file", type=Path, default=default_graph())
     ap.add_argument("--repo", default=DEFAULT_REPO, help="Hugging Face repo id, user/name")
-    ap.add_argument("--revision", default="main")
+    ap.add_argument("--revision", default="main",
+                    help="the HF revision to publish to (a branch); the pointer names it")
     ap.add_argument("--no-upload", action="store_true", help="write model.json only")
     ap.add_argument("--create-repo", action="store_true", help="create the repo first (needs create permission)")
     args = ap.parse_args()
@@ -73,7 +104,9 @@ def main():
         raise SystemExit(f"missing {args.file}; run model/export_onnx.py --fp16 first")
 
     if not args.no_upload:
-        upload(args.repo, args.file, args.create_repo)
+        api = upload(args.repo, args.file, args.create_repo, args.revision)
+        verify_remote(api, args.repo, args.revision,
+                      sha256(args.file), args.file.stat().st_size)
 
     url = f"https://huggingface.co/{args.repo}/resolve/{args.revision}/{FILE}"
     payload = {
