@@ -8,5 +8,9 @@ model/out/
 # Large validation fixture (fetch with model/validate/fetch-fixtures.mjs)
 model/validate/fixtures/vectors-200.tsv
 
+# The owner's own pairing gold list: private research input for TSK-012, kept
+# locally and never published (it is their taste, not a redistributable artifact).
+model/validate/fixtures/user-pairings.json
+
 # An app checkout cloned inside this repo, if you put it here
 site/
