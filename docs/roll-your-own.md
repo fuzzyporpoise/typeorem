@@ -22,7 +22,7 @@ precomputed vectors.
 | :---------- | :---- |
 | Python 3.11+ | the pipeline's virtualenv |
 | Node 20+ | the JS harnesses (`node model/validate/*.mjs`) |
-| A site checkout | `git clone git@gitlab.com:fuzzyporpoise/typeorem.git ../typeorem-site` next to this repo, or point `TYPEOREM_SITE_DIR` at it |
+| An app checkout | `git clone git@gitlab.com:fuzzyporpoise/typeorem.git ../typeorem-site` next to this repo, or point `TYPEOREM_SITE_DIR` at it |
 | git, ~6 GB disk | the Google Fonts clone is the bulk of it |
 | No GPU required | CPU embedding works, it is just slower (a few hours for the full catalog) |
 
@@ -39,16 +39,17 @@ keep them unless you intend to rebuild both.
 Every path that crosses between the pieces resolves through `model/paths.py` (Python)
 and `model/validate/site.mjs` (JS), in the same order:
 
-1. `$TYPEOREM_SITE_DIR`, when set,
-2. `<this repo>/site`,
-3. `<this repo>/../site`,
+1. `$TYPEOREM_SITE_DIR`, when set (the app checkout root, the directory that holds
+   `site/index.html`),
+2. `<this repo>`,
+3. `<this repo>/..`,
 4. `<this repo>/../typeorem-site`.
 
-The first candidate that holds an `index.html` wins, so a sibling clone needs no
+The first candidate that holds a `site/index.html` wins, so a sibling clone needs no
 configuration:
 
 ```bash
-export TYPEOREM_SITE_DIR=/path/to/typeorem-site   # optional, wins when set
+export TYPEOREM_SITE_DIR=/path/to/typeorem   # optional, wins when set
 ```
 
 The pipeline writes the corpus into `$TYPEOREM_SITE_DIR/site/data/`, reads the house
