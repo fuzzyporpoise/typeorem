@@ -5,7 +5,11 @@ from pathlib import Path
 import numpy as np
 
 BASE = Path(__file__).resolve().parents[1]
-SITE = BASE.parent / "site" / "data"
+sys.path.insert(0, str(BASE))
+import paths  # noqa: E402
+
+paths.require_site("the corpus check reads the shipped corpus")
+SITE = paths.site_data()
 
 meta = json.loads((SITE / "vectors.meta.json").read_text())
 raw = np.frombuffer((SITE / "vectors.i8.bin").read_bytes(), dtype=np.int8).reshape(meta["count"], meta["dim"])

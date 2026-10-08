@@ -30,8 +30,10 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "model"))
 from legibility import features_for, cell_bounds, O  # noqa: E402
+import paths  # noqa: E402
 
-DATA = ROOT / "site" / "data"
+paths.require_site("the metric A/B reads the shipped corpus")
+DATA = paths.site_data()
 PNG_DIR = ROOT / "model" / ".cache" / "224"
 FEAT_CACHE = ROOT / "model" / ".cache" / "render_features.json"
 FIXTURES = ROOT / "model" / "validate" / "fixtures" / "known-pairings.json"
