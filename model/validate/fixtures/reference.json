@@ -1,0 +1,20 @@
+{
+  "source": "fontjoy.com homepage shipped HTML (hardcoded demo), fontjoy.com/pairing/ (method), Jack000/fontjoy readme and formula.png",
+  "formula": "contrast similarity = -N * P, where P = sum over i of A_i*B_i with A_i*B_i > 0 and N = sum over i of A_i*B_i with A_i*B_i < 0. With N <= 0 and P >= 0 this equals |N| * P, so the score is large only when a pair is similar in some dimensions and different in others in equal measure.",
+  "homepageDefault": {
+    "note": "curated default in the shipped homepage HTML (data-family/data-variant); all three faces are present in the 2017 vector set. Low ranks under the pairwise metric signal that the selection model is still incomplete (TSK-009: legibility weighting plus joint 3-slot optimization), not that the example is meaningless.",
+    "faces": [
+      { "slot": "heading", "name": "Montserrat 700" },
+      { "slot": "subtitle", "name": "Lora italic" },
+      { "slot": "body", "name": "Hind Madurai 300" }
+    ]
+  },
+  "structuralSeeds": [
+    "Montserrat regular",
+    "Lora regular",
+    "Playfair Display regular",
+    "Oswald regular",
+    "Roboto regular",
+    "Lobster regular"
+  ]
+}
