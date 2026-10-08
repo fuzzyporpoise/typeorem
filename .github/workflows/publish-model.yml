@@ -1,14 +1,17 @@
 name: publish-model
 
-# Publishes the browser backbone to Hugging Face. Manual and rare by design: run
-# it when the corpus backbone or preprocess changes, or when the export recipe
-# does (a backbone swap), never per commit. On a release it publishes that tag's
-# graph; on demand it defaults to main.
+# Publishes the browser backbone to Hugging Face. Manual and rare by design: run it
+# when the corpus backbone or preprocess changes, or when the export recipe does (a
+# backbone swap), never per commit.
+#
+# Tag convention: `corpus-v*` marks a corpus release (model/release_corpus.py, cut
+# locally) and must NOT trigger this job; `model-v*` marks a backbone release, which
+# publishes that tag's graph. On demand the revision defaults to main.
 #
 # Needs the HF_TOKEN repository secret (write access to fuzzyporpoise/typeorem on
-# Hugging Face). The site's site/model.json pointer comes out as an artifact; copy
-# it into the site checkout (or run model/publish_model.py there, which writes it
-# directly).
+# Hugging Face). The app's site/model.json pointer comes out as an artifact; copy it
+# in (or run model/publish_model.py where the app checkout is, which writes it
+# directly, and let the next corpus release carry it).
 
 on:
   release:
@@ -21,6 +24,9 @@ on:
 
 jobs:
   publish:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      startsWith(github.event.release.tag_name, 'model')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
