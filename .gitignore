@@ -1,0 +1,12 @@
+# Python pipeline scratch
+__pycache__/
+*.pyc
+.venv/
+model/.cache/
+model/out/
+
+# Large validation fixture (fetch with model/validate/fetch-fixtures.mjs)
+model/validate/fixtures/vectors-200.tsv
+
+# A site checkout cloned inside this repo, if you put it here
+site/

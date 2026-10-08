@@ -1,0 +1,47 @@
+name: publish-model
+
+# Publishes the browser backbone to Hugging Face. Manual and rare by design: run
+# it when the corpus backbone or preprocess changes, or when the export recipe
+# does (a backbone swap), never per commit. On a release it publishes that tag's
+# graph; on demand it defaults to main.
+#
+# Needs the HF_TOKEN repository secret (write access to fuzzyporpoise/typeorem on
+# Hugging Face). The site's site/model.json pointer comes out as an artifact; copy
+# it into the site checkout (or run model/publish_model.py there, which writes it
+# directly).
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      revision:
+        description: Hugging Face revision to publish to
+        default: main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install the pipeline (torch, timm, onnx, huggingface_hub)
+        run: pip install --disable-pip-version-check -r model/requirements.txt
+      - name: Export the fp16 graph
+        run: python model/export_onnx.py --fp16 --out model/out/dinov2_vits14.onnx
+      - name: Upload the graph and write the pointer
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          REVISION: ${{ github.event.inputs.revision || github.event.release.tag_name || 'main' }}
+        run: >-
+          python model/publish_model.py
+          --file model/out/dinov2_vits14.fp16.onnx
+          --revision "$REVISION"
+          --create-repo
+      - name: Keep the pointer
+        uses: actions/upload-artifact@v4
+        with:
+          name: model-json
+          path: model/out/model.json

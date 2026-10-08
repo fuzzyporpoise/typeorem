@@ -1,0 +1,1520 @@
+{
+ "note": "JS/Python parity cases for site/js/reranker.js",
+ "cases": [
+  {
+   "heading": "Abril Fatface 400",
+   "candidate": "Bitter 400",
+   "score": -0.026049
+  },
+  {
+   "heading": "Abril Fatface 400",
+   "candidate": "Smooch Sans 400",
+   "score": -2.936701
+  },
+  {
+   "heading": "Abril Fatface 400",
+   "candidate": "Noto Sans Oriya 900",
+   "score": -12.644772
+  },
+  {
+   "heading": "Alegreya 400",
+   "candidate": "Alegreya Sans 400",
+   "score": 0.582102
+  },
+  {
+   "heading": "Alegreya 400",
+   "candidate": "Fredericka the Great 400",
+   "score": -1.9616
+  },
+  {
+   "heading": "Alegreya 400",
+   "candidate": "Exo 400 Italic",
+   "score": -7.979571
+  },
+  {
+   "heading": "Alegreya Sans 400",
+   "candidate": "Alegreya 400",
+   "score": 0.679407
+  },
+  {
+   "heading": "Alegreya Sans 400",
+   "candidate": "Alegreya Sans SC 500 Italic",
+   "score": -10.268753
+  },
+  {
+   "heading": "Alegreya Sans 400",
+   "candidate": "Asul 700",
+   "score": -8.40189
+  },
+  {
+   "heading": "Aleo 400",
+   "candidate": "Albert Sans 400",
+   "score": 0.206368
+  },
+  {
+   "heading": "Aleo 400",
+   "candidate": "Saira Condensed 200",
+   "score": -12.110746
+  },
+  {
+   "heading": "Aleo 400",
+   "candidate": "Noto Sans Telugu 900",
+   "score": -12.584296
+  },
+  {
+   "heading": "Alfa Slab One 400",
+   "candidate": "Chivo 400",
+   "score": -1.110944
+  },
+  {
+   "heading": "Alfa Slab One 400",
+   "candidate": "Literata 900",
+   "score": -11.452534
+  },
+  {
+   "heading": "Alfa Slab One 400",
+   "candidate": "Noto Sans Devanagari 300",
+   "score": -5.42449
+  },
+  {
+   "heading": "Alumni Sans 400",
+   "candidate": "DM Sans 400",
+   "score": -0.984942
+  },
+  {
+   "heading": "Alumni Sans 400",
+   "candidate": "Plus Jakarta Sans 400",
+   "score": -2.201689
+  },
+  {
+   "heading": "Alumni Sans 400",
+   "candidate": "Noto Sans NKo Unjoined 700",
+   "score": -9.441039
+  },
+  {
+   "heading": "Archivo 400",
+   "candidate": "Bitter 400",
+   "score": 0.440717
+  },
+  {
+   "heading": "Archivo 400",
+   "candidate": "Trirong 900 Italic",
+   "score": -17.48116
+  },
+  {
+   "heading": "Archivo 400",
+   "candidate": "Montserrat Underline 300 Italic",
+   "score": -11.969863
+  },
+  {
+   "heading": "Archivo Black 400",
+   "candidate": "Anonymous Pro 400",
+   "score": -3.296246
+  },
+  {
+   "heading": "Archivo Black 400",
+   "candidate": "Noto Serif Malayalam 300",
+   "score": -4.679295
+  },
+  {
+   "heading": "Archivo Black 400",
+   "candidate": "Saira Extra Condensed 800",
+   "score": -12.682262
+  },
+  {
+   "heading": "Archivo Narrow 400",
+   "candidate": "Archivo 400",
+   "score": -0.360631
+  },
+  {
+   "heading": "Archivo Narrow 400",
+   "candidate": "IM Fell Great Primer 400",
+   "score": -0.329351
+  },
+  {
+   "heading": "Archivo Narrow 400",
+   "candidate": "Sniglet 400",
+   "score": -2.588329
+  },
+  {
+   "heading": "Arvo 400",
+   "candidate": "Geist 400",
+   "score": 0.030967
+  },
+  {
+   "heading": "Arvo 400",
+   "candidate": "Alumni Sans 700",
+   "score": -11.416549
+  },
+  {
+   "heading": "Arvo 400",
+   "candidate": "Raleway 700",
+   "score": -10.236017
+  },
+  {
+   "heading": "Be Vietnam Pro 400",
+   "candidate": "Fira Sans 400",
+   "score": -0.101336
+  },
+  {
+   "heading": "Be Vietnam Pro 400",
+   "candidate": "Cantarell 400 Italic",
+   "score": -7.260036
+  },
+  {
+   "heading": "Be Vietnam Pro 400",
+   "candidate": "Shizuru 400",
+   "score": -3.216754
+  },
+  {
+   "heading": "Bebas Neue 400",
+   "candidate": "Heebo 400",
+   "score": -1.383747
+  },
+  {
+   "heading": "Bebas Neue 400",
+   "candidate": "Sofia Sans Semi Condensed 400",
+   "score": -2.016934
+  },
+  {
+   "heading": "Bebas Neue 400",
+   "candidate": "Alegreya Sans SC 900",
+   "score": -14.153017
+  },
+  {
+   "heading": "Besley 400",
+   "candidate": "Figtree 400",
+   "score": -0.017557
+  },
+  {
+   "heading": "Besley 400",
+   "candidate": "Fira Sans Extra Condensed 600",
+   "score": -8.394409
+  },
+  {
+   "heading": "Besley 400",
+   "candidate": "Asul 400",
+   "score": -0.875628
+  },
+  {
+   "heading": "Bitter 400",
+   "candidate": "Archivo 400",
+   "score": 0.359498
+  },
+  {
+   "heading": "Bitter 400",
+   "candidate": "Inspiration 400",
+   "score": -3.264642
+  },
+  {
+   "heading": "Bitter 400",
+   "candidate": "Josefin Slab 700 Italic",
+   "score": -14.151344
+  },
+  {
+   "heading": "Bricolage Grotesque 400",
+   "candidate": "BioRhyme 400",
+   "score": -2.127556
+  },
+  {
+   "heading": "Bricolage Grotesque 400",
+   "candidate": "Be Vietnam Pro 900 Italic",
+   "score": -17.949174
+  },
+  {
+   "heading": "Bricolage Grotesque 400",
+   "candidate": "Afacad 400 Italic",
+   "score": -6.156938
+  },
+  {
+   "heading": "Cardo 400",
+   "candidate": "Josefin Sans 400",
+   "score": -0.715868
+  },
+  {
+   "heading": "Cardo 400",
+   "candidate": "Noto Serif Khojki 700",
+   "score": -8.403887
+  },
+  {
+   "heading": "Cardo 400",
+   "candidate": "Manuale 700 Italic",
+   "score": -14.544972
+  },
+  {
+   "heading": "Carrois Gothic SC 400",
+   "candidate": "Cardo 400",
+   "score": -0.469934
+  },
+  {
+   "heading": "Carrois Gothic SC 400",
+   "candidate": "Encode Sans Expanded 700",
+   "score": -10.939532
+  },
+  {
+   "heading": "Carrois Gothic SC 400",
+   "candidate": "Noto Sans Hanifi Rohingya 400",
+   "score": -0.560911
+  },
+  {
+   "heading": "Chivo 400",
+   "candidate": "Cambo 400",
+   "score": 0.070954
+  },
+  {
+   "heading": "Chivo 400",
+   "candidate": "IBM Plex Sans Condensed 300 Italic",
+   "score": -10.050565
+  },
+  {
+   "heading": "Chivo 400",
+   "candidate": "Kreon 400",
+   "score": 0.079765
+  },
+  {
+   "heading": "Cormorant Garamond 400",
+   "candidate": "DM Sans 400",
+   "score": -0.549773
+  },
+  {
+   "heading": "Cormorant Garamond 400",
+   "candidate": "Yesteryear 400",
+   "score": -2.856268
+  },
+  {
+   "heading": "Cormorant Garamond 400",
+   "candidate": "Rubik Moonrocks 400",
+   "score": -2.700906
+  },
+  {
+   "heading": "Crimson Text 400",
+   "candidate": "Crimson Pro 400",
+   "score": -0.2889
+  },
+  {
+   "heading": "Crimson Text 400",
+   "candidate": "Nunito Sans 300 Italic",
+   "score": -10.058215
+  },
+  {
+   "heading": "Crimson Text 400",
+   "candidate": "Unbounded 700",
+   "score": -11.313587
+  },
+  {
+   "heading": "Cutive Mono 400",
+   "candidate": "Archivo Black 400",
+   "score": -2.302565
+  },
+  {
+   "heading": "Cutive Mono 400",
+   "candidate": "Sedgwick Ave 400",
+   "score": -3.485005
+  },
+  {
+   "heading": "Cutive Mono 400",
+   "candidate": "Old Standard TT 400 Italic",
+   "score": -5.118631
+  },
+  {
+   "heading": "David Libre 400",
+   "candidate": "Chivo 400",
+   "score": -0.5611
+  },
+  {
+   "heading": "David Libre 400",
+   "candidate": "Special Elite 400",
+   "score": -1.998459
+  },
+  {
+   "heading": "David Libre 400",
+   "candidate": "IBM Plex Serif 400 Italic",
+   "score": -6.310637
+  },
+  {
+   "heading": "DM Sans 400",
+   "candidate": "DM Mono 400",
+   "score": -0.800543
+  },
+  {
+   "heading": "DM Sans 400",
+   "candidate": "Namdhinggo 400",
+   "score": -1.645323
+  },
+  {
+   "heading": "DM Sans 400",
+   "candidate": "Pixelify Sans 400",
+   "score": -2.680759
+  },
+  {
+   "heading": "DM Serif Display 400",
+   "candidate": "DM Sans 400",
+   "score": -0.280033
+  },
+  {
+   "heading": "DM Serif Display 400",
+   "candidate": "IBM Plex Mono 500",
+   "score": -3.718234
+  },
+  {
+   "heading": "DM Serif Display 400",
+   "candidate": "Marcellus SC 400",
+   "score": -1.753676
+  },
+  {
+   "heading": "Domine 400",
+   "candidate": "Lato 400",
+   "score": -0.063461
+  },
+  {
+   "heading": "Domine 400",
+   "candidate": "JetBrains Mono 400",
+   "score": -1.033313
+  },
+  {
+   "heading": "Domine 400",
+   "candidate": "Lexend Zetta 700",
+   "score": -10.500382
+  },
+  {
+   "heading": "EB Garamond 400",
+   "candidate": "DM Mono 400",
+   "score": -0.964525
+  },
+  {
+   "heading": "EB Garamond 400",
+   "candidate": "Stick No Bills 400",
+   "score": -1.885008
+  },
+  {
+   "heading": "EB Garamond 400",
+   "candidate": "Asap 700",
+   "score": -9.205875
+  },
+  {
+   "heading": "Encode Sans Expanded 400",
+   "candidate": "Encode Sans 400",
+   "score": -1.957475
+  },
+  {
+   "heading": "Encode Sans Expanded 400",
+   "candidate": "Mate 400",
+   "score": -0.631913
+  },
+  {
+   "heading": "Encode Sans Expanded 400",
+   "candidate": "Hedvig Letters Sans 400",
+   "score": 0.022718
+  },
+  {
+   "heading": "Epilogue 400",
+   "candidate": "Barlow 400",
+   "score": -0.300678
+  },
+  {
+   "heading": "Epilogue 400",
+   "candidate": "Encode Sans Condensed 600",
+   "score": -8.247264
+  },
+  {
+   "heading": "Epilogue 400",
+   "candidate": "Mukta Malar 500",
+   "score": -3.798769
+  },
+  {
+   "heading": "Exo 2 400",
+   "candidate": "Alegreya Sans 400",
+   "score": -0.476385
+  },
+  {
+   "heading": "Exo 2 400",
+   "candidate": "Playfair 300",
+   "score": -6.16975
+  },
+  {
+   "heading": "Exo 2 400",
+   "candidate": "Noto Rashi Hebrew 900",
+   "score": -11.89236
+  },
+  {
+   "heading": "Fira Sans 400",
+   "candidate": "Archivo 400",
+   "score": -0.053588
+  },
+  {
+   "heading": "Fira Sans 400",
+   "candidate": "Radio Canada Big 400",
+   "score": -0.061416
+  },
+  {
+   "heading": "Fira Sans 400",
+   "candidate": "Google Sans Code 300 Italic",
+   "score": -11.821821
+  },
+  {
+   "heading": "Fjalla One 400",
+   "candidate": "Bad Script 400",
+   "score": -3.823619
+  },
+  {
+   "heading": "Fjalla One 400",
+   "candidate": "STIX Two Text 700 Italic",
+   "score": -13.737939
+  },
+  {
+   "heading": "Fjalla One 400",
+   "candidate": "Genos 900",
+   "score": -13.859066
+  },
+  {
+   "heading": "Francois One 400",
+   "candidate": "EB Garamond 400",
+   "score": -1.181422
+  },
+  {
+   "heading": "Francois One 400",
+   "candidate": "Cuprum 700 Italic",
+   "score": -15.601391
+  },
+  {
+   "heading": "Francois One 400",
+   "candidate": "Phudu 300",
+   "score": -7.550899
+  },
+  {
+   "heading": "Fraunces 400",
+   "candidate": "DM Sans 400",
+   "score": -0.428527
+  },
+  {
+   "heading": "Fraunces 400",
+   "candidate": "Atkinson Hyperlegible Mono 300 Italic",
+   "score": -10.258461
+  },
+  {
+   "heading": "Fraunces 400",
+   "candidate": "Andika 400",
+   "score": -0.731077
+  },
+  {
+   "heading": "Funnel Display 400",
+   "candidate": "Funnel Sans 400",
+   "score": 0.087439
+  },
+  {
+   "heading": "Funnel Display 400",
+   "candidate": "Savate 700",
+   "score": -10.614589
+  },
+  {
+   "heading": "Funnel Display 400",
+   "candidate": "Inria Sans 400 Italic",
+   "score": -6.257465
+  },
+  {
+   "heading": "Geist 400",
+   "candidate": "Inter 400",
+   "score": -0.113614
+  },
+  {
+   "heading": "Geist 400",
+   "candidate": "Fustat 700",
+   "score": -9.167575
+  },
+  {
+   "heading": "Geist 400",
+   "candidate": "DM Sans 700",
+   "score": -8.645831
+  },
+  {
+   "heading": "Gloock 400",
+   "candidate": "Epilogue 400",
+   "score": -1.511648
+  },
+  {
+   "heading": "Gloock 400",
+   "candidate": "Asset 400",
+   "score": -2.675679
+  },
+  {
+   "heading": "Gloock 400",
+   "candidate": "Spectral 300 Italic",
+   "score": -9.369174
+  },
+  {
+   "heading": "IBM Plex Sans 400",
+   "candidate": "IBM Plex Sans Condensed 400",
+   "score": -0.501351
+  },
+  {
+   "heading": "IBM Plex Sans 400",
+   "candidate": "Noto Serif Sinhala 700",
+   "score": -8.400476
+  },
+  {
+   "heading": "IBM Plex Sans 400",
+   "candidate": "Georama 700 Italic",
+   "score": -16.58846
+  },
+  {
+   "heading": "IBM Plex Sans Condensed 400",
+   "candidate": "IBM Plex Sans 400",
+   "score": -0.016294
+  },
+  {
+   "heading": "IBM Plex Sans Condensed 400",
+   "candidate": "Sofia Sans Extra Condensed 900",
+   "score": -13.330205
+  },
+  {
+   "heading": "IBM Plex Sans Condensed 400",
+   "candidate": "Bitcount Prop Single Ink 900",
+   "score": -14.707528
+  },
+  {
+   "heading": "Inconsolata 400",
+   "candidate": "Fira Code 400",
+   "score": -1.004804
+  },
+  {
+   "heading": "Inconsolata 400",
+   "candidate": "Sura 700",
+   "score": -7.825388
+  },
+  {
+   "heading": "Inconsolata 400",
+   "candidate": "Rochester 400",
+   "score": -2.710568
+  },
+  {
+   "heading": "Inknut Antiqua 400",
+   "candidate": "Be Vietnam Pro 400",
+   "score": -1.580491
+  },
+  {
+   "heading": "Inknut Antiqua 400",
+   "candidate": "Ranga 700",
+   "score": -11.253933
+  },
+  {
+   "heading": "Inknut Antiqua 400",
+   "candidate": "Datatype 400",
+   "score": -2.375455
+  },
+  {
+   "heading": "Instrument Sans 400",
+   "candidate": "Chivo Mono 400",
+   "score": -0.750398
+  },
+  {
+   "heading": "Instrument Sans 400",
+   "candidate": "Mukta Malar 800",
+   "score": -10.96468
+  },
+  {
+   "heading": "Instrument Sans 400",
+   "candidate": "Instrument Serif 400",
+   "score": -2.243632
+  },
+  {
+   "heading": "Instrument Serif 400",
+   "candidate": "DM Mono 400",
+   "score": -0.121813
+  },
+  {
+   "heading": "Instrument Serif 400",
+   "candidate": "Ubuntu Mono 400",
+   "score": -1.551121
+  },
+  {
+   "heading": "Instrument Serif 400",
+   "candidate": "Chivo 900",
+   "score": -14.210238
+  },
+  {
+   "heading": "Inter 400",
+   "candidate": "Archivo 400",
+   "score": -0.102978
+  },
+  {
+   "heading": "Inter 400",
+   "candidate": "Noto Sans Lepcha 400",
+   "score": -0.579177
+  },
+  {
+   "heading": "Inter 400",
+   "candidate": "Neuton 200",
+   "score": -12.028155
+  },
+  {
+   "heading": "JetBrains Mono 400",
+   "candidate": "Inter 400",
+   "score": -0.244617
+  },
+  {
+   "heading": "JetBrains Mono 400",
+   "candidate": "Fira Sans Condensed 500",
+   "score": -3.717171
+  },
+  {
+   "heading": "JetBrains Mono 400",
+   "candidate": "Tajawal 300",
+   "score": -6.318743
+  },
+  {
+   "heading": "Josefin Sans 400",
+   "candidate": "Cardo 400",
+   "score": -0.516929
+  },
+  {
+   "heading": "Josefin Sans 400",
+   "candidate": "STIX Two Text 400",
+   "score": -0.589513
+  },
+  {
+   "heading": "Josefin Sans 400",
+   "candidate": "Chivo Mono 900",
+   "score": -15.151336
+  },
+  {
+   "heading": "Josefin Slab 400",
+   "candidate": "Fjalla One 400",
+   "score": -3.530485
+  },
+  {
+   "heading": "Josefin Slab 400",
+   "candidate": "Andika 700",
+   "score": -9.191008
+  },
+  {
+   "heading": "Josefin Slab 400",
+   "candidate": "Turret Road 500",
+   "score": -5.526698
+  },
+  {
+   "heading": "Karla 400",
+   "candidate": "David Libre 400",
+   "score": -0.094245
+  },
+  {
+   "heading": "Karla 400",
+   "candidate": "Noto Sans Old South Arabian 400",
+   "score": -0.785803
+  },
+  {
+   "heading": "Karla 400",
+   "candidate": "Balthazar 400",
+   "score": -1.555465
+  },
+  {
+   "heading": "Lato 400",
+   "candidate": "Alegreya 400",
+   "score": -0.011084
+  },
+  {
+   "heading": "Lato 400",
+   "candidate": "Noto Sans Mono 700",
+   "score": -11.123658
+  },
+  {
+   "heading": "Lato 400",
+   "candidate": "Raleway 400 Italic",
+   "score": -6.002115
+  },
+  {
+   "heading": "League Script 400",
+   "candidate": "Josefin Sans 400",
+   "score": -1.011434
+  },
+  {
+   "heading": "League Script 400",
+   "candidate": "Kantumruy Pro 300",
+   "score": -5.15911
+  },
+  {
+   "heading": "League Script 400",
+   "candidate": "Inter 400",
+   "score": -1.552769
+  },
+  {
+   "heading": "Libre Baskerville 400",
+   "candidate": "DM Sans 400",
+   "score": -0.232091
+  },
+  {
+   "heading": "Libre Baskerville 400",
+   "candidate": "Chathura 300",
+   "score": -6.832632
+  },
+  {
+   "heading": "Libre Baskerville 400",
+   "candidate": "Urbanist 900",
+   "score": -12.337326
+  },
+  {
+   "heading": "Libre Caslon Display 400",
+   "candidate": "Figtree 400",
+   "score": -0.766553
+  },
+  {
+   "heading": "Libre Caslon Display 400",
+   "candidate": "Anek Devanagari 700",
+   "score": -9.492718
+  },
+  {
+   "heading": "Libre Caslon Display 400",
+   "candidate": "Josefin Slab 300 Italic",
+   "score": -9.819446
+  },
+  {
+   "heading": "Libre Franklin 400",
+   "candidate": "Aleo 400",
+   "score": 0.438168
+  },
+  {
+   "heading": "Libre Franklin 400",
+   "candidate": "Noto Sans Lao Looped 700",
+   "score": -9.095894
+  },
+  {
+   "heading": "Libre Franklin 400",
+   "candidate": "Gruppo 400",
+   "score": -2.635136
+  },
+  {
+   "heading": "Lobster 400",
+   "candidate": "Lato 400",
+   "score": -0.962111
+  },
+  {
+   "heading": "Lobster 400",
+   "candidate": "Underdog 400",
+   "score": -2.754003
+  },
+  {
+   "heading": "Lobster 400",
+   "candidate": "Noto Sans Brahmi 400",
+   "score": -1.660168
+  },
+  {
+   "heading": "Lora 400",
+   "candidate": "Abril Fatface 400",
+   "score": -2.077843
+  },
+  {
+   "heading": "Lora 400",
+   "candidate": "Kodchasan 500 Italic",
+   "score": -10.960502
+  },
+  {
+   "heading": "Lora 400",
+   "candidate": "Scheherazade New 400",
+   "score": -2.346586
+  },
+  {
+   "heading": "Lustria 400",
+   "candidate": "Lato 400",
+   "score": 0.423092
+  },
+  {
+   "heading": "Lustria 400",
+   "candidate": "Lilex 300 Italic",
+   "score": -10.203052
+  },
+  {
+   "heading": "Lustria 400",
+   "candidate": "Instrument Sans 400",
+   "score": 0.297197
+  },
+  {
+   "heading": "Manrope 400",
+   "candidate": "Be Vietnam Pro 400",
+   "score": -1.553233
+  },
+  {
+   "heading": "Manrope 400",
+   "candidate": "Martel 900",
+   "score": -13.469791
+  },
+  {
+   "heading": "Manrope 400",
+   "candidate": "Dai Banna SIL 600 Italic",
+   "score": -14.05777
+  },
+  {
+   "heading": "Merriweather 400",
+   "candidate": "Archivo 400",
+   "score": 0.255332
+  },
+  {
+   "heading": "Merriweather 400",
+   "candidate": "Iosevka Charon 400 Italic",
+   "score": -8.52998
+  },
+  {
+   "heading": "Merriweather 400",
+   "candidate": "Asap Sharp 700 Italic",
+   "score": -13.852173
+  },
+  {
+   "heading": "Montserrat 400",
+   "candidate": "Archivo 400",
+   "score": -0.004694
+  },
+  {
+   "heading": "Montserrat 400",
+   "candidate": "Ponomar 400",
+   "score": -2.311319
+  },
+  {
+   "heading": "Montserrat 400",
+   "candidate": "Public Sans 300 Italic",
+   "score": -9.740634
+  },
+  {
+   "heading": "Mulish 400",
+   "candidate": "Ovo 400",
+   "score": -0.348439
+  },
+  {
+   "heading": "Mulish 400",
+   "candidate": "Tourney 900",
+   "score": -14.681399
+  },
+  {
+   "heading": "Mulish 400",
+   "candidate": "Titillium Web 200 Italic",
+   "score": -16.533512
+  },
+  {
+   "heading": "Nunito 400",
+   "candidate": "Bitter 400",
+   "score": 0.375055
+  },
+  {
+   "heading": "Nunito 400",
+   "candidate": "Barlow Semi Condensed 200",
+   "score": -11.096573
+  },
+  {
+   "heading": "Nunito 400",
+   "candidate": "Berkshire Swash 400",
+   "score": -3.088835
+  },
+  {
+   "heading": "Old Standard TT 400",
+   "candidate": "Archivo Black 400",
+   "score": -2.102536
+  },
+  {
+   "heading": "Old Standard TT 400",
+   "candidate": "Winky Sans 300 Italic",
+   "score": -11.36093
+  },
+  {
+   "heading": "Old Standard TT 400",
+   "candidate": "Tomorrow 300 Italic",
+   "score": -11.664484
+  },
+  {
+   "heading": "Open Sans 400",
+   "candidate": "Archivo 400",
+   "score": -0.034241
+  },
+  {
+   "heading": "Open Sans 400",
+   "candidate": "Source Serif 4 700",
+   "score": -8.492691
+  },
+  {
+   "heading": "Open Sans 400",
+   "candidate": "WindSong 500",
+   "score": -6.755947
+  },
+  {
+   "heading": "Oswald 400",
+   "candidate": "Arvo 400",
+   "score": -0.1182
+  },
+  {
+   "heading": "Oswald 400",
+   "candidate": "Sometype Mono 700",
+   "score": -8.388888
+  },
+  {
+   "heading": "Oswald 400",
+   "candidate": "Battambang 700",
+   "score": -8.366628
+  },
+  {
+   "heading": "Ovo 400",
+   "candidate": "Mulish 400",
+   "score": -0.488619
+  },
+  {
+   "heading": "Ovo 400",
+   "candidate": "Yomogi 400",
+   "score": -2.064915
+  },
+  {
+   "heading": "Ovo 400",
+   "candidate": "Sarabun 400 Italic",
+   "score": -6.307206
+  },
+  {
+   "heading": "Petrona 400",
+   "candidate": "Karla 400",
+   "score": -0.181076
+  },
+  {
+   "heading": "Petrona 400",
+   "candidate": "Hanken Grotesk 900 Italic",
+   "score": -17.491607
+  },
+  {
+   "heading": "Petrona 400",
+   "candidate": "Bitcount Prop Single 700",
+   "score": -10.963596
+  },
+  {
+   "heading": "Playfair Display 400",
+   "candidate": "Be Vietnam Pro 400",
+   "score": -1.307678
+  },
+  {
+   "heading": "Playfair Display 400",
+   "candidate": "Wittgenstein 900",
+   "score": -11.356383
+  },
+  {
+   "heading": "Playfair Display 400",
+   "candidate": "Hind Mysuru 500",
+   "score": -3.228098
+  },
+  {
+   "heading": "Playfair Display SC 400",
+   "candidate": "Josefin Slab 400",
+   "score": -1.038223
+  },
+  {
+   "heading": "Playfair Display SC 400",
+   "candidate": "Sansation 700 Italic",
+   "score": -14.553211
+  },
+  {
+   "heading": "Playfair Display SC 400",
+   "candidate": "IBM Plex Sans Condensed 500 Italic",
+   "score": -9.422378
+  },
+  {
+   "heading": "Plus Jakarta Sans 400",
+   "candidate": "Inter 400",
+   "score": -0.054175
+  },
+  {
+   "heading": "Plus Jakarta Sans 400",
+   "candidate": "Genos 400 Italic",
+   "score": -8.315902
+  },
+  {
+   "heading": "Plus Jakarta Sans 400",
+   "candidate": "Lemonada 400",
+   "score": -2.825325
+  },
+  {
+   "heading": "Poppins 400",
+   "candidate": "DM Sans 400",
+   "score": -0.061559
+  },
+  {
+   "heading": "Poppins 400",
+   "candidate": "Rubik Doodle Shadow 400",
+   "score": -2.589111
+  },
+  {
+   "heading": "Poppins 400",
+   "candidate": "Strichpunkt Sans 700",
+   "score": -8.977471
+  },
+  {
+   "heading": "Prata 400",
+   "candidate": "Francois One 400",
+   "score": -2.875037
+  },
+  {
+   "heading": "Prata 400",
+   "candidate": "Winky Sans 700 Italic",
+   "score": -16.442814
+  },
+  {
+   "heading": "Prata 400",
+   "candidate": "Tirra 600",
+   "score": -6.333644
+  },
+  {
+   "heading": "PT Sans 400",
+   "candidate": "Be Vietnam Pro 400",
+   "score": -1.396678
+  },
+  {
+   "heading": "PT Sans 400",
+   "candidate": "Jim Nightshade 400",
+   "score": -3.331479
+  },
+  {
+   "heading": "PT Sans 400",
+   "candidate": "Matemasie 400",
+   "score": -3.105622
+  },
+  {
+   "heading": "PT Sans Narrow 400",
+   "candidate": "PT Sans 400",
+   "score": -0.579068
+  },
+  {
+   "heading": "PT Sans Narrow 400",
+   "candidate": "Kantumruy Pro 300",
+   "score": -4.372104
+  },
+  {
+   "heading": "PT Sans Narrow 400",
+   "candidate": "Bitcount Prop Single Ink 300",
+   "score": -6.602527
+  },
+  {
+   "heading": "PT Serif 400",
+   "candidate": "Chivo 400",
+   "score": -0.38481
+  },
+  {
+   "heading": "PT Serif 400",
+   "candidate": "Open Sans 300",
+   "score": -4.083298
+  },
+  {
+   "heading": "PT Serif 400",
+   "candidate": "Amatic SC 400",
+   "score": -3.242775
+  },
+  {
+   "heading": "Quattrocento 400",
+   "candidate": "Fanwood Text 400",
+   "score": -0.665141
+  },
+  {
+   "heading": "Quattrocento 400",
+   "candidate": "Plus Jakarta Sans 700 Italic",
+   "score": -13.988634
+  },
+  {
+   "heading": "Quattrocento 400",
+   "candidate": "Castoro 700 Italic",
+   "score": -13.576285
+  },
+  {
+   "heading": "Quicksand 400",
+   "candidate": "Cabin 400",
+   "score": -0.84406
+  },
+  {
+   "heading": "Quicksand 400",
+   "candidate": "Lisu Bosa 700",
+   "score": -7.993873
+  },
+  {
+   "heading": "Quicksand 400",
+   "candidate": "Alkalami 400",
+   "score": -1.159393
+  },
+  {
+   "heading": "Raleway 400",
+   "candidate": "Lato 400",
+   "score": 0.103265
+  },
+  {
+   "heading": "Raleway 400",
+   "candidate": "Forum 400",
+   "score": -1.779752
+  },
+  {
+   "heading": "Raleway 400",
+   "candidate": "Piazzolla 400 Italic",
+   "score": -5.084902
+  },
+  {
+   "heading": "Reddit Sans 400",
+   "candidate": "Caveat 400",
+   "score": -3.430331
+  },
+  {
+   "heading": "Reddit Sans 400",
+   "candidate": "Quantico 400",
+   "score": -2.653126
+  },
+  {
+   "heading": "Reddit Sans 400",
+   "candidate": "Averia Serif Libre 400",
+   "score": -2.773153
+  },
+  {
+   "heading": "Righteous 400",
+   "candidate": "Cabin 400",
+   "score": -0.694973
+  },
+  {
+   "heading": "Righteous 400",
+   "candidate": "Lusitana 700",
+   "score": -8.610709
+  },
+  {
+   "heading": "Righteous 400",
+   "candidate": "Suwannaphum 300",
+   "score": -4.544967
+  },
+  {
+   "heading": "Roboto 400",
+   "candidate": "Archivo 400",
+   "score": -0.08732
+  },
+  {
+   "heading": "Roboto 400",
+   "candidate": "Aref Ruqaa 400",
+   "score": -2.069395
+  },
+  {
+   "heading": "Roboto 400",
+   "candidate": "Epilogue 900",
+   "score": -12.87026
+  },
+  {
+   "heading": "Roboto Condensed 400",
+   "candidate": "Roboto 400",
+   "score": -0.201654
+  },
+  {
+   "heading": "Roboto Condensed 400",
+   "candidate": "Noto Sans Khmer 900",
+   "score": -12.704743
+  },
+  {
+   "heading": "Roboto Condensed 400",
+   "candidate": "Sekuya 400",
+   "score": -4.028376
+  },
+  {
+   "heading": "Roboto Mono 400",
+   "candidate": "Lora 400",
+   "score": 0.174788
+  },
+  {
+   "heading": "Roboto Mono 400",
+   "candidate": "Google Sans Code 300 Italic",
+   "score": -11.452454
+  },
+  {
+   "heading": "Roboto Mono 400",
+   "candidate": "Noto Sans Tagalog 400",
+   "score": -0.73705
+  },
+  {
+   "heading": "Roboto Slab 400",
+   "candidate": "Neuton 400",
+   "score": -0.805979
+  },
+  {
+   "heading": "Roboto Slab 400",
+   "candidate": "Jost 900",
+   "score": -12.523839
+  },
+  {
+   "heading": "Roboto Slab 400",
+   "candidate": "Space Grotesk 300",
+   "score": -5.185241
+  },
+  {
+   "heading": "Sacramento 400",
+   "candidate": "Barlow 400",
+   "score": -1.338468
+  },
+  {
+   "heading": "Sacramento 400",
+   "candidate": "Bitcount Grid Single 900",
+   "score": -15.808451
+  },
+  {
+   "heading": "Sacramento 400",
+   "candidate": "Moul 400",
+   "score": -3.883025
+  },
+  {
+   "heading": "Six Caps 400",
+   "candidate": "Merriweather 400",
+   "score": -0.977875
+  },
+  {
+   "heading": "Six Caps 400",
+   "candidate": "Euphoria Script 400",
+   "score": -3.121097
+  },
+  {
+   "heading": "Six Caps 400",
+   "candidate": "Encode Sans Expanded 500",
+   "score": -6.436218
+  },
+  {
+   "heading": "Source Sans 3 400",
+   "candidate": "PT Sans 400",
+   "score": -0.496451
+  },
+  {
+   "heading": "Source Sans 3 400",
+   "candidate": "Stalemate 400",
+   "score": -3.862387
+  },
+  {
+   "heading": "Source Sans 3 400",
+   "candidate": "Commissioner 900",
+   "score": -13.484297
+  },
+  {
+   "heading": "Source Serif 4 400",
+   "candidate": "DM Sans 400",
+   "score": 0.21822
+  },
+  {
+   "heading": "Source Serif 4 400",
+   "candidate": "Beiruti 400",
+   "score": -2.236008
+  },
+  {
+   "heading": "Source Serif 4 400",
+   "candidate": "Crimson Text 600 Italic",
+   "score": -11.846935
+  },
+  {
+   "heading": "Space Grotesk 400",
+   "candidate": "Be Vietnam Pro 400",
+   "score": -1.444742
+  },
+  {
+   "heading": "Space Grotesk 400",
+   "candidate": "Redacted Script 300",
+   "score": -7.690592
+  },
+  {
+   "heading": "Space Grotesk 400",
+   "candidate": "Finlandica Headline 400",
+   "score": -1.0707
+  },
+  {
+   "heading": "Space Mono 400",
+   "candidate": "Lora 400",
+   "score": -0.252599
+  },
+  {
+   "heading": "Space Mono 400",
+   "candidate": "Neuton 700",
+   "score": -8.274222
+  },
+  {
+   "heading": "Space Mono 400",
+   "candidate": "Sofia 400",
+   "score": -2.747485
+  },
+  {
+   "heading": "Special Gothic Expanded One 400",
+   "candidate": "Inter 400",
+   "score": -0.750951
+  },
+  {
+   "heading": "Special Gothic Expanded One 400",
+   "candidate": "Ruslan Display 400",
+   "score": -2.882915
+  },
+  {
+   "heading": "Special Gothic Expanded One 400",
+   "candidate": "Rakkas 400",
+   "score": -2.315701
+  },
+  {
+   "heading": "Spectral 400",
+   "candidate": "JetBrains Mono 400",
+   "score": -1.571743
+  },
+  {
+   "heading": "Spectral 400",
+   "candidate": "Kodchasan 300",
+   "score": -5.971044
+  },
+  {
+   "heading": "Spectral 400",
+   "candidate": "Montserrat Alternates 700 Italic",
+   "score": -15.428625
+  },
+  {
+   "heading": "Syne 400",
+   "candidate": "Epilogue 400",
+   "score": -0.919099
+  },
+  {
+   "heading": "Syne 400",
+   "candidate": "Iosevka Charon 400 Italic",
+   "score": -8.156162
+  },
+  {
+   "heading": "Syne 400",
+   "candidate": "Khand 700",
+   "score": -11.495771
+  },
+  {
+   "heading": "Tenor Sans 400",
+   "candidate": "Alegreya Sans 400",
+   "score": -0.565741
+  },
+  {
+   "heading": "Tenor Sans 400",
+   "candidate": "Saira Semi Condensed 500",
+   "score": -5.971126
+  },
+  {
+   "heading": "Tenor Sans 400",
+   "candidate": "Sarabun 100 Italic",
+   "score": -25.670998
+  },
+  {
+   "heading": "Ubuntu Condensed 400",
+   "candidate": "Ubuntu 400",
+   "score": -1.99144
+  },
+  {
+   "heading": "Ubuntu Condensed 400",
+   "candidate": "Passion One 900",
+   "score": -14.29792
+  },
+  {
+   "heading": "Ubuntu Condensed 400",
+   "candidate": "Vesper Libre 500",
+   "score": -3.819156
+  },
+  {
+   "heading": "Ubuntu Sans Mono 400",
+   "candidate": "Ubuntu Mono 400",
+   "score": -2.103499
+  },
+  {
+   "heading": "Ubuntu Sans Mono 400",
+   "candidate": "Hind Siliguri 600",
+   "score": -5.976084
+  },
+  {
+   "heading": "Ubuntu Sans Mono 400",
+   "candidate": "Atkinson Hyperlegible 400 Italic",
+   "score": -5.81761
+  },
+  {
+   "heading": "Unbounded 400",
+   "candidate": "Albert Sans 400",
+   "score": -0.341352
+  },
+  {
+   "heading": "Unbounded 400",
+   "candidate": "Noto Rashi Hebrew 400",
+   "score": -0.18805
+  },
+  {
+   "heading": "Unbounded 400",
+   "candidate": "David Libre 400",
+   "score": -0.619237
+  },
+  {
+   "heading": "Varela Round 400",
+   "candidate": "Inter 400",
+   "score": 0.012107
+  },
+  {
+   "heading": "Varela Round 400",
+   "candidate": "Ubuntu 700 Italic",
+   "score": -15.115338
+  },
+  {
+   "heading": "Varela Round 400",
+   "candidate": "Signika Negative 700",
+   "score": -10.542506
+  },
+  {
+   "heading": "Vollkorn 400",
+   "candidate": "Roboto 400",
+   "score": -0.400347
+  },
+  {
+   "heading": "Vollkorn 400",
+   "candidate": "Inria Serif 400",
+   "score": -0.909499
+  },
+  {
+   "heading": "Vollkorn 400",
+   "candidate": "Saira Extra Condensed 600",
+   "score": -8.458269
+  },
+  {
+   "heading": "Work Sans 400",
+   "candidate": "Bitter 400",
+   "score": 0.441284
+  },
+  {
+   "heading": "Work Sans 400",
+   "candidate": "Tsukimi Rounded 600",
+   "score": -8.323566
+  },
+  {
+   "heading": "Work Sans 400",
+   "candidate": "TASA Orbiter 700",
+   "score": -9.029023
+  },
+  {
+   "heading": "Yanone Kaffeesatz 400",
+   "candidate": "Playfair Display 400",
+   "score": -2.203273
+  },
+  {
+   "heading": "Yanone Kaffeesatz 400",
+   "candidate": "Notable 400",
+   "score": -3.98425
+  },
+  {
+   "heading": "Yanone Kaffeesatz 400",
+   "candidate": "Sansation 400 Italic",
+   "score": -7.024965
+  },
+  {
+   "heading": "Yellowtail 400",
+   "candidate": "Amaranth 400",
+   "score": -3.02669
+  },
+  {
+   "heading": "Yellowtail 400",
+   "candidate": "Iosevka Charon Mono 500",
+   "score": -6.443187
+  },
+  {
+   "heading": "Yellowtail 400",
+   "candidate": "Sofia Sans Extra Condensed 400",
+   "score": -3.314309
+  },
+  {
+   "heading": "Yeseva One 400",
+   "candidate": "Crimson Text 400",
+   "score": 0.120835
+  },
+  {
+   "heading": "Yeseva One 400",
+   "candidate": "Akshar 400",
+   "score": -2.355943
+  },
+  {
+   "heading": "Yeseva One 400",
+   "candidate": "Barlow Semi Condensed 200 Italic",
+   "score": -15.95348
+  }
+ ]
+}

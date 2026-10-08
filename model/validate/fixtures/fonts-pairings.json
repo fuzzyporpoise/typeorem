@@ -1,0 +1,3686 @@
+{
+ "version": 1,
+ "generated": "2026-10-07",
+ "note": "Multi-partner pairing benchmark. For each heading, \"acceptable\" lists every body partner the public sources endorse, so hit@k answers \"did the metric surface a good partner\", not \"did it surface the one partner\". Scored under the strict rule: the partner family counts at its canonical 400-normal instance. See .todo/metric-research.md (seventh pass) and mine-pairings.mjs (sources, reproducibility).",
+ "minPartners": 2,
+ "sources": [
+  {
+   "name": "Fontpair (fontpair.co), curated + community pairings, via the site's public API",
+   "url": "https://www.fontpair.co/"
+  },
+  {
+   "name": "Seed pairs from fixtures/known-pairings.json (Typewolf five-fresh article, public design consensus)",
+   "url": null
+  },
+  {
+   "name": "Elementor, \"The 30 Best Font Combinations for Web Design\"",
+   "url": "https://elementor.com/blog/font-pairing/"
+  },
+  {
+   "name": "Google Web Fonts Typographic Project (femmebot)",
+   "url": "https://femmebot.github.io/google-type/"
+  },
+  {
+   "name": "Pagecloud, \"Best Google Fonts Pairings\"",
+   "url": "https://www.pagecloud.com/blog/best-google-fonts-pairings"
+  },
+  {
+   "name": "Visme, \"Font Combinations\"",
+   "url": "https://visme.co/blog/font-combinations/"
+  },
+  {
+   "name": "Typespiration (Rafal Tomal)",
+   "url": "https://typespiration.com/"
+  },
+  {
+   "name": "100 Days of Fonts (Do Hee Kim)",
+   "url": "http://100daysoffonts.com/"
+  },
+  {
+   "name": "Design Your Way, \"Google Font Pairings\" (roles from the article's roles column)",
+   "url": "https://www.designyourway.net/blog/google-font-pairings/"
+  },
+  {
+   "name": "CSS Author, \"Google Fonts Combinations\"",
+   "url": "https://cssauthor.com/google-fonts-combinations/"
+  },
+  {
+   "name": "256 Tools font pairing tool (curated pairs with heading/body roles)",
+   "url": "https://256-tools.com/en/tools/font-pairing/"
+  },
+  {
+   "name": "tiny-online.tools font pair generator (curated pairs, display font first)",
+   "url": "https://tiny-online.tools/design-tools/font-pair-generator"
+  },
+  {
+   "name": "Shapecat font pairing tool (curated pairs with heading/body roles)",
+   "url": "https://shapecat.com/tools/font-pairing"
+  },
+  {
+   "name": "Leadpages, \"Best Google Fonts\" (combos, display font first)",
+   "url": "https://leadpages.com/blog/best-google-fonts"
+  },
+  {
+   "name": "FontFYI curated pairings (open JSON API, heading/body roles)",
+   "url": "https://fontfyi.com/tools/font-pairing/"
+  },
+  {
+   "name": "CodeKitHub Google Fonts pairing finder (curated cards, heading/body roles from preview styles)",
+   "url": "https://codekithub.com/en/google-fonts-pairing-finder/"
+  },
+  {
+   "name": "The Brief, \"Google Font Pairings\" (numbered combos, display font first)",
+   "url": "https://www.thebrief.ai/blog/google-font-pairings/"
+  }
+ ],
+ "pairings": [
+  {
+   "heading": "Abril Fatface",
+   "acceptable": [
+    {
+     "family": "Bitter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Fira Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Josefin Sans",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Karla",
+     "sources": [
+      "cssauthor"
+     ]
+    },
+    {
+     "family": "Lato",
+     "sources": [
+      "elementor",
+      "seed"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Merriweather",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Montserrat",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Nunito",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "PT Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "PT Sans Narrow",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Raleway",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Roboto",
+     "sources": [
+      "fontpair",
+      "tiny-online"
+     ]
+    },
+    {
+     "family": "Work Sans",
+     "sources": [
+      "thebrief"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Alegreya",
+   "acceptable": [
+    {
+     "family": "Alegreya Sans",
+     "sources": [
+      "fontpair-community",
+      "seed",
+      "typespiration"
+     ]
+    },
+    {
+     "family": "Source Sans 3",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Alegreya Sans",
+   "acceptable": [
+    {
+     "family": "Alegreya",
+     "sources": [
+      "elementor",
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Aleo",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "David Libre",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Faustina",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Merriweather",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Petrona",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Aleo",
+   "acceptable": [
+    {
+     "family": "Albert Sans",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Archivo",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Alfa Slab One",
+   "acceptable": [
+    {
+     "family": "Chivo",
+     "sources": [
+      "thebrief"
+     ]
+    },
+    {
+     "family": "Gentium Book Plus",
+     "sources": [
+      "fontpair-community",
+      "google-type"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Alumni Sans",
+   "acceptable": [
+    {
+     "family": "DM Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Libre Franklin",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Archivo",
+   "acceptable": [
+    {
+     "family": "Bitter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Fira Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "IBM Plex Mono",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Manrope",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Nunito",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Raleway",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Spectral",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Archivo Black",
+   "acceptable": [
+    {
+     "family": "Anonymous Pro",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Archivo",
+     "sources": [
+      "fontpair-community",
+      "seed"
+     ]
+    },
+    {
+     "family": "Hind",
+     "sources": [
+      "thebrief"
+     ]
+    },
+    {
+     "family": "IM Fell English",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Montserrat",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Prata",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Roboto",
+     "sources": [
+      "elementor",
+      "shapecat"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Archivo Narrow",
+   "acceptable": [
+    {
+     "family": "Archivo",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Be Vietnam Pro",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "David Libre",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Faustina",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Source Serif 4",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Spectral",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Arvo",
+   "acceptable": [
+    {
+     "family": "Geist",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Lato",
+     "sources": [
+      "tiny-online"
+     ]
+    },
+    {
+     "family": "Montserrat",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Roboto",
+     "sources": [
+      "thebrief"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Be Vietnam Pro",
+   "acceptable": [
+    {
+     "family": "Fira Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Manrope",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Merriweather",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Montserrat",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Old Standard TT",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Open Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Poppins",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Raleway",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Source Sans 3",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Spectral",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Bebas Neue",
+   "acceptable": [
+    {
+     "family": "Heebo",
+     "sources": [
+      "leadpages"
+     ]
+    },
+    {
+     "family": "Old Standard TT",
+     "sources": [
+      "elementor"
+     ]
+    },
+    {
+     "family": "Roboto",
+     "sources": [
+      "fontfyi",
+      "seed",
+      "tiny-online"
+     ]
+    },
+    {
+     "family": "Source Sans 3",
+     "sources": [
+      "thebrief"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Besley",
+   "acceptable": [
+    {
+     "family": "Figtree",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Fustat",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Bitter",
+   "acceptable": [
+    {
+     "family": "Archivo",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Be Vietnam Pro",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Fira Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "256tools",
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "PT Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Raleway",
+     "sources": [
+      "fontpair",
+      "tiny-online"
+     ]
+    },
+    {
+     "family": "Roboto",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Source Sans 3",
+     "sources": [
+      "seed"
+     ]
+    },
+    {
+     "family": "Spectral",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Bricolage Grotesque",
+   "acceptable": [
+    {
+     "family": "BioRhyme",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Geist",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Ubuntu",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Cardo",
+   "acceptable": [
+    {
+     "family": "Josefin Sans",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Lato",
+     "sources": [
+      "seed"
+     ]
+    },
+    {
+     "family": "Montserrat",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Open Sans",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Roboto Serif",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Carrois Gothic SC",
+   "acceptable": [
+    {
+     "family": "Cardo",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Cutive Mono",
+     "sources": [
+      "hundreddays"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Chivo",
+   "acceptable": [
+    {
+     "family": "Cambo",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "IBM Plex Serif",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Rasa",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Spectral",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Tinos",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Cormorant Garamond",
+   "acceptable": [
+    {
+     "family": "DM Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Nunito",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Proza Libre",
+     "sources": [
+      "seed",
+      "tiny-online"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Crimson Text",
+   "acceptable": [
+    {
+     "family": "Crimson Pro",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Julius Sans One",
+     "sources": [
+      "google-type"
+     ]
+    },
+    {
+     "family": "Work Sans",
+     "sources": [
+      "seed",
+      "tiny-online"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Cutive Mono",
+   "acceptable": [
+    {
+     "family": "Archivo Black",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Dosis",
+     "sources": [
+      "hundreddays"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "David Libre",
+   "acceptable": [
+    {
+     "family": "Chivo",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Fira Code",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "DM Sans",
+   "acceptable": [
+    {
+     "family": "DM Mono",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "DM Serif Display",
+     "sources": [
+      "fontfyi"
+     ]
+    },
+    {
+     "family": "Epilogue",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Merriweather",
+     "sources": [
+      "256tools"
+     ]
+    },
+    {
+     "family": "Playfair Display",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Source Serif 4",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Spectral",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Varela Round",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Work Sans",
+     "sources": [
+      "256tools"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "DM Serif Display",
+   "acceptable": [
+    {
+     "family": "DM Sans",
+     "sources": [
+      "cssauthor",
+      "fontpair-community",
+      "seed",
+      "shapecat",
+      "tiny-online"
+     ]
+    },
+    {
+     "family": "DM Serif Text",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Roboto Mono",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Domine",
+   "acceptable": [
+    {
+     "family": "Lato",
+     "sources": [
+      "seed"
+     ]
+    },
+    {
+     "family": "Manrope",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "EB Garamond",
+   "acceptable": [
+    {
+     "family": "DM Mono",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Montserrat",
+     "sources": [
+      "seed"
+     ]
+    },
+    {
+     "family": "PT Sans",
+     "sources": [
+      "tiny-online"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Encode Sans Expanded",
+   "acceptable": [
+    {
+     "family": "Encode Sans",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Encode Sans Condensed",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Epilogue",
+   "acceptable": [
+    {
+     "family": "Barlow",
+     "sources": [
+      "leadpages"
+     ]
+    },
+    {
+     "family": "Baskervville",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Newsreader",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Rosario",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Spectral",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Exo 2",
+   "acceptable": [
+    {
+     "family": "Alegreya Sans",
+     "sources": [
+      "elementor"
+     ]
+    },
+    {
+     "family": "Nunito Sans",
+     "sources": [
+      "tiny-online"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Fira Sans",
+   "acceptable": [
+    {
+     "family": "Archivo",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Be Vietnam Pro",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Bitter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Manrope",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Merriweather",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Open Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "PT Serif",
+     "sources": [
+      "elementor"
+     ]
+    },
+    {
+     "family": "Raleway",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Source Sans 3",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Fjalla One",
+   "acceptable": [
+    {
+     "family": "Bad Script",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Cutive Mono",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Libre Baskerville",
+     "sources": [
+      "pagecloud"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "typespiration"
+     ]
+    },
+    {
+     "family": "Merriweather Sans",
+     "sources": [
+      "thebrief"
+     ]
+    },
+    {
+     "family": "Noto Sans",
+     "sources": [
+      "designyourway"
+     ]
+    },
+    {
+     "family": "Prata",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "PT Serif",
+     "sources": [
+      "typespiration"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Francois One",
+   "acceptable": [
+    {
+     "family": "EB Garamond",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Josefin Sans",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Karla",
+     "sources": [
+      "thebrief"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Fraunces",
+   "acceptable": [
+    {
+     "family": "DM Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Epilogue",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Figtree",
+     "sources": [
+      "tiny-online"
+     ]
+    },
+    {
+     "family": "Instrument Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "shapecat"
+     ]
+    },
+    {
+     "family": "Outfit",
+     "sources": [
+      "cssauthor"
+     ]
+    },
+    {
+     "family": "Poppins",
+     "sources": [
+      "leadpages"
+     ]
+    },
+    {
+     "family": "Space Grotesk",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Funnel Display",
+   "acceptable": [
+    {
+     "family": "Funnel Sans",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Geist",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Geist",
+   "acceptable": [
+    {
+     "family": "Inter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Manrope",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Gloock",
+   "acceptable": [
+    {
+     "family": "Epilogue",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Instrument Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "IBM Plex Sans",
+   "acceptable": [
+    {
+     "family": "IBM Plex Sans Condensed",
+     "sources": [
+      "thebrief"
+     ]
+    },
+    {
+     "family": "IBM Plex Serif",
+     "sources": [
+      "fontfyi"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "IBM Plex Sans Condensed",
+   "acceptable": [
+    {
+     "family": "IBM Plex Sans",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "IBM Plex Serif",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Inconsolata",
+   "acceptable": [
+    {
+     "family": "Fira Code",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Newsreader",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Spectral",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Inknut Antiqua",
+   "acceptable": [
+    {
+     "family": "Be Vietnam Pro",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "DM Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Instrument Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Mulish",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Work Sans",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Instrument Sans",
+   "acceptable": [
+    {
+     "family": "Chivo Mono",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Geist Mono",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Karla",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Instrument Serif",
+   "acceptable": [
+    {
+     "family": "DM Mono",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Instrument Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Work Sans",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Inter",
+   "acceptable": [
+    {
+     "family": "Archivo",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Be Vietnam Pro",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Fira Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "IBM Plex Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Inconsolata",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "JetBrains Mono",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Manrope",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Merriweather",
+     "sources": [
+      "fontfyi"
+     ]
+    },
+    {
+     "family": "Montserrat",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Poppins",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "PT Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Roboto",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Source Sans 3",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Source Serif 4",
+     "sources": [
+      "fontfyi"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "JetBrains Mono",
+   "acceptable": [
+    {
+     "family": "Inter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Roboto Mono",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Josefin Sans",
+   "acceptable": [
+    {
+     "family": "Cardo",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Josefin Slab",
+     "sources": [
+      "elementor"
+     ]
+    },
+    {
+     "family": "Libre Baskerville",
+     "sources": [
+      "tiny-online"
+     ]
+    },
+    {
+     "family": "Open Sans",
+     "sources": [
+      "seed"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Josefin Slab",
+   "acceptable": [
+    {
+     "family": "Fjalla One",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Josefin Sans",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Petit Formal Script",
+     "sources": [
+      "hundreddays"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Karla",
+   "acceptable": [
+    {
+     "family": "David Libre",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Faustina",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "IBM Plex Serif",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Inconsolata",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Newsreader",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Playfair Display",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Spectral",
+     "sources": [
+      "elementor"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Lato",
+   "acceptable": [
+    {
+     "family": "Alegreya",
+     "sources": [
+      "designyourway"
+     ]
+    },
+    {
+     "family": "EB Garamond",
+     "sources": [
+      "hundreddays",
+      "seed"
+     ]
+    },
+    {
+     "family": "Josefin Slab",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Merriweather",
+     "sources": [
+      "elementor"
+     ]
+    },
+    {
+     "family": "Roboto",
+     "sources": [
+      "elementor"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "League Script",
+   "acceptable": [
+    {
+     "family": "Josefin Sans",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Josefin Slab",
+     "sources": [
+      "hundreddays"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Libre Baskerville",
+   "acceptable": [
+    {
+     "family": "DM Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Figtree",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "IBM Plex Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Instrument Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Libre Franklin",
+     "sources": [
+      "fontpair",
+      "seed",
+      "tiny-online"
+     ]
+    },
+    {
+     "family": "Montserrat",
+     "sources": [
+      "seed"
+     ]
+    },
+    {
+     "family": "Nixie One",
+     "sources": [
+      "google-type"
+     ]
+    },
+    {
+     "family": "Righteous",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Rosario",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Source Sans 3",
+     "sources": [
+      "elementor"
+     ]
+    },
+    {
+     "family": "Work Sans",
+     "sources": [
+      "fontpair",
+      "shapecat"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Libre Caslon Display",
+   "acceptable": [
+    {
+     "family": "Figtree",
+     "sources": [
+      "typespiration"
+     ]
+    },
+    {
+     "family": "Libre Caslon Text",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Libre Franklin",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Libre Franklin",
+   "acceptable": [
+    {
+     "family": "Aleo",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Cambay",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "David Libre",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Eczar",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Faustina",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Libre Baskerville",
+     "sources": [
+      "elementor",
+      "fontpair-community",
+      "seed"
+     ]
+    },
+    {
+     "family": "Martel",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Lobster",
+   "acceptable": [
+    {
+     "family": "Lato",
+     "sources": [
+      "seed"
+     ]
+    },
+    {
+     "family": "Open Sans",
+     "sources": [
+      "thebrief"
+     ]
+    },
+    {
+     "family": "Roboto Condensed",
+     "sources": [
+      "elementor"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Lora",
+   "acceptable": [
+    {
+     "family": "Abril Fatface",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "256tools"
+     ]
+    },
+    {
+     "family": "Josefin Sans",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Manrope",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Merriweather",
+     "sources": [
+      "elementor",
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Open Sans",
+     "sources": [
+      "seed"
+     ]
+    },
+    {
+     "family": "Poppins",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "PT Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Raleway",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Roboto",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Source Serif 4",
+     "sources": [
+      "256tools"
+     ]
+    },
+    {
+     "family": "Varela",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Work Sans",
+     "sources": [
+      "256tools"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Lustria",
+   "acceptable": [
+    {
+     "family": "Lato",
+     "sources": [
+      "pagecloud"
+     ]
+    },
+    {
+     "family": "Mulish",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Manrope",
+   "acceptable": [
+    {
+     "family": "Be Vietnam Pro",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Faustina",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Geist Mono",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "IBM Plex Mono",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Merriweather",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Newsreader",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Nunito",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Outfit",
+     "sources": [
+      "cssauthor"
+     ]
+    },
+    {
+     "family": "Raleway",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Roboto",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Sora",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Work Sans",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Merriweather",
+   "acceptable": [
+    {
+     "family": "Archivo",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Be Vietnam Pro",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Bitter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "fontpair",
+      "thebrief"
+     ]
+    },
+    {
+     "family": "Merriweather Sans",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Montserrat",
+     "sources": [
+      "256tools"
+     ]
+    },
+    {
+     "family": "Open Sans",
+     "sources": [
+      "fontpair",
+      "seed"
+     ]
+    },
+    {
+     "family": "Poppins",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Source Sans 3",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Spectral",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Work Sans",
+     "sources": [
+      "seed"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Montserrat",
+   "acceptable": [
+    {
+     "family": "Archivo",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Bitter",
+     "sources": [
+      "256tools"
+     ]
+    },
+    {
+     "family": "Cutive Mono",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Fira Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Geist",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Google Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "IBM Plex Mono",
+     "sources": [
+      "256tools"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "256tools"
+     ]
+    },
+    {
+     "family": "Lato",
+     "sources": [
+      "cssauthor",
+      "visme"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "256tools",
+      "fontpair",
+      "seed"
+     ]
+    },
+    {
+     "family": "Merriweather",
+     "sources": [
+      "designyourway",
+      "shapecat",
+      "tiny-online"
+     ]
+    },
+    {
+     "family": "Nunito",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Open Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Over the Rainbow",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Playfair Display",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Poppins",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Raleway",
+     "sources": [
+      "thebrief"
+     ]
+    },
+    {
+     "family": "Roboto",
+     "sources": [
+      "fontfyi"
+     ]
+    },
+    {
+     "family": "Source Sans 3",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Vast Shadow",
+     "sources": [
+      "hundreddays"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Mulish",
+   "acceptable": [
+    {
+     "family": "Ovo",
+     "sources": [
+      "google-type"
+     ]
+    },
+    {
+     "family": "Philosopher",
+     "sources": [
+      "google-type"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Nunito",
+   "acceptable": [
+    {
+     "family": "Bitter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Merriweather",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Nunito Sans",
+     "sources": [
+      "fontfyi",
+      "fontpair-community",
+      "seed"
+     ]
+    },
+    {
+     "family": "Open Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Poppins",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "PT Sans",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Roboto",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Old Standard TT",
+   "acceptable": [
+    {
+     "family": "Archivo Black",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Fjalla One",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Merriweather",
+     "sources": [
+      "typespiration"
+     ]
+    },
+    {
+     "family": "PT Sans Narrow",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Questrial",
+     "sources": [
+      "google-type"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Open Sans",
+   "acceptable": [
+    {
+     "family": "Archivo",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Bitter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Crimson Text",
+     "sources": [
+      "typespiration"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "fontpair",
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Merriweather",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Poppins",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "PT Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Roboto",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Source Sans 3",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Oswald",
+   "acceptable": [
+    {
+     "family": "Arvo",
+     "sources": [
+      "typespiration"
+     ]
+    },
+    {
+     "family": "Cutive Mono",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "EB Garamond",
+     "sources": [
+      "designyourway"
+     ]
+    },
+    {
+     "family": "Lato",
+     "sources": [
+      "seed",
+      "visme"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Montserrat",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Old Standard TT",
+     "sources": [
+      "elementor",
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Open Sans",
+     "sources": [
+      "fontfyi",
+      "tiny-online"
+     ]
+    },
+    {
+     "family": "Petit Formal Script",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Quattrocento",
+     "sources": [
+      "google-type",
+      "pagecloud"
+     ]
+    },
+    {
+     "family": "Quicksand",
+     "sources": [
+      "hundreddays"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Ovo",
+   "acceptable": [
+    {
+     "family": "Mulish",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Syne",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Petrona",
+   "acceptable": [
+    {
+     "family": "Karla",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Libre Franklin",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Manrope",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Playfair Display",
+   "acceptable": [
+    {
+     "family": "Be Vietnam Pro",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Cutive Mono",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "DM Sans",
+     "sources": [
+      "256tools"
+     ]
+    },
+    {
+     "family": "Fira Code",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Fira Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "256tools"
+     ]
+    },
+    {
+     "family": "Libre Baskerville",
+     "sources": [
+      "typespiration"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "fontpair",
+      "typespiration"
+     ]
+    },
+    {
+     "family": "Merriweather",
+     "sources": [
+      "256tools"
+     ]
+    },
+    {
+     "family": "Montserrat",
+     "sources": [
+      "seed"
+     ]
+    },
+    {
+     "family": "Nunito",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Playfair",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Raleway",
+     "sources": [
+      "elementor",
+      "leadpages"
+     ]
+    },
+    {
+     "family": "Roboto",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Source Sans 3",
+     "sources": [
+      "cssauthor",
+      "designyourway",
+      "fontfyi",
+      "fontpair",
+      "pagecloud",
+      "seed",
+      "shapecat",
+      "tiny-online",
+      "typespiration"
+     ]
+    },
+    {
+     "family": "Vollkorn",
+     "sources": [
+      "hundreddays"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Playfair Display SC",
+   "acceptable": [
+    {
+     "family": "Josefin Slab",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Playfair",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Plus Jakarta Sans",
+   "acceptable": [
+    {
+     "family": "Inter",
+     "sources": [
+      "fontfyi"
+     ]
+    },
+    {
+     "family": "Manrope",
+     "sources": [
+      "tiny-online"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Poppins",
+   "acceptable": [
+    {
+     "family": "DM Sans",
+     "sources": [
+      "256tools"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "256tools",
+      "fontfyi",
+      "fontpair",
+      "seed"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "256tools",
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Merriweather",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Nunito",
+     "sources": [
+      "fontpair",
+      "tiny-online"
+     ]
+    },
+    {
+     "family": "Open Sans",
+     "sources": [
+      "seed"
+     ]
+    },
+    {
+     "family": "PT Serif",
+     "sources": [
+      "shapecat"
+     ]
+    },
+    {
+     "family": "Raleway",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Work Sans",
+     "sources": [
+      "256tools",
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Prata",
+   "acceptable": [
+    {
+     "family": "Francois One",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Manrope",
+     "sources": [
+      "leadpages"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "PT Sans",
+   "acceptable": [
+    {
+     "family": "Be Vietnam Pro",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Nunito",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Open Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Poppins",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "PT Serif",
+     "sources": [
+      "elementor"
+     ]
+    },
+    {
+     "family": "Source Sans 3",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Spectral",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "PT Sans Narrow",
+   "acceptable": [
+    {
+     "family": "PT Sans",
+     "sources": [
+      "fontpair-community",
+      "typespiration"
+     ]
+    },
+    {
+     "family": "PT Serif",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "PT Serif",
+   "acceptable": [
+    {
+     "family": "Chivo",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Lato",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "PT Sans",
+     "sources": [
+      "fontpair-community",
+      "seed"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Quattrocento",
+   "acceptable": [
+    {
+     "family": "Fanwood Text",
+     "sources": [
+      "pagecloud"
+     ]
+    },
+    {
+     "family": "Quattrocento Sans",
+     "sources": [
+      "fontpair-community",
+      "pagecloud"
+     ]
+    },
+    {
+     "family": "Questrial",
+     "sources": [
+      "leadpages"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Quicksand",
+   "acceptable": [
+    {
+     "family": "Cabin",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "EB Garamond",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Josefin Slab",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Roboto Slab",
+     "sources": [
+      "seed"
+     ]
+    },
+    {
+     "family": "Sacramento",
+     "sources": [
+      "hundreddays"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Raleway",
+   "acceptable": [
+    {
+     "family": "Lato",
+     "sources": [
+      "tiny-online"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "fontfyi",
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Merriweather",
+     "sources": [
+      "elementor",
+      "seed"
+     ]
+    },
+    {
+     "family": "Open Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Roboto",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Roboto Slab",
+     "sources": [
+      "designyourway"
+     ]
+    },
+    {
+     "family": "Source Sans 3",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Reddit Sans",
+   "acceptable": [
+    {
+     "family": "Caveat",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Sora",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Righteous",
+   "acceptable": [
+    {
+     "family": "Cabin",
+     "sources": [
+      "tiny-online"
+     ]
+    },
+    {
+     "family": "Josefin Slab",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "League Script",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "hundreddays"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Roboto",
+   "acceptable": [
+    {
+     "family": "Archivo",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Be Vietnam Pro",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Bitter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Fira Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Lato",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Manrope",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Montserrat",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Nunito",
+     "sources": [
+      "fontpair",
+      "seed"
+     ]
+    },
+    {
+     "family": "Nunito Sans",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Open Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Poppins",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "PT Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Roboto Mono",
+     "sources": [
+      "fontpair-community",
+      "thebrief"
+     ]
+    },
+    {
+     "family": "Roboto Serif",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Source Sans 3",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Roboto Condensed",
+   "acceptable": [
+    {
+     "family": "Roboto",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Vollkorn",
+     "sources": [
+      "typespiration"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Roboto Mono",
+   "acceptable": [
+    {
+     "family": "Lora",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Spectral",
+     "sources": [
+      "fontpair",
+      "thebrief"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Roboto Slab",
+   "acceptable": [
+    {
+     "family": "Neuton",
+     "sources": [
+      "typespiration"
+     ]
+    },
+    {
+     "family": "Roboto",
+     "sources": [
+      "fontpair-community",
+      "seed"
+     ]
+    },
+    {
+     "family": "Roboto Serif",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Sacramento",
+   "acceptable": [
+    {
+     "family": "Barlow",
+     "sources": [
+      "thebrief"
+     ]
+    },
+    {
+     "family": "Montserrat",
+     "sources": [
+      "hundreddays"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Six Caps",
+   "acceptable": [
+    {
+     "family": "Merriweather",
+     "sources": [
+      "typespiration"
+     ]
+    },
+    {
+     "family": "Montserrat",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Playfair Display",
+     "sources": [
+      "hundreddays"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Source Sans 3",
+   "acceptable": [
+    {
+     "family": "PT Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Source Code Pro",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Source Serif 4",
+   "acceptable": [
+    {
+     "family": "DM Sans",
+     "sources": [
+      "256tools"
+     ]
+    },
+    {
+     "family": "Source Sans 3",
+     "sources": [
+      "fontpair-community",
+      "seed"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Space Grotesk",
+   "acceptable": [
+    {
+     "family": "Be Vietnam Pro",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "IBM Plex Mono",
+     "sources": [
+      "256tools"
+     ]
+    },
+    {
+     "family": "IBM Plex Sans",
+     "sources": [
+      "shapecat"
+     ]
+    },
+    {
+     "family": "Inter",
+     "sources": [
+      "256tools",
+      "fontfyi",
+      "fontpair",
+      "seed",
+      "tiny-online"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "fontpair",
+      "typespiration"
+     ]
+    },
+    {
+     "family": "Roboto",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Source Serif 4",
+     "sources": [
+      "256tools"
+     ]
+    },
+    {
+     "family": "Space Mono",
+     "sources": [
+      "cssauthor"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Space Mono",
+   "acceptable": [
+    {
+     "family": "Lora",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Rethink Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Roboto Mono",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Space Grotesk",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Work Sans",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Special Gothic Expanded One",
+   "acceptable": [
+    {
+     "family": "Inter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Special Gothic",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Spectral",
+   "acceptable": [
+    {
+     "family": "JetBrains Mono",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Karla",
+     "sources": [
+      "fontpair",
+      "seed",
+      "tiny-online"
+     ]
+    },
+    {
+     "family": "Lora",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Merriweather",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Syne",
+   "acceptable": [
+    {
+     "family": "Epilogue",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Gloock",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Newsreader",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Plus Jakarta Sans",
+     "sources": [
+      "cssauthor"
+     ]
+    },
+    {
+     "family": "Red Hat Text",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Sora",
+     "sources": [
+      "tiny-online"
+     ]
+    },
+    {
+     "family": "TASA Orbiter",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Tenor Sans",
+   "acceptable": [
+    {
+     "family": "Alegreya Sans",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Karla",
+     "sources": [
+      "fontpair"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Ubuntu Condensed",
+   "acceptable": [
+    {
+     "family": "Ubuntu",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Ubuntu Sans",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Ubuntu Sans Mono",
+   "acceptable": [
+    {
+     "family": "Ubuntu Mono",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Ubuntu Sans",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Unbounded",
+   "acceptable": [
+    {
+     "family": "Albert Sans",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Geist",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Varela Round",
+   "acceptable": [
+    {
+     "family": "Inter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Varela",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Vollkorn",
+   "acceptable": [
+    {
+     "family": "Roboto",
+     "sources": [
+      "typespiration"
+     ]
+    },
+    {
+     "family": "Source Sans 3",
+     "sources": [
+      "seed"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Work Sans",
+   "acceptable": [
+    {
+     "family": "Bitter",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Crimson Text",
+     "sources": [
+      "typespiration"
+     ]
+    },
+    {
+     "family": "JetBrains Mono",
+     "sources": [
+      "fontpair"
+     ]
+    },
+    {
+     "family": "Source Serif 4",
+     "sources": [
+      "fontfyi",
+      "seed"
+     ]
+    },
+    {
+     "family": "Taviraj",
+     "sources": [
+      "seed"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Yanone Kaffeesatz",
+   "acceptable": [
+    {
+     "family": "Playfair Display",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Playfair Display SC",
+     "sources": [
+      "hundreddays"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Yellowtail",
+   "acceptable": [
+    {
+     "family": "Amaranth",
+     "sources": [
+      "visme"
+     ]
+    },
+    {
+     "family": "Lato",
+     "sources": [
+      "fontpair-community"
+     ]
+    },
+    {
+     "family": "Nunito",
+     "sources": [
+      "fontpair-community"
+     ]
+    }
+   ]
+  },
+  {
+   "heading": "Yeseva One",
+   "acceptable": [
+    {
+     "family": "Crimson Text",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Josefin Sans",
+     "sources": [
+      "hundreddays"
+     ]
+    },
+    {
+     "family": "Roboto",
+     "sources": [
+      "hundreddays"
+     ]
+    }
+   ]
+  }
+ ]
+}
