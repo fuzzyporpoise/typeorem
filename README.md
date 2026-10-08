@@ -37,7 +37,7 @@ model/
   build_corpus.py     the pipeline entry point (+ the house-face append)
   export_onnx.py      the browser graph (--fp16 for the shipped build)
   publish_model.py    publishes it to Hugging Face, writes the site's model.json
-  paths.py            where the site checkout is (TYPEOREM_SITE_DIR)
+  paths.py            where the app checkout is (TYPEOREM_SITE_DIR)
   MODEL_CARD.md       the model card for the published backbone
   tests/              pipeline tests
   validate/           the metric harnesses (README.md in there)
@@ -53,7 +53,7 @@ cd typeorem
 python3 -m venv model/.venv
 model/.venv/bin/pip install -r model/requirements.txt
 
-# The site checkout is what the pipeline writes into and the harnesses read from.
+# The app checkout is what the pipeline writes into and the harnesses read from.
 git clone git@gitlab.com:fuzzyporpoise/typeorem.git ../typeorem-site
 export TYPEOREM_SITE_DIR=../typeorem-site
 ```
@@ -65,14 +65,14 @@ house faces, the backbone publish, and the validation. Two things to know up fro
   repo. `TYPEOREM_SITE_DIR` (default `../site`) is the only path that crosses between
   the two halves.
 - The harnesses score the metric **the browser ships**, so they import `site/js/` from
-  the site checkout rather than keeping a copy that could drift.
+  the app checkout rather than keeping a copy that could drift.
 
 ## Tests
 
 ```bash
 model/.venv/bin/python model/tests/test_catalog.py             # catalog parse + instance policy
 model/.venv/bin/python model/tests/test_corpus_determinism.py  # render determinism (needs a pipeline run)
-node model/validate/reranker.test.mjs                          # JS/Python re-ranker parity (needs the site)
+node model/validate/reranker.test.mjs                          # JS/Python re-ranker parity (needs the app checkout)
 ```
 
 `.github/workflows/gate.yml` runs the standalone tests on every push and pull request;

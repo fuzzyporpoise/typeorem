@@ -8,5 +8,5 @@ model/out/
 # Large validation fixture (fetch with model/validate/fetch-fixtures.mjs)
 model/validate/fixtures/vectors-200.tsv
 
-# A site checkout cloned inside this repo, if you put it here
+# An app checkout cloned inside this repo, if you put it here
 site/
