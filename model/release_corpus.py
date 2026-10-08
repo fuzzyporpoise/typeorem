@@ -201,7 +201,9 @@ def publish(repo, tag, archive, asset_name, notes, token):
     release = api(f"/repos/{repo}/releases", token, method="POST", body={
         "tag_name": tag,
         "target_commitish": "main",
-        "name": f"corpus {tag}",
+        # The name is the tag, verbatim: anything reading it (a tool, a page, a
+        # person) should get the handle it can use, not a decorated label.
+        "name": tag,
         "body": notes,
         "draft": False,
         "prerelease": False,

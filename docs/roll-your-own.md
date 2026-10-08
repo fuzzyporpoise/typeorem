@@ -159,7 +159,9 @@ The checks are the point, and they run before anything is uploaded:
 
 `--dry-run` validates only, and `--no-upload` writes the archive and the lock without
 touching GitHub. Tags are immutable handles here: the command refuses a tag that
-already exists, so pick a new one (`corpus-v2`) rather than moving a release.
+already exists, so pick a new one (`corpus-v2`) rather than moving a release. The
+release is named after its tag and its single asset is `<tag>.tar.gz`, so the tag is
+the only handle anyone needs: nothing downstream has to unwrap a decorated label.
 
 ### The house faces (a `local` source)
 
