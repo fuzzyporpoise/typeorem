@@ -5,6 +5,12 @@ import numpy as np
 
 from catalog import write_json
 
+# The corpus's identity. They live here, beside the writer of corpus.version.json,
+# so anything that has to check a shipped corpus (the release command, a gate) can
+# import them without pulling in the heavy pipeline.
+BACKBONE = "dinov2_vits14"
+PREPROCESS = "imagenet"
+
 
 def label_of(inst):
     suffix = " Italic" if inst["style"] == "italic" else ""

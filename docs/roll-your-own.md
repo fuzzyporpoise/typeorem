@@ -118,9 +118,9 @@ model/.venv/bin/python model/instances.py       # catalog + instance policy -> m
 model/.venv/bin/python model/build_corpus.py    # render -> embed -> PCA -> emit, + house faces
 ```
 
-The pipeline writes into the site checkout, so commit and push the result there
-(the handoff is a normal commit in the site repo, and the site's own gate re-checks
-it; `tests/provenance.test.mjs` is the tripwire for the data boundary below).
+The pipeline writes into the app checkout, which does not track the result: the
+corpus ships as a release (next section), and the app's own gate re-checks whatever
+it fetched (`tests/provenance.test.mjs` is the tripwire for the data boundary below).
 
 The clone is blobless: the working tree is checked out and font blobs are fetched on
 demand, which is why the first `build_corpus.py` run spends its time on the network.
@@ -128,9 +128,38 @@ Renders land in `model/.cache/224/` (gitignored, one PNG per instance id); an in
 that fails to render is reported and dropped from the corpus rather than failing the
 run. `model/.cache/` and the virtualenv are gitignored.
 
-The catalog is pinned by commit in the site's `corpus.version.json`
+The catalog is pinned by commit in the app's `corpus.version.json`
 (`googleFontsCommit`), so a rebuild is reproducible; a scheduled monthly diff-and-PR
 job is the intended refresh path, not a per-session step.
+
+### Ship the corpus (cut a release)
+
+The app deploys whatever release it pins, and nothing generated is tracked there, so a
+rebuilt corpus reaches the site through one command:
+
+```bash
+model/.venv/bin/python model/release_corpus.py --tag corpus-v2
+```
+
+It validates the generated tree, packs a deterministic tar.gz (`site/data/*` plus
+`site/model.json`), publishes it as a release asset on this repo, and writes the app's
+`corpus.lock.json` (the tag, the archive's sha256, and the sha256 of every member).
+Commit the lock in the app repo and deploy there; `npm run corpus` fetches and verifies
+it locally, and the app's CI does the same before the gate and before publishing Pages.
+
+The checks are the point, and they run before anything is uploaded:
+
+- the file set is exactly what the app serves;
+- `corpus.version.json`, `vectors.meta.json`, and `model.json` agree with this
+  checkout on backbone and preprocessing, and the `glyphGrid` block equals
+  `render.py`'s grid;
+- counts, byte sizes, and the PCA layout agree, and catalog ids are row indices;
+- every catalog row's `source` is in the public allowlist: the provenance gate, run
+  again at the boundary where data leaves the machine.
+
+`--dry-run` validates only, and `--no-upload` writes the archive and the lock without
+touching GitHub. Tags are immutable handles here: the command refuses a tag that
+already exists, so pick a new one (`corpus-v2`) rather than moving a release.
 
 ### The house faces (a `local` source)
 
