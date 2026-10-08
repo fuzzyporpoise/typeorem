@@ -1,27 +1,27 @@
-# Typeorem: the science
+# Typeorem
 
-The corpus pipeline and the validation harnesses behind
-[typeorem.dev](https://typeorem.dev/), a font-pairing tool and a unified theory of type
-design. This repo is the science: it turns the Google Fonts catalog into a 200-dim
-embedding space and measures whether the pairing metric built on top of it is any good.
-It is an expansion of where [fontjoy](https://github.com/Jack000/fontjoy) (MIT) started.
-
-The site is the other half, in its own repo (`fuzzyporpoise/typeorem` on GitLab): the
-static app that serves the corpus and the deployed page. The science writes the corpus;
-the site serves it.
+The corpus pipeline and the metric harnesses behind
+[typeorem.dev](https://typeorem.dev/), a font-pairing tool. This repo turns the Google Fonts
+catalog into a 200-dim font-embedding corpus and measures whether the pairing metric built on
+top of it holds up. It is an expansion of where
+[fontjoy](https://github.com/Jack000/fontjoy) (MIT) started.
 
 ```
-Google Fonts  ->  glyph grid  ->  DINOv2 ViT-S/14  ->  PCA (200d)  ->  site/data
+Google Fonts  ->  glyph grid  ->  DINOv2 ViT-S/14  ->  PCA (200d)  ->  corpus
 ```
+
+The corpus is a handful of static files: an int8 vector per font instance, a catalog that
+names them, the PCA projection that produced them, and a version file that pins the contract.
+[`docs/roll-your-own.md`](docs/roll-your-own.md) covers building one and serving it from your
+own front-end.
 
 ## Why this exists
 
-Fontjoy paired fonts with a cosine split over 2017 features. This project asks the next
-question: can a modern frozen vision backbone, a corpus of every pairing-eligible Google
-Fonts instance, and a role-aware objective beat that, and can the answer be checked
-rather than asserted? The harnesses here are the check: a multi-partner benchmark mined
-from public pairing sources, an engine evaluation, a challenger A/B, and a learned
-re-ranker.
+Fontjoy paired fonts with a cosine split over 2017 features. This project asks whether a
+modern frozen vision backbone, a corpus of every pairing-eligible Google Fonts instance, and a
+role-aware objective do better, and whether the answer can be checked rather than asserted.
+The harnesses here are the check: a multi-partner benchmark mined from public pairing sources,
+an engine evaluation, a challenger A/B, and a learned re-ranker.
 
 ## Layout
 
@@ -33,11 +33,11 @@ model/
   embed.py            the frozen backbone (DINOv2 ViT-S/14, ImageNet preprocessing)
   reduce.py           PCA to 200 dims + int8 quantization
   legibility.py       the body-legibility proxy
-  emit.py             writes the site's site/data
+  emit.py             writes the corpus (vectors, catalog, PCA, version)
   build_corpus.py     the pipeline entry point (+ the house-face append)
   export_onnx.py      the browser graph (--fp16 for the shipped build)
-  publish_model.py    publishes it to Hugging Face, writes the site's model.json
-  paths.py            where the app checkout is (TYPEOREM_SITE_DIR)
+  publish_model.py    publishes it to Hugging Face, writes model.json
+  paths.py            where the consumer checkout is (TYPEOREM_SITE_DIR)
   release_corpus.py   validates the corpus and publishes it as a tagged release
   MODEL_CARD.md       the model card for the published backbone
   tests/              pipeline tests
@@ -53,22 +53,26 @@ git clone git@github.com:fuzzyporpoise/typeorem.git
 cd typeorem
 python3 -m venv model/.venv
 model/.venv/bin/pip install -r model/requirements.txt
-
-# The app checkout is what the pipeline writes into and the harnesses read from.
-git clone git@gitlab.com:fuzzyporpoise/typeorem.git ../typeorem-site
-export TYPEOREM_SITE_DIR=../typeorem-site
 ```
 
-Read `docs/roll-your-own.md` for the full path: the catalog clone, the rebuild, the
-house faces, shipping the corpus as a release, the backbone publish, and the
-validation. Two things to know up front:
+The pipeline writes its corpus into a front-end checkout: a directory that holds a
+`site/index.html`, which it checks for before it writes. Point `TYPEOREM_SITE_DIR` at yours,
+or drop one next to this repo as `../typeorem-site`:
 
-- The pipeline's output is the **app's corpus**, which the app does not track: the
-  science cuts a tagged release from it (`model/release_corpus.py --tag corpus-v2`)
-  and the app pins that tag in its `corpus.lock.json`. `TYPEOREM_SITE_DIR` (default: a
-  sibling checkout) is the only path that crosses between the two halves.
-- The harnesses score the metric **the browser ships**, so they import `site/js/` from
-  the app checkout rather than keeping a copy that could drift.
+```bash
+export TYPEOREM_SITE_DIR=/path/to/your-front-end
+```
+
+Read `docs/roll-your-own.md` for the full path: the catalog clone, the rebuild, the house
+faces, shipping the corpus as a release, the backbone publish, and the validation. Two things
+to know up front:
+
+- The corpus is output, not source: nothing generated is tracked here. `emit.py` writes it
+  into `$TYPEOREM_SITE_DIR/site/data/`, and `model/release_corpus.py` can pack and validate it
+  as a tagged release. `TYPEOREM_SITE_DIR` is the only path that crosses between the pipeline
+  and the front-end.
+- The harnesses score the metric **your browser ships**, so they import `site/js/` from the
+  consumer checkout rather than keeping a copy that could drift.
 
 ## Tests
 
@@ -76,7 +80,7 @@ validation. Two things to know up front:
 model/.venv/bin/python model/tests/test_catalog.py             # catalog parse + instance policy
 model/.venv/bin/python model/tests/test_release.py             # the release boundary: the corpus checks + the archive
 model/.venv/bin/python model/tests/test_corpus_determinism.py  # render determinism (needs a pipeline run)
-node model/validate/reranker.test.mjs                          # JS/Python re-ranker parity (needs the app checkout)
+node model/validate/reranker.test.mjs                          # JS/Python re-ranker parity (needs a consumer checkout)
 ```
 
 `.github/workflows/gate.yml` runs the standalone tests on every push and pull request;
@@ -95,6 +99,6 @@ see `model/MODEL_CARD.md`. Everything else here is MIT.
 
 ## License
 
-Code and corpus: MIT (`LICENSE`). Method: credited to fontjoy (MIT). Google Fonts: OFL.
-The bundled house face, [Commit Mono](https://commitmono.com), is SIL OFL 1.1 and lives
-in the site repo's `site/fonts/` (the science reads it from there).
+Code and corpus: MIT (`LICENSE`). Method: credited to fontjoy (MIT). Google Fonts: OFL. The
+bundled house face, [Commit Mono](https://commitmono.com), is SIL OFL 1.1 and lives in the
+consumer checkout's `site/fonts/` (the pipeline reads it from there).
