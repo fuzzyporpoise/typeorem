@@ -30,11 +30,12 @@ from sklearn.linear_model import LogisticRegression
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "model"))
+import paths  # noqa: E402
 # reuse the render-feature cache + corpus loaders from the metric A/B harness
 from metric_ab import load_corpus, build_features  # noqa: E402
 
 FIXTURES = ROOT / "model" / "validate" / "fixtures" / "fonts-pairings.json"
-SITE_DATA = ROOT / "site" / "data"
+SITE_DATA = paths.site_data()
 CASES = ROOT / "model" / "validate" / "fixtures" / "reranker-cases.json"
 XH_SIGMA = 0.05
 SEED = 0
