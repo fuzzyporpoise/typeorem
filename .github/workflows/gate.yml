@@ -1,9 +1,9 @@
 name: gate
 
 # The standalone half of the pipeline's tests: no Google Fonts clone, no corpus
-# rebuild, no site checkout. The full validation (the metric harnesses and the
-# re-ranker parity) needs the site checkout, so it runs locally or in the site's
-# own CI; see docs/roll-your-own.md.
+# rebuild, no app checkout. The full validation (the metric harnesses and the
+# re-ranker parity) needs the app checkout, so it runs locally or in the app's own
+# CI; see docs/roll-your-own.md.
 
 on:
   push:
@@ -19,8 +19,10 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install the light test dependencies
-        run: pip install --disable-pip-version-check numpy==2.0.2 fonttools==4.60.2
+        run: pip install --disable-pip-version-check numpy==2.0.2 pillow==11.3.0 fonttools==4.60.2
       - name: Catalog parse and instance policy
         run: python model/tests/test_catalog.py
+      - name: The corpus release boundary
+        run: python model/tests/test_release.py
       - name: Every module imports
         run: python -m compileall -q model

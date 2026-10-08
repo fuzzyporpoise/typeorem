@@ -38,6 +38,7 @@ model/
   export_onnx.py      the browser graph (--fp16 for the shipped build)
   publish_model.py    publishes it to Hugging Face, writes the site's model.json
   paths.py            where the app checkout is (TYPEOREM_SITE_DIR)
+  release_corpus.py   validates the corpus and publishes it as a tagged release
   MODEL_CARD.md       the model card for the published backbone
   tests/              pipeline tests
   validate/           the metric harnesses (README.md in there)
@@ -59,11 +60,13 @@ export TYPEOREM_SITE_DIR=../typeorem-site
 ```
 
 Read `docs/roll-your-own.md` for the full path: the catalog clone, the rebuild, the
-house faces, the backbone publish, and the validation. Two things to know up front:
+house faces, shipping the corpus as a release, the backbone publish, and the
+validation. Two things to know up front:
 
-- The pipeline's output is the **site's corpus**, so a rebuild is a commit in the site
-  repo. `TYPEOREM_SITE_DIR` (default `../site`) is the only path that crosses between
-  the two halves.
+- The pipeline's output is the **app's corpus**, which the app does not track: the
+  science cuts a tagged release from it (`model/release_corpus.py --tag corpus-v2`)
+  and the app pins that tag in its `corpus.lock.json`. `TYPEOREM_SITE_DIR` (default: a
+  sibling checkout) is the only path that crosses between the two halves.
 - The harnesses score the metric **the browser ships**, so they import `site/js/` from
   the app checkout rather than keeping a copy that could drift.
 
@@ -71,13 +74,16 @@ house faces, the backbone publish, and the validation. Two things to know up fro
 
 ```bash
 model/.venv/bin/python model/tests/test_catalog.py             # catalog parse + instance policy
+model/.venv/bin/python model/tests/test_release.py             # the release boundary: the corpus checks + the archive
 model/.venv/bin/python model/tests/test_corpus_determinism.py  # render determinism (needs a pipeline run)
 node model/validate/reranker.test.mjs                          # JS/Python re-ranker parity (needs the app checkout)
 ```
 
 `.github/workflows/gate.yml` runs the standalone tests on every push and pull request;
 `publish-model.yml` runs the backbone export and the Hugging Face upload on a release
-(or on demand), with the `HF_TOKEN` secret.
+(or on demand), with the `HF_TOKEN` secret. Cutting a corpus release is a local command
+(`model/release_corpus.py`): it needs the Google Fonts clone and the renders, so it
+belongs on the machine that built the corpus, not on a runner.
 
 ## The model
 

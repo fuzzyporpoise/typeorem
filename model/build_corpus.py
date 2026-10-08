@@ -14,7 +14,7 @@ from embed import DINOv2
 from render import (render_corpus, render_instance, GLYPH_SET_VERSION, GLYPHS,
                     COLS, ROWS, SIZE, FONT_SIZE, BASELINE_Y)
 from reduce import fit_pca, quantize_int8, DIM
-from emit import emit, report, label_of
+from emit import emit, report, label_of, BACKBONE, PREPROCESS
 from legibility import fit_proxy, render_axes
 from instances import POLICY_VERSION, WGHT_LADDER, slug
 from catalog import google_fonts_commit, write_json
@@ -23,8 +23,6 @@ CACHE = BASE / ".cache"
 OUT = BASE / "out"
 # The corpus ships in the site checkout (TYPEOREM_SITE_DIR, default ../site).
 SITE = paths.site_data()
-BACKBONE = "dinov2_vits14"
-PREPROCESS = "imagenet"
 
 # ---------------------------------------------------------------------------
 # House faces (TSK-014). Commit Mono is the fuzzyporpoise house face but is not
