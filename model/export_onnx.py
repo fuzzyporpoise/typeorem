@@ -16,8 +16,11 @@ an option here: it drops the embedding to cosine 0.86 and the projected vector
 to about 0.4. A parity check runs on each build: ONNX vs the live torch model.
 
 The fp16 graph is not committed; publish it with model/publish_model.py, which
-records the URL and hash in site/model.json (the TSK-010 hosting decision). See
-.todo/custom-fonts-plan.md.
+records the URL and hash in site/model.json (the TSK-010 hosting decision).
+Publishing is manual and rare: only a backbone swap triggers it, i.e. a change to
+the corpus backbone/preprocess, to embed.py's extractor (backbone, weights, resize
+policy, normalization) or input size, or to this script's export recipe (opset,
+dynamic axes, fp16).
 """
 
 import argparse

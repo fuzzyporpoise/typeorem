@@ -5,7 +5,6 @@
 // pairs, so a metric is judged on finding THE one arbitrary partner. This
 // script builds the de-ambiguated yardstick: per heading, every partner the
 // public sources endorse, so hit@k can ask "did we surface a good partner".
-// See .todo/metric-research.md (seventh pass).
 //
 // Sources (all public; attribution also recorded in the fixture):
 //   fontpair      Fontpair (fontpair.co), via the public Supabase REST API
@@ -409,7 +408,7 @@ if (kept.length < MIN_HEADINGS) {
 const fixture = {
   version: 1,
   generated: new Date().toISOString().slice(0, 10),
-  note: 'Multi-partner pairing benchmark. For each heading, "acceptable" lists every body partner the public sources endorse, so hit@k answers "did the metric surface a good partner", not "did it surface the one partner". Scored under the strict rule: the partner family counts at its canonical 400-normal instance. See .todo/metric-research.md (seventh pass) and mine-pairings.mjs (sources, reproducibility).',
+  note: 'Multi-partner pairing benchmark. For each heading, "acceptable" lists every body partner the public sources endorse, so hit@k answers "did the metric surface a good partner", not "did it surface the one partner". Scored under the strict rule: the partner family counts at its canonical 400-normal instance. See mine-pairings.mjs (sources, reproducibility).',
   minPartners: MIN_PARTNERS,
   sources: SOURCES.map(s => ({ name: s.name, url: s.url })),
   pairings: kept,

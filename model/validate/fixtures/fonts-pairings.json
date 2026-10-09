@@ -1,7 +1,7 @@
 {
  "version": 1,
  "generated": "2026-10-07",
- "note": "Multi-partner pairing benchmark. For each heading, \"acceptable\" lists every body partner the public sources endorse, so hit@k answers \"did the metric surface a good partner\", not \"did it surface the one partner\". Scored under the strict rule: the partner family counts at its canonical 400-normal instance. See .todo/metric-research.md (seventh pass) and mine-pairings.mjs (sources, reproducibility).",
+ "note": "Multi-partner pairing benchmark. For each heading, \"acceptable\" lists every body partner the public sources endorse, so hit@k answers \"did the metric surface a good partner\", not \"did it surface the one partner\". Scored under the strict rule: the partner family counts at its canonical 400-normal instance. See mine-pairings.mjs (sources, reproducibility).",
  "minPartners": 2,
  "sources": [
   {

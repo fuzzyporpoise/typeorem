@@ -1,8 +1,7 @@
 # Metric validation harness
 
 Resolves and validates the shipped pairing metric, fontjoy's "contrast
-similarity", by replaying fontjoy's own reference vectors. See
-`.todo/implementation-plan.md` section 5.1.
+similarity", by replaying fontjoy's own reference vectors.
 
 ## The formula (resolved 2026-10-07)
 
@@ -75,8 +74,8 @@ the median best-partner rank.
 the original 40 pairs (`fixtures/known-pairings.json`, kept as the mining seed)
 under the two candidate directions (asymmetric role metric, multi-axis metric)
 and their hybrid, plus diagnostics on the documented failure cases and an
-odd/even split for robustness. See `.todo/metric-research.md` for the results
-tables and the decision.
+odd/even split for robustness; run it to reproduce the results tables and the
+decision.
 
 `mine-pairings.mjs` rebuilds the benchmark fixture from public sources
 (fontpair.co's API, listicles, pairing tools, the seed pairs); every name is
@@ -94,7 +93,7 @@ pointwise logistic model over 10 heading-relative features, trained and
 evaluated on the multi-partner benchmark (every acceptable partner is a
 positive; negatives are sampled outside the acceptable partners' families) by
 LOOCV and a held-out even/odd split. It beats the hand metric out-of-sample but
-is not wired into the app; see `.todo/metric-research.md` for the numbers.
+is not wired into the app; rerun `reranker.py` to reproduce the numbers.
 `--fit` writes `site/data/reranker.json`, consumed by `site/js/reranker.js` and
 pinned by `tests/reranker.test.mjs`.
 
