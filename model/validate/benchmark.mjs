@@ -37,7 +37,10 @@ const corpus = loadCorpus();
 // sources endorse (see mine-pairings.mjs). Scoring is strict: a partner family
 // only counts at its canonical 400-normal instance (the loose any-instance rule
 // flattered every metric).
-const fixtures = JSON.parse(fs.readFileSync(path.join(DIR, 'fixtures', 'fonts-pairings.json'), 'utf8'));
+// FIXTURE overrides the benchmark fixture (e.g. FIXTURE=fontsinuse-pairings.json
+// scores the usage-mined pairs instead of the curated endorsement set).
+const FIXTURE = process.env.FIXTURE || 'fonts-pairings.json';
+const fixtures = JSON.parse(fs.readFileSync(path.join(DIR, 'fixtures', FIXTURE), 'utf8'));
 const fam = i => corpus.instances[i].family;
 
 const elig = [];

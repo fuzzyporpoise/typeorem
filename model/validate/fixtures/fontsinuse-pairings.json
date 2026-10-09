@@ -1,0 +1,7442 @@
+{
+  "version": 1,
+  "generated": "2026-10-09",
+  "note": "Real-world font-use pairs from the supplementary data of Choi & Hyun, \"Typeface network and the principle of font pairing\" (Sci Rep 14:30820, 2024), collected from fontsinuse.com. Usage co-occurrence, not curated endorsement: pairs are unordered, so each is emitted in both directions. `uses`/`mediums` record how often and where; `lift` is observed co-occurrence over the family-frequency expectation (the usage de-skew); `kin` marks same-superfamily pairs. A documented alias map in mine-fontsinuse.mjs substitutes open revivals/metric-compatible faces for commercial names (Futura -> Jost, Arial -> Arimo, ...). The raw CSV is not committed (article is CC BY-NC-ND); re-run the generator to rebuild.",
+  "minPartners": 1,
+  "sources": [
+    {
+      "name": "Choi & Hyun, \"Typeface network and the principle of font pairing\", Sci Rep 14:30820 (2024), supplementary file MOESM1 (22,897 font-use cases from fontsinuse.com)",
+      "url": "https://doi.org/10.1038/s41598-024-81601-w"
+    },
+    {
+      "name": "Fonts In Use (fontsinuse.com), the underlying use-case archive",
+      "url": "https://fontsinuse.com/"
+    }
+  ],
+  "pairings": [
+    {
+      "heading": "Alegreya",
+      "acceptable": [
+        {
+          "family": "Alegreya Sans",
+          "uses": 9,
+          "lift": 729.15,
+          "kin": true,
+          "mediums": {
+            "Books": 5,
+            "Booklets/Pamphlets": 2,
+            "Ephemera": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Lekton",
+          "uses": 1,
+          "lift": 117.84,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Franklin",
+          "uses": 1,
+          "lift": 5.29,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Alegreya Sans",
+      "acceptable": [
+        {
+          "family": "Alegreya",
+          "uses": 9,
+          "lift": 729.15,
+          "kin": true,
+          "mediums": {
+            "Books": 5,
+            "Booklets/Pamphlets": 2,
+            "Ephemera": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Piazzolla",
+          "uses": 2,
+          "lift": 405.08,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Aleo",
+      "acceptable": [
+        {
+          "family": "Lato",
+          "uses": 2,
+          "lift": 332.38,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Allura",
+      "acceptable": [
+        {
+          "family": "Satisfy",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Amaranth",
+      "acceptable": [
+        {
+          "family": "Open Sans",
+          "uses": 1,
+          "lift": 243.05,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Amatic SC",
+      "acceptable": [
+        {
+          "family": "Josefin Sans",
+          "uses": 1,
+          "lift": 2430.5,
+          "mediums": {
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Amiko",
+      "acceptable": [
+        {
+          "family": "Cormorant",
+          "uses": 2,
+          "lift": 883.82,
+          "mediums": {
+            "Booklets/Pamphlets": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Raleway",
+          "uses": 2,
+          "lift": 720.15,
+          "mediums": {
+            "Booklets/Pamphlets": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Amiri",
+      "acceptable": [
+        {
+          "family": "Bitter",
+          "uses": 2,
+          "lift": 1851.81,
+          "mediums": {
+            "Books": 1,
+            "Exhibition/Installation": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "IBM Plex Sans",
+          "uses": 1,
+          "lift": 190.63,
+          "mediums": {
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Anton",
+      "acceptable": [
+        {
+          "family": "Michroma",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "PT Mono",
+          "uses": 1,
+          "lift": 1767.64,
+          "mediums": {
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Archivo",
+      "acceptable": [
+        {
+          "family": "Arimo",
+          "uses": 4,
+          "lift": 21.38,
+          "mediums": {
+            "Album Art": 1,
+            "Branding/Identity": 1,
+            "Film/Video": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Asul",
+          "uses": 1,
+          "lift": 190.63,
+          "mediums": {
+            "Booklets/Pamphlets": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "DM Serif Display",
+          "uses": 1,
+          "lift": 228.75,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Inter",
+          "uses": 1,
+          "lift": 29.33,
+          "mediums": {
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Judson",
+          "uses": 1,
+          "lift": 1143.76,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Lora",
+          "uses": 1,
+          "lift": 87.98,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tinos",
+          "uses": 1,
+          "lift": 3.06,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Arimo",
+      "acceptable": [
+        {
+          "family": "Tinos",
+          "uses": 20,
+          "lift": 4.86,
+          "mediums": {
+            "Web": 6,
+            "Magazines/Periodicals": 4,
+            "Posters/Flyers": 3,
+            "Booklets/Pamphlets": 2,
+            "Books": 2,
+            "Branding/Identity": 2,
+            "Signs": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Jost",
+          "uses": 11,
+          "lift": 0.92,
+          "mediums": {
+            "Advertising": 2,
+            "Art/Illustration": 1,
+            "Books": 1,
+            "Branding/Identity": 1,
+            "Film/Video": 1,
+            "Magazines/Periodicals": 1,
+            "Packaging": 1,
+            "Signs": 1,
+            "Software/Apps": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Gelasio",
+          "uses": 6,
+          "lift": 4.04,
+          "mediums": {
+            "Web": 3,
+            "Branding/Identity": 1,
+            "Exhibition/Installation": 1,
+            "Infographics/Maps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Archivo",
+          "uses": 4,
+          "lift": 21.38,
+          "mediums": {
+            "Album Art": 1,
+            "Branding/Identity": 1,
+            "Film/Video": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Franklin",
+          "uses": 4,
+          "lift": 1.48,
+          "mediums": {
+            "Advertising": 1,
+            "Art/Illustration": 1,
+            "Magazines/Periodicals": 1,
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bodoni Moda",
+          "uses": 3,
+          "lift": 2.1,
+          "mediums": {
+            "Advertising": 1,
+            "Art/Illustration": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Baskerville",
+          "uses": 3,
+          "lift": 2.87,
+          "mediums": {
+            "Advertising": 1,
+            "Art/Illustration": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Caslon Text",
+          "uses": 3,
+          "lift": 2.18,
+          "mediums": {
+            "Advertising": 1,
+            "Art/Illustration": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto",
+          "uses": 3,
+          "lift": 2.39,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Open Sans",
+          "uses": 2,
+          "lift": 2.27,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bebas Neue",
+          "uses": 1,
+          "lift": 2.84,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bona Nova",
+          "uses": 1,
+          "lift": 90.86,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Courier Prime",
+          "uses": 1,
+          "lift": 1.42,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Eczar",
+          "uses": 1,
+          "lift": 90.86,
+          "mediums": {
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Merriweather",
+          "uses": 1,
+          "lift": 2.16,
+          "mediums": {
+            "Infographics/Maps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Arvo",
+      "acceptable": [
+        {
+          "family": "Quicksand",
+          "uses": 2,
+          "lift": 2160.44,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto",
+          "uses": 2,
+          "lift": 56.85,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Asul",
+      "acceptable": [
+        {
+          "family": "Archivo",
+          "uses": 1,
+          "lift": 190.63,
+          "mediums": {
+            "Booklets/Pamphlets": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Audiowide",
+      "acceptable": [
+        {
+          "family": "Montserrat",
+          "uses": 2,
+          "lift": 185.18,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Barlow",
+      "acceptable": [
+        {
+          "family": "Dosis",
+          "uses": 3,
+          "lift": 810.17,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Dancing Script",
+          "uses": 2,
+          "lift": 648.13,
+          "mediums": {
+            "Advertising": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Pacifico",
+          "uses": 2,
+          "lift": 231.48,
+          "mediums": {
+            "Advertising": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Space Mono",
+          "uses": 1,
+          "lift": 27.46,
+          "mediums": {
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Bebas Neue",
+      "acceptable": [
+        {
+          "family": "Merriweather",
+          "uses": 2,
+          "lift": 28.93,
+          "mediums": {
+            "Film/Video": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Poppins",
+          "uses": 2,
+          "lift": 26.42,
+          "mediums": {
+            "Film/Video": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto",
+          "uses": 2,
+          "lift": 10.66,
+          "mediums": {
+            "Film/Video": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Arimo",
+          "uses": 1,
+          "lift": 2.84,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Gelasio",
+          "uses": 1,
+          "lift": 4.5,
+          "mediums": {
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tinos",
+          "uses": 1,
+          "lift": 1.62,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Bevan",
+      "acceptable": [
+        {
+          "family": "Jost",
+          "uses": 1,
+          "lift": 17.87,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "BioRhyme Expanded",
+      "acceptable": [
+        {
+          "family": "Sofia",
+          "uses": 3,
+          "lift": 216.04,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Syne",
+          "uses": 3,
+          "lift": 441.91,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Work Sans",
+          "uses": 3,
+          "lift": 149.57,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Biryani",
+      "acceptable": [
+        {
+          "family": "Lato",
+          "uses": 1,
+          "lift": 498.56,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Open Sans",
+          "uses": 1,
+          "lift": 243.05,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Bitter",
+      "acceptable": [
+        {
+          "family": "Amiri",
+          "uses": 2,
+          "lift": 1851.81,
+          "mediums": {
+            "Books": 1,
+            "Exhibition/Installation": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Noto Sans",
+          "uses": 1,
+          "lift": 64.6,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Work Sans",
+          "uses": 1,
+          "lift": 42.73,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Bodoni Moda",
+      "acceptable": [
+        {
+          "family": "Jost",
+          "uses": 26,
+          "lift": 3.57,
+          "mediums": {
+            "Booklets/Pamphlets": 6,
+            "Posters/Flyers": 4,
+            "Advertising": 3,
+            "Album Art": 3,
+            "Art/Illustration": 2,
+            "Branding/Identity": 2,
+            "Newspapers": 2,
+            "Books": 1,
+            "Ephemera": 1,
+            "Infographics/Maps": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Baskerville",
+          "uses": 7,
+          "lift": 11.02,
+          "mediums": {
+            "Books": 2,
+            "Advertising": 1,
+            "Art/Illustration": 1,
+            "Booklets/Pamphlets": 1,
+            "Magazines/Periodicals": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Franklin",
+          "uses": 6,
+          "lift": 3.66,
+          "mediums": {
+            "Advertising": 2,
+            "Album Art": 1,
+            "Art/Illustration": 1,
+            "Booklets/Pamphlets": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tinos",
+          "uses": 6,
+          "lift": 2.4,
+          "mediums": {
+            "Newspapers": 2,
+            "Booklets/Pamphlets": 1,
+            "Books": 1,
+            "Ephemera": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Courier Prime",
+          "uses": 5,
+          "lift": 11.69,
+          "mediums": {
+            "Newspapers": 2,
+            "Art/Illustration": 1,
+            "Ephemera": 1,
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Caslon Text",
+          "uses": 4,
+          "lift": 4.79,
+          "mediums": {
+            "Magazines/Periodicals": 2,
+            "Advertising": 1,
+            "Art/Illustration": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Arimo",
+          "uses": 3,
+          "lift": 2.1,
+          "mediums": {
+            "Advertising": 1,
+            "Art/Illustration": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Cabin",
+          "uses": 1,
+          "lift": 18.7,
+          "mediums": {
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Gelasio",
+          "uses": 1,
+          "lift": 1.11,
+          "mediums": {
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Bona Nova",
+      "acceptable": [
+        {
+          "family": "Arimo",
+          "uses": 1,
+          "lift": 90.86,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Bonbon",
+      "acceptable": [
+        {
+          "family": "Cormorant",
+          "uses": 1,
+          "lift": 883.82,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Ovo",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Bungee",
+      "acceptable": [
+        {
+          "family": "Montserrat",
+          "uses": 6,
+          "lift": 50.5,
+          "mediums": {
+            "Books": 1,
+            "Branding/Identity": 1,
+            "Magazines/Periodicals": 1,
+            "Packaging": 1,
+            "Posters/Flyers": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto",
+          "uses": 6,
+          "lift": 46.52,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Packaging": 2,
+            "Signs": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Jura",
+          "uses": 3,
+          "lift": 883.82,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Raleway",
+          "uses": 3,
+          "lift": 98.2,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Recursive",
+          "uses": 3,
+          "lift": 662.86,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Software/Apps": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Cabin",
+      "acceptable": [
+        {
+          "family": "Gelasio",
+          "uses": 3,
+          "lift": 54.01,
+          "mediums": {
+            "Web": 2,
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bodoni Moda",
+          "uses": 1,
+          "lift": 18.7,
+          "mediums": {
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Open Sans",
+          "uses": 1,
+          "lift": 30.38,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Caveat",
+      "acceptable": [
+        {
+          "family": "Merriweather",
+          "uses": 1,
+          "lift": 462.95,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Montserrat",
+          "uses": 1,
+          "lift": 185.18,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Open Sans",
+          "uses": 1,
+          "lift": 243.05,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Cherry Swash",
+      "acceptable": [
+        {
+          "family": "Grenze Gotisch",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Metamorphous",
+          "uses": 1,
+          "lift": 9722,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tektur",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Varela",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Chivo",
+      "acceptable": [
+        {
+          "family": "Gelasio",
+          "uses": 2,
+          "lift": 22.16,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "PT Serif",
+          "uses": 2,
+          "lift": 199.43,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Quattrocento",
+          "uses": 2,
+          "lift": 747.85,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Cinzel",
+      "acceptable": [
+        {
+          "family": "Jost",
+          "uses": 1,
+          "lift": 2.98,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Cormorant",
+      "acceptable": [
+        {
+          "family": "Amiko",
+          "uses": 2,
+          "lift": 883.82,
+          "mediums": {
+            "Booklets/Pamphlets": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Courier Prime",
+          "uses": 2,
+          "lift": 27.62,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Playfair Display",
+          "uses": 2,
+          "lift": 32.14,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Quattrocento Sans",
+          "uses": 2,
+          "lift": 883.82,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Raleway",
+          "uses": 2,
+          "lift": 65.47,
+          "mediums": {
+            "Booklets/Pamphlets": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bonbon",
+          "uses": 1,
+          "lift": 883.82,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Josefin Sans",
+          "uses": 1,
+          "lift": 110.48,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Lato",
+          "uses": 1,
+          "lift": 22.66,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "League Spartan",
+          "uses": 1,
+          "lift": 883.82,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Ovo",
+          "uses": 1,
+          "lift": 883.82,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Courier Prime",
+      "acceptable": [
+        {
+          "family": "Jost",
+          "uses": 6,
+          "lift": 1.68,
+          "mediums": {
+            "Art/Illustration": 1,
+            "Film/Video": 1,
+            "Magazines/Periodicals": 1,
+            "Newspapers": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tinos",
+          "uses": 6,
+          "lift": 4.87,
+          "mediums": {
+            "Books": 1,
+            "Ephemera": 1,
+            "Exhibition/Installation": 1,
+            "Newspapers": 1,
+            "Posters/Flyers": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bodoni Moda",
+          "uses": 5,
+          "lift": 11.69,
+          "mediums": {
+            "Newspapers": 2,
+            "Art/Illustration": 1,
+            "Ephemera": 1,
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Gelasio",
+          "uses": 3,
+          "lift": 6.75,
+          "mediums": {
+            "Film/Video": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Cormorant",
+          "uses": 2,
+          "lift": 27.62,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Playfair Display",
+          "uses": 2,
+          "lift": 11.05,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Quattrocento Sans",
+          "uses": 2,
+          "lift": 303.81,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Arimo",
+          "uses": 1,
+          "lift": 1.42,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Franklin",
+          "uses": 1,
+          "lift": 1.24,
+          "mediums": {
+            "Booklets/Pamphlets": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Dancing Script",
+      "acceptable": [
+        {
+          "family": "Barlow",
+          "uses": 2,
+          "lift": 648.13,
+          "mediums": {
+            "Advertising": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Pacifico",
+          "uses": 2,
+          "lift": 555.54,
+          "mediums": {
+            "Advertising": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "DM Mono",
+      "acceptable": [
+        {
+          "family": "DM Sans",
+          "uses": 6,
+          "lift": 662.86,
+          "kin": true,
+          "mediums": {
+            "Branding/Identity": 3,
+            "Mobile/Tablet": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Gelasio",
+          "uses": 1,
+          "lift": 13.09,
+          "mediums": {
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Jost",
+          "uses": 1,
+          "lift": 1.62,
+          "mediums": {
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "DM Sans",
+      "acceptable": [
+        {
+          "family": "DM Mono",
+          "uses": 6,
+          "lift": 662.86,
+          "kin": true,
+          "mediums": {
+            "Branding/Identity": 3,
+            "Mobile/Tablet": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Gelasio",
+          "uses": 1,
+          "lift": 9,
+          "mediums": {
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Jost",
+          "uses": 1,
+          "lift": 1.12,
+          "mediums": {
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "DM Serif Display",
+      "acceptable": [
+        {
+          "family": "Archivo",
+          "uses": 1,
+          "lift": 228.75,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "DM Serif Text",
+          "uses": 1,
+          "lift": 3888.8,
+          "kin": true,
+          "mediums": {
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "DM Serif Text",
+      "acceptable": [
+        {
+          "family": "DM Serif Display",
+          "uses": 1,
+          "lift": 3888.8,
+          "kin": true,
+          "mediums": {
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Domine",
+      "acceptable": [
+        {
+          "family": "Roboto",
+          "uses": 1,
+          "lift": 85.28,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Dosis",
+      "acceptable": [
+        {
+          "family": "Barlow",
+          "uses": 3,
+          "lift": 810.17,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Economica",
+      "acceptable": [
+        {
+          "family": "Open Sans",
+          "uses": 1,
+          "lift": 60.76,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Eczar",
+      "acceptable": [
+        {
+          "family": "Arimo",
+          "uses": 1,
+          "lift": 90.86,
+          "mediums": {
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Englebert",
+      "acceptable": [
+        {
+          "family": "Jost",
+          "uses": 4,
+          "lift": 17.87,
+          "mediums": {
+            "Booklets/Pamphlets": 1,
+            "Branding/Identity": 1,
+            "Posters/Flyers": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Oswald",
+          "uses": 4,
+          "lift": 1944.4,
+          "mediums": {
+            "Booklets/Pamphlets": 1,
+            "Branding/Identity": 1,
+            "Posters/Flyers": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Fira Mono",
+      "acceptable": [
+        {
+          "family": "Fira Sans",
+          "uses": 2,
+          "lift": 259.25,
+          "kin": true,
+          "mediums": {
+            "Mobile/Tablet": 1,
+            "Software/Apps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Permanent Marker",
+          "uses": 2,
+          "lift": 972.2,
+          "mediums": {
+            "Advertising": 1,
+            "Infographics/Maps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Fraunces",
+          "uses": 1,
+          "lift": 388.88,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Jost",
+          "uses": 1,
+          "lift": 1.79,
+          "mediums": {
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Fira Sans",
+      "acceptable": [
+        {
+          "family": "Fira Mono",
+          "uses": 2,
+          "lift": 259.25,
+          "kin": true,
+          "mediums": {
+            "Mobile/Tablet": 1,
+            "Software/Apps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "IBM Plex Mono",
+          "uses": 2,
+          "lift": 70.07,
+          "mediums": {
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Merriweather",
+          "uses": 1,
+          "lift": 30.86,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Flamenco",
+      "acceptable": [
+        {
+          "family": "Libre Baskerville",
+          "uses": 2,
+          "lift": 204.67,
+          "mediums": {
+            "Advertising": 1,
+            "Film/Video": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Fraunces",
+      "acceptable": [
+        {
+          "family": "Fira Mono",
+          "uses": 1,
+          "lift": 388.88,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Nunito",
+          "uses": 1,
+          "lift": 555.54,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Fredoka",
+      "acceptable": [
+        {
+          "family": "Lato",
+          "uses": 1,
+          "lift": 498.56,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Freehand",
+      "acceptable": [
+        {
+          "family": "Libre Caslon Text",
+          "uses": 1,
+          "lift": 77.78,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Gelasio",
+      "acceptable": [
+        {
+          "family": "Jost",
+          "uses": 11,
+          "lift": 1.46,
+          "mediums": {
+            "Web": 5,
+            "Branding/Identity": 2,
+            "Album Art": 1,
+            "Art/Illustration": 1,
+            "Film/Video": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tinos",
+          "uses": 11,
+          "lift": 4.24,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Web": 2,
+            "Advertising": 1,
+            "Album Art": 1,
+            "Books": 1,
+            "Film/Video": 1,
+            "Mobile/Tablet": 1,
+            "Signs": 1,
+            "Software/Apps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Arimo",
+          "uses": 6,
+          "lift": 4.04,
+          "mediums": {
+            "Web": 3,
+            "Branding/Identity": 1,
+            "Exhibition/Installation": 1,
+            "Infographics/Maps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Franklin",
+          "uses": 4,
+          "lift": 2.35,
+          "mediums": {
+            "Advertising": 1,
+            "Album Art": 1,
+            "Branding/Identity": 1,
+            "Film/Video": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Cabin",
+          "uses": 3,
+          "lift": 54.01,
+          "mediums": {
+            "Web": 2,
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Courier Prime",
+          "uses": 3,
+          "lift": 6.75,
+          "mediums": {
+            "Film/Video": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Montserrat",
+          "uses": 3,
+          "lift": 4.12,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Signs": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Chivo",
+          "uses": 2,
+          "lift": 22.16,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "PT Serif",
+          "uses": 2,
+          "lift": 19.2,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Quattrocento",
+          "uses": 2,
+          "lift": 72.01,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Spectral",
+          "uses": 2,
+          "lift": 12.52,
+          "mediums": {
+            "Web": 2
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bebas Neue",
+          "uses": 1,
+          "lift": 4.5,
+          "mediums": {
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bodoni Moda",
+          "uses": 1,
+          "lift": 1.11,
+          "mediums": {
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "DM Mono",
+          "uses": 1,
+          "lift": 13.09,
+          "mediums": {
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "DM Sans",
+          "uses": 1,
+          "lift": 9,
+          "mediums": {
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Open Sans",
+          "uses": 1,
+          "lift": 1.8,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Playfair Display",
+          "uses": 1,
+          "lift": 2.62,
+          "mediums": {
+            "Advertising": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto Mono",
+          "uses": 1,
+          "lift": 7.58,
+          "mediums": {
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Grenze",
+      "acceptable": [
+        {
+          "family": "IM Fell English",
+          "uses": 1,
+          "lift": 4861,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Syncopate",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Grenze Gotisch",
+      "acceptable": [
+        {
+          "family": "Cherry Swash",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Metamorphous",
+          "uses": 1,
+          "lift": 9722,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tektur",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Varela",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Hind",
+      "acceptable": [
+        {
+          "family": "Playfair Display",
+          "uses": 4,
+          "lift": 235.68,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Web": 2
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Poppins",
+          "uses": 2,
+          "lift": 140.9,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto",
+          "uses": 2,
+          "lift": 56.85,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "IBM Plex Mono",
+      "acceptable": [
+        {
+          "family": "IBM Plex Sans",
+          "uses": 7,
+          "lift": 108.19,
+          "kin": true,
+          "mediums": {
+            "Web": 2,
+            "Booklets/Pamphlets": 1,
+            "Books": 1,
+            "Branding/Identity": 1,
+            "Infographics/Maps": 1,
+            "Mobile/Tablet": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "IM Fell English",
+          "uses": 3,
+          "lift": 394.14,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Fira Sans",
+          "uses": 2,
+          "lift": 70.07,
+          "mediums": {
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "IBM Plex Serif",
+          "uses": 2,
+          "lift": 525.51,
+          "kin": true,
+          "mediums": {
+            "Infographics/Maps": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Noto Sans",
+          "uses": 1,
+          "lift": 12.22,
+          "mediums": {
+            "Infographics/Maps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "IBM Plex Sans",
+      "acceptable": [
+        {
+          "family": "IBM Plex Mono",
+          "uses": 7,
+          "lift": 108.19,
+          "kin": true,
+          "mediums": {
+            "Web": 2,
+            "Booklets/Pamphlets": 1,
+            "Books": 1,
+            "Branding/Identity": 1,
+            "Infographics/Maps": 1,
+            "Mobile/Tablet": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "IM Fell English",
+          "uses": 3,
+          "lift": 428.91,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Noto Sans",
+          "uses": 3,
+          "lift": 39.9,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Infographics/Maps": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Amiri",
+          "uses": 1,
+          "lift": 190.63,
+          "mediums": {
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "IBM Plex Serif",
+          "uses": 1,
+          "lift": 285.94,
+          "kin": true,
+          "mediums": {
+            "Infographics/Maps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Piazzolla",
+          "uses": 1,
+          "lift": 95.31,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "IBM Plex Serif",
+      "acceptable": [
+        {
+          "family": "IBM Plex Mono",
+          "uses": 2,
+          "lift": 525.51,
+          "kin": true,
+          "mediums": {
+            "Infographics/Maps": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "IBM Plex Sans",
+          "uses": 1,
+          "lift": 285.94,
+          "kin": true,
+          "mediums": {
+            "Infographics/Maps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Noto Sans",
+          "uses": 1,
+          "lift": 226.09,
+          "mediums": {
+            "Infographics/Maps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "IM Fell English",
+      "acceptable": [
+        {
+          "family": "IBM Plex Mono",
+          "uses": 3,
+          "lift": 394.14,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "IBM Plex Sans",
+          "uses": 3,
+          "lift": 428.91,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Grenze",
+          "uses": 1,
+          "lift": 4861,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Syncopate",
+          "uses": 1,
+          "lift": 4861,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Inconsolata",
+      "acceptable": [
+        {
+          "family": "Jost",
+          "uses": 2,
+          "lift": 5.11,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Inter",
+      "acceptable": [
+        {
+          "family": "Montserrat",
+          "uses": 3,
+          "lift": 14.24,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Archivo",
+          "uses": 1,
+          "lift": 29.33,
+          "mediums": {
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Playfair Display",
+          "uses": 1,
+          "lift": 9.06,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Pragati Narrow",
+          "uses": 1,
+          "lift": 498.56,
+          "mediums": {
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Questrial",
+          "uses": 1,
+          "lift": 498.56,
+          "mediums": {
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Josefin Sans",
+      "acceptable": [
+        {
+          "family": "Amatic SC",
+          "uses": 1,
+          "lift": 2430.5,
+          "mediums": {
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Cormorant",
+          "uses": 1,
+          "lift": 110.48,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Jost",
+      "acceptable": [
+        {
+          "family": "Libre Franklin",
+          "uses": 38,
+          "lift": 2.77,
+          "mediums": {
+            "Advertising": 7,
+            "Album Art": 7,
+            "Posters/Flyers": 7,
+            "Booklets/Pamphlets": 4,
+            "Books": 3,
+            "Branding/Identity": 3,
+            "Art/Illustration": 2,
+            "Ephemera": 2,
+            "Magazines/Periodicals": 2,
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tinos",
+          "uses": 37,
+          "lift": 1.77,
+          "mediums": {
+            "Advertising": 5,
+            "Posters/Flyers": 5,
+            "Album Art": 4,
+            "Books": 4,
+            "Booklets/Pamphlets": 3,
+            "Branding/Identity": 3,
+            "Magazines/Periodicals": 3,
+            "Film/Video": 2,
+            "Object/Product": 2,
+            "Software/Apps": 2,
+            "Web": 2,
+            "Infographics/Maps": 1,
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bodoni Moda",
+          "uses": 26,
+          "lift": 3.57,
+          "mediums": {
+            "Booklets/Pamphlets": 6,
+            "Posters/Flyers": 4,
+            "Advertising": 3,
+            "Album Art": 3,
+            "Art/Illustration": 2,
+            "Branding/Identity": 2,
+            "Newspapers": 2,
+            "Books": 1,
+            "Ephemera": 1,
+            "Infographics/Maps": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Caslon Text",
+          "uses": 15,
+          "lift": 2.14,
+          "mediums": {
+            "Advertising": 3,
+            "Books": 3,
+            "Branding/Identity": 2,
+            "Album Art": 1,
+            "Art/Illustration": 1,
+            "Ephemera": 1,
+            "Magazines/Periodicals": 1,
+            "Posters/Flyers": 1,
+            "Signs": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Baskerville",
+          "uses": 12,
+          "lift": 2.26,
+          "mediums": {
+            "Books": 5,
+            "Advertising": 1,
+            "Art/Illustration": 1,
+            "Booklets/Pamphlets": 1,
+            "Infographics/Maps": 1,
+            "Magazines/Periodicals": 1,
+            "Mobile/Tablet": 1,
+            "Software/Apps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Arimo",
+          "uses": 11,
+          "lift": 0.92,
+          "mediums": {
+            "Advertising": 2,
+            "Art/Illustration": 1,
+            "Books": 1,
+            "Branding/Identity": 1,
+            "Film/Video": 1,
+            "Magazines/Periodicals": 1,
+            "Packaging": 1,
+            "Signs": 1,
+            "Software/Apps": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Gelasio",
+          "uses": 11,
+          "lift": 1.46,
+          "mediums": {
+            "Web": 5,
+            "Branding/Identity": 2,
+            "Album Art": 1,
+            "Art/Illustration": 1,
+            "Film/Video": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Courier Prime",
+          "uses": 6,
+          "lift": 1.68,
+          "mediums": {
+            "Art/Illustration": 1,
+            "Film/Video": 1,
+            "Magazines/Periodicals": 1,
+            "Newspapers": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Englebert",
+          "uses": 4,
+          "lift": 17.87,
+          "mediums": {
+            "Booklets/Pamphlets": 1,
+            "Branding/Identity": 1,
+            "Posters/Flyers": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Lekton",
+          "uses": 4,
+          "lift": 6.5,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Booklets/Pamphlets": 1,
+            "Signs": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Oswald",
+          "uses": 4,
+          "lift": 7.15,
+          "mediums": {
+            "Booklets/Pamphlets": 1,
+            "Branding/Identity": 1,
+            "Posters/Flyers": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Work Sans",
+          "uses": 4,
+          "lift": 1.1,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Booklets/Pamphlets": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Lobster",
+          "uses": 3,
+          "lift": 7.66,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Posters/Flyers": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Merriweather",
+          "uses": 3,
+          "lift": 1.28,
+          "mediums": {
+            "Web": 2,
+            "Exhibition/Installation": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Montserrat",
+          "uses": 3,
+          "lift": 0.51,
+          "mediums": {
+            "Booklets/Pamphlets": 1,
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Open Sans",
+          "uses": 3,
+          "lift": 0.67,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto Condensed",
+          "uses": 3,
+          "lift": 4.12,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Inconsolata",
+          "uses": 2,
+          "lift": 5.11,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Overpass",
+          "uses": 2,
+          "lift": 7.15,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Paprika",
+          "uses": 2,
+          "lift": 17.87,
+          "mediums": {
+            "Booklets/Pamphlets": 2
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "PT Serif",
+          "uses": 2,
+          "lift": 2.38,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Raleway",
+          "uses": 2,
+          "lift": 1.32,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bevan",
+          "uses": 1,
+          "lift": 17.87,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Cinzel",
+          "uses": 1,
+          "lift": 2.98,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "DM Mono",
+          "uses": 1,
+          "lift": 1.62,
+          "mediums": {
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "DM Sans",
+          "uses": 1,
+          "lift": 1.12,
+          "mediums": {
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Fira Mono",
+          "uses": 1,
+          "lift": 1.79,
+          "mediums": {
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto",
+          "uses": 1,
+          "lift": 0.16,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto Mono",
+          "uses": 1,
+          "lift": 0.94,
+          "mediums": {
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Syne",
+          "uses": 1,
+          "lift": 0.81,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Trocchi",
+          "uses": 1,
+          "lift": 3.57,
+          "mediums": {
+            "Album Art": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Judson",
+      "acceptable": [
+        {
+          "family": "Archivo",
+          "uses": 1,
+          "lift": 1143.76,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Jura",
+      "acceptable": [
+        {
+          "family": "Bungee",
+          "uses": 3,
+          "lift": 883.82,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Montserrat",
+          "uses": 3,
+          "lift": 185.18,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto",
+          "uses": 3,
+          "lift": 170.56,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Karla",
+      "acceptable": [
+        {
+          "family": "Newsreader",
+          "uses": 1,
+          "lift": 294.61,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Oswald",
+          "uses": 1,
+          "lift": 88.38,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Public Sans",
+          "uses": 1,
+          "lift": 176.76,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto Mono",
+          "uses": 1,
+          "lift": 46.52,
+          "mediums": {
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Khand",
+      "acceptable": [
+        {
+          "family": "Mulish",
+          "uses": 1,
+          "lift": 1944.4,
+          "mediums": {
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Lato",
+      "acceptable": [
+        {
+          "family": "Playfair Display",
+          "uses": 5,
+          "lift": 45.32,
+          "mediums": {
+            "Web": 2,
+            "Art/Illustration": 1,
+            "Infographics/Maps": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Aleo",
+          "uses": 2,
+          "lift": 332.38,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Noto Sans",
+          "uses": 2,
+          "lift": 23.19,
+          "mediums": {
+            "Software/Apps": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Open Sans",
+          "uses": 2,
+          "lift": 12.46,
+          "mediums": {
+            "Web": 2
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Biryani",
+          "uses": 1,
+          "lift": 498.56,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Cormorant",
+          "uses": 1,
+          "lift": 22.66,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Fredoka",
+          "uses": 1,
+          "lift": 498.56,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Merriweather",
+          "uses": 1,
+          "lift": 11.87,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Oswald",
+          "uses": 1,
+          "lift": 49.86,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "PT Serif",
+          "uses": 1,
+          "lift": 33.24,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Sofia",
+          "uses": 1,
+          "lift": 11.08,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Vollkorn",
+          "uses": 1,
+          "lift": 45.32,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "League Spartan",
+      "acceptable": [
+        {
+          "family": "Cormorant",
+          "uses": 1,
+          "lift": 883.82,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Lekton",
+      "acceptable": [
+        {
+          "family": "Jost",
+          "uses": 4,
+          "lift": 6.5,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Booklets/Pamphlets": 1,
+            "Signs": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Alegreya",
+          "uses": 1,
+          "lift": 117.84,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Six Caps",
+          "uses": 1,
+          "lift": 1767.64,
+          "mediums": {
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Libre Baskerville",
+      "acceptable": [
+        {
+          "family": "Jost",
+          "uses": 12,
+          "lift": 2.26,
+          "mediums": {
+            "Books": 5,
+            "Advertising": 1,
+            "Art/Illustration": 1,
+            "Booklets/Pamphlets": 1,
+            "Infographics/Maps": 1,
+            "Magazines/Periodicals": 1,
+            "Mobile/Tablet": 1,
+            "Software/Apps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bodoni Moda",
+          "uses": 7,
+          "lift": 11.02,
+          "mediums": {
+            "Books": 2,
+            "Advertising": 1,
+            "Art/Illustration": 1,
+            "Booklets/Pamphlets": 1,
+            "Magazines/Periodicals": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Franklin",
+          "uses": 6,
+          "lift": 5.01,
+          "mediums": {
+            "Advertising": 1,
+            "Album Art": 1,
+            "Art/Illustration": 1,
+            "Booklets/Pamphlets": 1,
+            "Books": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Arimo",
+          "uses": 3,
+          "lift": 2.87,
+          "mediums": {
+            "Advertising": 1,
+            "Art/Illustration": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Caslon Text",
+          "uses": 3,
+          "lift": 4.91,
+          "mediums": {
+            "Advertising": 1,
+            "Art/Illustration": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Flamenco",
+          "uses": 2,
+          "lift": 204.67,
+          "mediums": {
+            "Advertising": 1,
+            "Film/Video": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tinos",
+          "uses": 2,
+          "lift": 1.09,
+          "mediums": {
+            "Books": 2
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Ubuntu",
+          "uses": 2,
+          "lift": 81.87,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Raleway",
+          "uses": 1,
+          "lift": 7.58,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Libre Caslon Text",
+      "acceptable": [
+        {
+          "family": "Jost",
+          "uses": 15,
+          "lift": 2.14,
+          "mediums": {
+            "Advertising": 3,
+            "Books": 3,
+            "Branding/Identity": 2,
+            "Album Art": 1,
+            "Art/Illustration": 1,
+            "Ephemera": 1,
+            "Magazines/Periodicals": 1,
+            "Posters/Flyers": 1,
+            "Signs": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bodoni Moda",
+          "uses": 4,
+          "lift": 4.79,
+          "mediums": {
+            "Magazines/Periodicals": 2,
+            "Advertising": 1,
+            "Art/Illustration": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Arimo",
+          "uses": 3,
+          "lift": 2.18,
+          "mediums": {
+            "Advertising": 1,
+            "Art/Illustration": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Baskerville",
+          "uses": 3,
+          "lift": 4.91,
+          "mediums": {
+            "Advertising": 1,
+            "Art/Illustration": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Franklin",
+          "uses": 3,
+          "lift": 1.9,
+          "mediums": {
+            "Advertising": 1,
+            "Art/Illustration": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Noto Serif",
+          "uses": 3,
+          "lift": 42.42,
+          "mediums": {
+            "Books": 1,
+            "Ephemera": 1,
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto",
+          "uses": 2,
+          "lift": 2.73,
+          "mediums": {
+            "Advertising": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tinos",
+          "uses": 2,
+          "lift": 0.83,
+          "mediums": {
+            "Books": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Freehand",
+          "uses": 1,
+          "lift": 77.78,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Space Mono",
+          "uses": 1,
+          "lift": 2.64,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Libre Franklin",
+      "acceptable": [
+        {
+          "family": "Jost",
+          "uses": 38,
+          "lift": 2.77,
+          "mediums": {
+            "Advertising": 7,
+            "Album Art": 7,
+            "Posters/Flyers": 7,
+            "Booklets/Pamphlets": 4,
+            "Books": 3,
+            "Branding/Identity": 3,
+            "Art/Illustration": 2,
+            "Ephemera": 2,
+            "Magazines/Periodicals": 2,
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tinos",
+          "uses": 18,
+          "lift": 3.82,
+          "mediums": {
+            "Books": 6,
+            "Booklets/Pamphlets": 3,
+            "Album Art": 2,
+            "Branding/Identity": 2,
+            "Advertising": 1,
+            "Film/Video": 1,
+            "Infographics/Maps": 1,
+            "Magazines/Periodicals": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bodoni Moda",
+          "uses": 6,
+          "lift": 3.66,
+          "mediums": {
+            "Advertising": 2,
+            "Album Art": 1,
+            "Art/Illustration": 1,
+            "Booklets/Pamphlets": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Baskerville",
+          "uses": 6,
+          "lift": 5.01,
+          "mediums": {
+            "Advertising": 1,
+            "Album Art": 1,
+            "Art/Illustration": 1,
+            "Booklets/Pamphlets": 1,
+            "Books": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Arimo",
+          "uses": 4,
+          "lift": 1.48,
+          "mediums": {
+            "Advertising": 1,
+            "Art/Illustration": 1,
+            "Magazines/Periodicals": 1,
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Gelasio",
+          "uses": 4,
+          "lift": 2.35,
+          "mediums": {
+            "Advertising": 1,
+            "Album Art": 1,
+            "Branding/Identity": 1,
+            "Film/Video": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Caslon Text",
+          "uses": 3,
+          "lift": 1.9,
+          "mediums": {
+            "Advertising": 1,
+            "Art/Illustration": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Alegreya",
+          "uses": 1,
+          "lift": 5.29,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Courier Prime",
+          "uses": 1,
+          "lift": 1.24,
+          "mediums": {
+            "Booklets/Pamphlets": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Limelight",
+      "acceptable": [
+        {
+          "family": "Work Sans",
+          "uses": 1,
+          "lift": 299.14,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Lobster",
+      "acceptable": [
+        {
+          "family": "Jost",
+          "uses": 3,
+          "lift": 7.66,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Posters/Flyers": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Pacifico",
+          "uses": 1,
+          "lift": 198.41,
+          "mediums": {
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Lora",
+      "acceptable": [
+        {
+          "family": "Archivo",
+          "uses": 1,
+          "lift": 87.98,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Raleway",
+          "uses": 1,
+          "lift": 55.4,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Manrope",
+      "acceptable": [
+        {
+          "family": "Noto Sans",
+          "uses": 3,
+          "lift": 104.35,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Ephemera": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Merriweather",
+      "acceptable": [
+        {
+          "family": "Open Sans",
+          "uses": 11,
+          "lift": 63.66,
+          "mediums": {
+            "Web": 7,
+            "Branding/Identity": 3,
+            "Infographics/Maps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto",
+          "uses": 4,
+          "lift": 16.24,
+          "mediums": {
+            "Web": 3,
+            "Film/Video": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Jost",
+          "uses": 3,
+          "lift": 1.28,
+          "mediums": {
+            "Web": 2,
+            "Exhibition/Installation": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Mulish",
+          "uses": 3,
+          "lift": 138.89,
+          "mediums": {
+            "Advertising": 1,
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bebas Neue",
+          "uses": 2,
+          "lift": 28.93,
+          "mediums": {
+            "Film/Video": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Poppins",
+          "uses": 2,
+          "lift": 20.13,
+          "mediums": {
+            "Film/Video": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Arimo",
+          "uses": 1,
+          "lift": 2.16,
+          "mediums": {
+            "Infographics/Maps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Caveat",
+          "uses": 1,
+          "lift": 462.95,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Fira Sans",
+          "uses": 1,
+          "lift": 30.86,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Lato",
+          "uses": 1,
+          "lift": 11.87,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Montserrat",
+          "uses": 1,
+          "lift": 4.41,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "PT Serif",
+          "uses": 1,
+          "lift": 30.86,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Vollkorn",
+          "uses": 1,
+          "lift": 42.09,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Work Sans",
+          "uses": 1,
+          "lift": 7.12,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Metamorphous",
+      "acceptable": [
+        {
+          "family": "Cherry Swash",
+          "uses": 1,
+          "lift": 9722,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Grenze Gotisch",
+          "uses": 1,
+          "lift": 9722,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tektur",
+          "uses": 1,
+          "lift": 9722,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Varela",
+          "uses": 1,
+          "lift": 9722,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Michroma",
+      "acceptable": [
+        {
+          "family": "Anton",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "PT Mono",
+          "uses": 1,
+          "lift": 1767.64,
+          "mediums": {
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Mina",
+      "acceptable": [
+        {
+          "family": "Sofia",
+          "uses": 2,
+          "lift": 288.06,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Mirza",
+      "acceptable": [
+        {
+          "family": "Roboto Mono",
+          "uses": 1,
+          "lift": 1023.37,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Montserrat",
+      "acceptable": [
+        {
+          "family": "Open Sans",
+          "uses": 7,
+          "lift": 16.2,
+          "mediums": {
+            "Web": 3,
+            "Branding/Identity": 2,
+            "Mobile/Tablet": 1,
+            "Software/Apps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bungee",
+          "uses": 6,
+          "lift": 50.5,
+          "mediums": {
+            "Books": 1,
+            "Branding/Identity": 1,
+            "Magazines/Periodicals": 1,
+            "Packaging": 1,
+            "Posters/Flyers": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tinos",
+          "uses": 6,
+          "lift": 2.97,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Web": 2,
+            "Mobile/Tablet": 1,
+            "Signs": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Gelasio",
+          "uses": 3,
+          "lift": 4.12,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Signs": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Inter",
+          "uses": 3,
+          "lift": 14.24,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Jost",
+          "uses": 3,
+          "lift": 0.51,
+          "mediums": {
+            "Booklets/Pamphlets": 1,
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Jura",
+          "uses": 3,
+          "lift": 185.18,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Playfair Display",
+          "uses": 3,
+          "lift": 10.1,
+          "mediums": {
+            "Booklets/Pamphlets": 1,
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "PT Mono",
+          "uses": 3,
+          "lift": 50.5,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Software/Apps": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto",
+          "uses": 3,
+          "lift": 4.87,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Space Mono",
+          "uses": 3,
+          "lift": 9.42,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Work Sans",
+          "uses": 3,
+          "lift": 8.55,
+          "mediums": {
+            "Booklets/Pamphlets": 1,
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Audiowide",
+          "uses": 2,
+          "lift": 185.18,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Caveat",
+          "uses": 1,
+          "lift": 185.18,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Merriweather",
+          "uses": 1,
+          "lift": 4.41,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Mr Dafoe",
+      "acceptable": [
+        {
+          "family": "Oregano",
+          "uses": 1,
+          "lift": 9722,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Mukta",
+      "acceptable": [
+        {
+          "family": "Mukta Mahee",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Newspapers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Mukta Mahee",
+      "acceptable": [
+        {
+          "family": "Mukta",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Newspapers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Mulish",
+      "acceptable": [
+        {
+          "family": "Merriweather",
+          "uses": 3,
+          "lift": 138.89,
+          "mediums": {
+            "Advertising": 1,
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Khand",
+          "uses": 1,
+          "lift": 1944.4,
+          "mediums": {
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Newsreader",
+      "acceptable": [
+        {
+          "family": "Karla",
+          "uses": 1,
+          "lift": 294.61,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Oswald",
+          "uses": 1,
+          "lift": 648.13,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Noto Sans",
+      "acceptable": [
+        {
+          "family": "IBM Plex Sans",
+          "uses": 3,
+          "lift": 39.9,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Infographics/Maps": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Manrope",
+          "uses": 3,
+          "lift": 104.35,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Ephemera": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Lato",
+          "uses": 2,
+          "lift": 23.19,
+          "mediums": {
+            "Software/Apps": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bitter",
+          "uses": 1,
+          "lift": 64.6,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "IBM Plex Mono",
+          "uses": 1,
+          "lift": 12.22,
+          "mediums": {
+            "Infographics/Maps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "IBM Plex Serif",
+          "uses": 1,
+          "lift": 226.09,
+          "mediums": {
+            "Infographics/Maps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tinos",
+          "uses": 1,
+          "lift": 1.21,
+          "mediums": {
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Work Sans",
+          "uses": 1,
+          "lift": 6.96,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Noto Sans Mono",
+      "acceptable": [
+        {
+          "family": "Roboto",
+          "uses": 2,
+          "lift": 170.56,
+          "mediums": {
+            "Album Art": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Noto Serif",
+      "acceptable": [
+        {
+          "family": "Libre Caslon Text",
+          "uses": 3,
+          "lift": 42.42,
+          "mediums": {
+            "Books": 1,
+            "Ephemera": 1,
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Nunito",
+      "acceptable": [
+        {
+          "family": "VT323",
+          "uses": 2,
+          "lift": 2777.71,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Fraunces",
+          "uses": 1,
+          "lift": 555.54,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Nunito Sans",
+      "acceptable": [
+        {
+          "family": "Roboto Condensed",
+          "uses": 2,
+          "lift": 997.13,
+          "mediums": {
+            "Infographics/Maps": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Poppins",
+          "uses": 1,
+          "lift": 140.9,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Open Sans",
+      "acceptable": [
+        {
+          "family": "Merriweather",
+          "uses": 11,
+          "lift": 63.66,
+          "mediums": {
+            "Web": 7,
+            "Branding/Identity": 3,
+            "Infographics/Maps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto",
+          "uses": 8,
+          "lift": 17.06,
+          "mediums": {
+            "Web": 2,
+            "Advertising": 1,
+            "Branding/Identity": 1,
+            "Infographics/Maps": 1,
+            "Mobile/Tablet": 1,
+            "Packaging": 1,
+            "Software/Apps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Montserrat",
+          "uses": 7,
+          "lift": 16.2,
+          "mediums": {
+            "Web": 3,
+            "Branding/Identity": 2,
+            "Mobile/Tablet": 1,
+            "Software/Apps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Jost",
+          "uses": 3,
+          "lift": 0.67,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "PT Mono",
+          "uses": 3,
+          "lift": 66.29,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Software/Apps": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tinos",
+          "uses": 3,
+          "lift": 1.95,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Arimo",
+          "uses": 2,
+          "lift": 2.27,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Lato",
+          "uses": 2,
+          "lift": 12.46,
+          "mediums": {
+            "Web": 2
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto Slab",
+          "uses": 2,
+          "lift": 48.61,
+          "mediums": {
+            "Web": 2
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Amaranth",
+          "uses": 1,
+          "lift": 243.05,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Biryani",
+          "uses": 1,
+          "lift": 243.05,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Cabin",
+          "uses": 1,
+          "lift": 30.38,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Caveat",
+          "uses": 1,
+          "lift": 243.05,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Economica",
+          "uses": 1,
+          "lift": 60.76,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Gelasio",
+          "uses": 1,
+          "lift": 1.8,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Proza Libre",
+          "uses": 1,
+          "lift": 60.76,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "PT Serif",
+          "uses": 1,
+          "lift": 16.2,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Raleway",
+          "uses": 1,
+          "lift": 9,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Spectral",
+          "uses": 1,
+          "lift": 10.57,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Unna",
+          "uses": 1,
+          "lift": 243.05,
+          "mediums": {
+            "Ephemera": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Vollkorn",
+          "uses": 1,
+          "lift": 22.1,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Oregano",
+      "acceptable": [
+        {
+          "family": "Mr Dafoe",
+          "uses": 1,
+          "lift": 9722,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Oswald",
+      "acceptable": [
+        {
+          "family": "Englebert",
+          "uses": 4,
+          "lift": 1944.4,
+          "mediums": {
+            "Booklets/Pamphlets": 1,
+            "Branding/Identity": 1,
+            "Posters/Flyers": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Jost",
+          "uses": 4,
+          "lift": 7.15,
+          "mediums": {
+            "Booklets/Pamphlets": 1,
+            "Branding/Identity": 1,
+            "Posters/Flyers": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Karla",
+          "uses": 1,
+          "lift": 88.38,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Lato",
+          "uses": 1,
+          "lift": 49.86,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Newsreader",
+          "uses": 1,
+          "lift": 648.13,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Overpass",
+      "acceptable": [
+        {
+          "family": "Jost",
+          "uses": 2,
+          "lift": 7.15,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Ovo",
+      "acceptable": [
+        {
+          "family": "Bonbon",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Cormorant",
+          "uses": 1,
+          "lift": 883.82,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Pacifico",
+      "acceptable": [
+        {
+          "family": "Barlow",
+          "uses": 2,
+          "lift": 231.48,
+          "mediums": {
+            "Advertising": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Dancing Script",
+          "uses": 2,
+          "lift": 555.54,
+          "mediums": {
+            "Advertising": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Lobster",
+          "uses": 1,
+          "lift": 198.41,
+          "mediums": {
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Paprika",
+      "acceptable": [
+        {
+          "family": "Jost",
+          "uses": 2,
+          "lift": 17.87,
+          "mediums": {
+            "Booklets/Pamphlets": 2
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Permanent Marker",
+      "acceptable": [
+        {
+          "family": "Fira Mono",
+          "uses": 2,
+          "lift": 972.2,
+          "mediums": {
+            "Advertising": 1,
+            "Infographics/Maps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Piazzolla",
+      "acceptable": [
+        {
+          "family": "Alegreya Sans",
+          "uses": 2,
+          "lift": 405.08,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "IBM Plex Sans",
+          "uses": 1,
+          "lift": 95.31,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Playfair Display",
+      "acceptable": [
+        {
+          "family": "Lato",
+          "uses": 5,
+          "lift": 45.32,
+          "mediums": {
+            "Web": 2,
+            "Art/Illustration": 1,
+            "Infographics/Maps": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Hind",
+          "uses": 4,
+          "lift": 235.68,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Web": 2
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Montserrat",
+          "uses": 3,
+          "lift": 10.1,
+          "mediums": {
+            "Booklets/Pamphlets": 1,
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Cormorant",
+          "uses": 2,
+          "lift": 32.14,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Courier Prime",
+          "uses": 2,
+          "lift": 11.05,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Poppins",
+          "uses": 2,
+          "lift": 15.37,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Quattrocento Sans",
+          "uses": 2,
+          "lift": 353.53,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto",
+          "uses": 2,
+          "lift": 6.2,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Gelasio",
+          "uses": 1,
+          "lift": 2.62,
+          "mediums": {
+            "Advertising": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Inter",
+          "uses": 1,
+          "lift": 9.06,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Raleway",
+          "uses": 1,
+          "lift": 13.09,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Recursive",
+          "uses": 1,
+          "lift": 88.38,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Poppins",
+      "acceptable": [
+        {
+          "family": "Roboto",
+          "uses": 4,
+          "lift": 14.83,
+          "mediums": {
+            "Web": 2,
+            "Branding/Identity": 1,
+            "Film/Video": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bebas Neue",
+          "uses": 2,
+          "lift": 26.42,
+          "mediums": {
+            "Film/Video": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Hind",
+          "uses": 2,
+          "lift": 140.9,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Merriweather",
+          "uses": 2,
+          "lift": 20.13,
+          "mediums": {
+            "Film/Video": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Playfair Display",
+          "uses": 2,
+          "lift": 15.37,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Nunito Sans",
+          "uses": 1,
+          "lift": 140.9,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Work Sans",
+          "uses": 1,
+          "lift": 6.5,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Pragati Narrow",
+      "acceptable": [
+        {
+          "family": "Inter",
+          "uses": 1,
+          "lift": 498.56,
+          "mediums": {
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Questrial",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Prompt",
+      "acceptable": [
+        {
+          "family": "Work Sans",
+          "uses": 2,
+          "lift": 119.66,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Proza Libre",
+      "acceptable": [
+        {
+          "family": "Open Sans",
+          "uses": 1,
+          "lift": 60.76,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "PT Mono",
+      "acceptable": [
+        {
+          "family": "Montserrat",
+          "uses": 3,
+          "lift": 50.5,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Software/Apps": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Open Sans",
+          "uses": 3,
+          "lift": 66.29,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Software/Apps": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Anton",
+          "uses": 1,
+          "lift": 1767.64,
+          "mediums": {
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Michroma",
+          "uses": 1,
+          "lift": 1767.64,
+          "mediums": {
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "PT Serif",
+      "acceptable": [
+        {
+          "family": "Chivo",
+          "uses": 2,
+          "lift": 199.43,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Gelasio",
+          "uses": 2,
+          "lift": 19.2,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Jost",
+          "uses": 2,
+          "lift": 2.38,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Quattrocento",
+          "uses": 2,
+          "lift": 648.13,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Lato",
+          "uses": 1,
+          "lift": 33.24,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Merriweather",
+          "uses": 1,
+          "lift": 30.86,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Open Sans",
+          "uses": 1,
+          "lift": 16.2,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto",
+          "uses": 1,
+          "lift": 11.37,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Vollkorn",
+          "uses": 1,
+          "lift": 117.84,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Public Sans",
+      "acceptable": [
+        {
+          "family": "Karla",
+          "uses": 1,
+          "lift": 176.76,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Quattrocento",
+      "acceptable": [
+        {
+          "family": "Chivo",
+          "uses": 2,
+          "lift": 747.85,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Gelasio",
+          "uses": 2,
+          "lift": 72.01,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "PT Serif",
+          "uses": 2,
+          "lift": 648.13,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Quattrocento Sans",
+      "acceptable": [
+        {
+          "family": "Cormorant",
+          "uses": 2,
+          "lift": 883.82,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Courier Prime",
+          "uses": 2,
+          "lift": 303.81,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Playfair Display",
+          "uses": 2,
+          "lift": 353.53,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Questrial",
+      "acceptable": [
+        {
+          "family": "Inter",
+          "uses": 1,
+          "lift": 498.56,
+          "mediums": {
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Pragati Narrow",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Quicksand",
+      "acceptable": [
+        {
+          "family": "Roboto",
+          "uses": 3,
+          "lift": 170.56,
+          "mediums": {
+            "Web": 2,
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Arvo",
+          "uses": 2,
+          "lift": 2160.44,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Raleway",
+      "acceptable": [
+        {
+          "family": "Bungee",
+          "uses": 3,
+          "lift": 98.2,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Amiko",
+          "uses": 2,
+          "lift": 720.15,
+          "mediums": {
+            "Booklets/Pamphlets": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Cormorant",
+          "uses": 2,
+          "lift": 65.47,
+          "mediums": {
+            "Booklets/Pamphlets": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Jost",
+          "uses": 2,
+          "lift": 1.32,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Baskerville",
+          "uses": 1,
+          "lift": 7.58,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Lora",
+          "uses": 1,
+          "lift": 55.4,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Open Sans",
+          "uses": 1,
+          "lift": 9,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Playfair Display",
+          "uses": 1,
+          "lift": 13.09,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Recursive",
+      "acceptable": [
+        {
+          "family": "Bungee",
+          "uses": 3,
+          "lift": 662.86,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Software/Apps": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Playfair Display",
+          "uses": 1,
+          "lift": 88.38,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Roboto",
+      "acceptable": [
+        {
+          "family": "Open Sans",
+          "uses": 8,
+          "lift": 17.06,
+          "mediums": {
+            "Web": 2,
+            "Advertising": 1,
+            "Branding/Identity": 1,
+            "Infographics/Maps": 1,
+            "Mobile/Tablet": 1,
+            "Packaging": 1,
+            "Software/Apps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bungee",
+          "uses": 6,
+          "lift": 46.52,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Packaging": 2,
+            "Signs": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto Slab",
+          "uses": 6,
+          "lift": 102.34,
+          "kin": true,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Web": 2,
+            "Advertising": 1,
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Merriweather",
+          "uses": 4,
+          "lift": 16.24,
+          "mediums": {
+            "Web": 3,
+            "Film/Video": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Poppins",
+          "uses": 4,
+          "lift": 14.83,
+          "mediums": {
+            "Web": 2,
+            "Branding/Identity": 1,
+            "Film/Video": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto Condensed",
+          "uses": 4,
+          "lift": 52.48,
+          "kin": true,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Ephemera": 1,
+            "Signs": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Arimo",
+          "uses": 3,
+          "lift": 2.39,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Jura",
+          "uses": 3,
+          "lift": 170.56,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Montserrat",
+          "uses": 3,
+          "lift": 4.87,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Quicksand",
+          "uses": 3,
+          "lift": 170.56,
+          "mediums": {
+            "Web": 2,
+            "Branding/Identity": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Arvo",
+          "uses": 2,
+          "lift": 56.85,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bebas Neue",
+          "uses": 2,
+          "lift": 10.66,
+          "mediums": {
+            "Film/Video": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Hind",
+          "uses": 2,
+          "lift": 56.85,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Caslon Text",
+          "uses": 2,
+          "lift": 2.73,
+          "mediums": {
+            "Advertising": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Noto Sans Mono",
+          "uses": 2,
+          "lift": 170.56,
+          "mediums": {
+            "Album Art": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Playfair Display",
+          "uses": 2,
+          "lift": 6.2,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto Mono",
+          "uses": 2,
+          "lift": 17.95,
+          "kin": true,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Space Mono",
+          "uses": 2,
+          "lift": 5.78,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tinos",
+          "uses": 2,
+          "lift": 0.91,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Domine",
+          "uses": 1,
+          "lift": 85.28,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Jost",
+          "uses": 1,
+          "lift": 0.16,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "PT Serif",
+          "uses": 1,
+          "lift": 11.37,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Ultra",
+          "uses": 1,
+          "lift": 170.56,
+          "mediums": {
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Roboto Condensed",
+      "acceptable": [
+        {
+          "family": "Roboto",
+          "uses": 4,
+          "lift": 52.48,
+          "kin": true,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Ephemera": 1,
+            "Signs": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Jost",
+          "uses": 3,
+          "lift": 4.12,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Nunito Sans",
+          "uses": 2,
+          "lift": 997.13,
+          "mediums": {
+            "Infographics/Maps": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Roboto Mono",
+      "acceptable": [
+        {
+          "family": "Roboto",
+          "uses": 2,
+          "lift": 17.95,
+          "kin": true,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Schoolbell",
+          "uses": 2,
+          "lift": 1023.37,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Gelasio",
+          "uses": 1,
+          "lift": 7.58,
+          "mediums": {
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Jost",
+          "uses": 1,
+          "lift": 0.94,
+          "mediums": {
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Karla",
+          "uses": 1,
+          "lift": 46.52,
+          "mediums": {
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Mirza",
+          "uses": 1,
+          "lift": 1023.37,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Roboto Slab",
+      "acceptable": [
+        {
+          "family": "Roboto",
+          "uses": 6,
+          "lift": 102.34,
+          "kin": true,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Web": 2,
+            "Advertising": 1,
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Open Sans",
+          "uses": 2,
+          "lift": 48.61,
+          "mediums": {
+            "Web": 2
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tinos",
+          "uses": 2,
+          "lift": 10.4,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Rubik",
+      "acceptable": [
+        {
+          "family": "Rubik Mono One",
+          "uses": 1,
+          "lift": 1495.69,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Space Grotesk",
+          "uses": 1,
+          "lift": 53.42,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Space Mono",
+          "uses": 1,
+          "lift": 25.35,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Rubik Mono One",
+      "acceptable": [
+        {
+          "family": "Rubik",
+          "uses": 1,
+          "lift": 1495.69,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Satisfy",
+      "acceptable": [
+        {
+          "family": "Allura",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Schoolbell",
+      "acceptable": [
+        {
+          "family": "Roboto Mono",
+          "uses": 2,
+          "lift": 1023.37,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Six Caps",
+      "acceptable": [
+        {
+          "family": "Lekton",
+          "uses": 1,
+          "lift": 1767.64,
+          "mediums": {
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Sofia",
+      "acceptable": [
+        {
+          "family": "BioRhyme Expanded",
+          "uses": 3,
+          "lift": 216.04,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Syne",
+          "uses": 3,
+          "lift": 58.92,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Work Sans",
+          "uses": 3,
+          "lift": 19.94,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Mina",
+          "uses": 2,
+          "lift": 288.06,
+          "mediums": {
+            "Magazines/Periodicals": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Lato",
+          "uses": 1,
+          "lift": 11.08,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Space Grotesk",
+      "acceptable": [
+        {
+          "family": "Space Mono",
+          "uses": 10,
+          "lift": 117.7,
+          "kin": true,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Posters/Flyers": 2,
+            "Web": 2,
+            "Album Art": 1,
+            "Books": 1,
+            "Exhibition/Installation": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Rubik",
+          "uses": 1,
+          "lift": 53.42,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Syne",
+          "uses": 1,
+          "lift": 31.56,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Space Mono",
+      "acceptable": [
+        {
+          "family": "Space Grotesk",
+          "uses": 10,
+          "lift": 117.7,
+          "kin": true,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Posters/Flyers": 2,
+            "Web": 2,
+            "Album Art": 1,
+            "Books": 1,
+            "Exhibition/Installation": 1,
+            "Magazines/Periodicals": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Montserrat",
+          "uses": 3,
+          "lift": 9.42,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto",
+          "uses": 2,
+          "lift": 5.78,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Barlow",
+          "uses": 1,
+          "lift": 27.46,
+          "mediums": {
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Caslon Text",
+          "uses": 1,
+          "lift": 2.64,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Rubik",
+          "uses": 1,
+          "lift": 25.35,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Spectral",
+      "acceptable": [
+        {
+          "family": "Gelasio",
+          "uses": 2,
+          "lift": 12.52,
+          "mediums": {
+            "Web": 2
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Open Sans",
+          "uses": 1,
+          "lift": 10.57,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tinos",
+          "uses": 1,
+          "lift": 2.26,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Work Sans",
+          "uses": 1,
+          "lift": 13.01,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Syncopate",
+      "acceptable": [
+        {
+          "family": "Grenze",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "IM Fell English",
+          "uses": 1,
+          "lift": 4861,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Syne",
+      "acceptable": [
+        {
+          "family": "Work Sans",
+          "uses": 5,
+          "lift": 67.99,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Mobile/Tablet": 2,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "BioRhyme Expanded",
+          "uses": 3,
+          "lift": 441.91,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Sofia",
+          "uses": 3,
+          "lift": 58.92,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Jost",
+          "uses": 1,
+          "lift": 0.81,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Space Grotesk",
+          "uses": 1,
+          "lift": 31.56,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Tagesschrift",
+      "acceptable": [
+        {
+          "family": "Vollkorn",
+          "uses": 1,
+          "lift": 1767.64,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Tektur",
+      "acceptable": [
+        {
+          "family": "Cherry Swash",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Grenze Gotisch",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Metamorphous",
+          "uses": 1,
+          "lift": 9722,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Varela",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Tinos",
+      "acceptable": [
+        {
+          "family": "Jost",
+          "uses": 37,
+          "lift": 1.77,
+          "mediums": {
+            "Advertising": 5,
+            "Posters/Flyers": 5,
+            "Album Art": 4,
+            "Books": 4,
+            "Booklets/Pamphlets": 3,
+            "Branding/Identity": 3,
+            "Magazines/Periodicals": 3,
+            "Film/Video": 2,
+            "Object/Product": 2,
+            "Software/Apps": 2,
+            "Web": 2,
+            "Infographics/Maps": 1,
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Arimo",
+          "uses": 20,
+          "lift": 4.86,
+          "mediums": {
+            "Web": 6,
+            "Magazines/Periodicals": 4,
+            "Posters/Flyers": 3,
+            "Booklets/Pamphlets": 2,
+            "Books": 2,
+            "Branding/Identity": 2,
+            "Signs": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Franklin",
+          "uses": 18,
+          "lift": 3.82,
+          "mediums": {
+            "Books": 6,
+            "Booklets/Pamphlets": 3,
+            "Album Art": 2,
+            "Branding/Identity": 2,
+            "Advertising": 1,
+            "Film/Video": 1,
+            "Infographics/Maps": 1,
+            "Magazines/Periodicals": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Gelasio",
+          "uses": 11,
+          "lift": 4.24,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Web": 2,
+            "Advertising": 1,
+            "Album Art": 1,
+            "Books": 1,
+            "Film/Video": 1,
+            "Mobile/Tablet": 1,
+            "Signs": 1,
+            "Software/Apps": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bodoni Moda",
+          "uses": 6,
+          "lift": 2.4,
+          "mediums": {
+            "Newspapers": 2,
+            "Booklets/Pamphlets": 1,
+            "Books": 1,
+            "Ephemera": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Courier Prime",
+          "uses": 6,
+          "lift": 4.87,
+          "mediums": {
+            "Books": 1,
+            "Ephemera": 1,
+            "Exhibition/Installation": 1,
+            "Newspapers": 1,
+            "Posters/Flyers": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Montserrat",
+          "uses": 6,
+          "lift": 2.97,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Web": 2,
+            "Mobile/Tablet": 1,
+            "Signs": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Work Sans",
+          "uses": 5,
+          "lift": 4,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Object/Product": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Open Sans",
+          "uses": 3,
+          "lift": 1.95,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Baskerville",
+          "uses": 2,
+          "lift": 1.09,
+          "mediums": {
+            "Books": 2
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Libre Caslon Text",
+          "uses": 2,
+          "lift": 0.83,
+          "mediums": {
+            "Books": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto",
+          "uses": 2,
+          "lift": 0.91,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Roboto Slab",
+          "uses": 2,
+          "lift": 10.4,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Archivo",
+          "uses": 1,
+          "lift": 3.06,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bebas Neue",
+          "uses": 1,
+          "lift": 1.62,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Noto Sans",
+          "uses": 1,
+          "lift": 1.21,
+          "mediums": {
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Spectral",
+          "uses": 1,
+          "lift": 2.26,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Trocchi",
+      "acceptable": [
+        {
+          "family": "Jost",
+          "uses": 1,
+          "lift": 3.57,
+          "mediums": {
+            "Album Art": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Ubuntu",
+      "acceptable": [
+        {
+          "family": "Libre Baskerville",
+          "uses": 2,
+          "lift": 81.87,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Ultra",
+      "acceptable": [
+        {
+          "family": "Roboto",
+          "uses": 1,
+          "lift": 170.56,
+          "mediums": {
+            "Posters/Flyers": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Unna",
+      "acceptable": [
+        {
+          "family": "Open Sans",
+          "uses": 1,
+          "lift": 243.05,
+          "mediums": {
+            "Ephemera": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Varela",
+      "acceptable": [
+        {
+          "family": "Cherry Swash",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Grenze Gotisch",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Metamorphous",
+          "uses": 1,
+          "lift": 9722,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tektur",
+          "uses": 1,
+          "lift": 19444,
+          "mediums": {
+            "Object/Product": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Vollkorn",
+      "acceptable": [
+        {
+          "family": "Lato",
+          "uses": 1,
+          "lift": 45.32,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Merriweather",
+          "uses": 1,
+          "lift": 42.09,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Open Sans",
+          "uses": 1,
+          "lift": 22.1,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "PT Serif",
+          "uses": 1,
+          "lift": 117.84,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tagesschrift",
+          "uses": 1,
+          "lift": 1767.64,
+          "mediums": {
+            "Books": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "VT323",
+      "acceptable": [
+        {
+          "family": "Nunito",
+          "uses": 2,
+          "lift": 2777.71,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Packaging": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Work Sans",
+      "acceptable": [
+        {
+          "family": "Syne",
+          "uses": 5,
+          "lift": 67.99,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Mobile/Tablet": 2,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Tinos",
+          "uses": 5,
+          "lift": 4,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Object/Product": 1,
+            "Packaging": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Jost",
+          "uses": 4,
+          "lift": 1.1,
+          "mediums": {
+            "Branding/Identity": 2,
+            "Booklets/Pamphlets": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "BioRhyme Expanded",
+          "uses": 3,
+          "lift": 149.57,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Montserrat",
+          "uses": 3,
+          "lift": 8.55,
+          "mediums": {
+            "Booklets/Pamphlets": 1,
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Sofia",
+          "uses": 3,
+          "lift": 19.94,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Mobile/Tablet": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Prompt",
+          "uses": 2,
+          "lift": 119.66,
+          "mediums": {
+            "Branding/Identity": 1,
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Bitter",
+          "uses": 1,
+          "lift": 42.73,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Limelight",
+          "uses": 1,
+          "lift": 299.14,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Merriweather",
+          "uses": 1,
+          "lift": 7.12,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Noto Sans",
+          "uses": 1,
+          "lift": 6.96,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Poppins",
+          "uses": 1,
+          "lift": 6.5,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        },
+        {
+          "family": "Spectral",
+          "uses": 1,
+          "lift": 13.01,
+          "mediums": {
+            "Web": 1
+          },
+          "sources": [
+            "fontsinuse"
+          ]
+        }
+      ]
+    }
+  ]
+}

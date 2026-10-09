@@ -86,6 +86,81 @@ fixture is committed; re-mining refreshes it from live sources.
     node model/validate/benchmark.mjs
     model/.venv/bin/python model/validate/metric_ab.py
 
+## Usage-mined pairs and null models (`mine-fontsinuse.mjs`, `nullmodel.mjs`)
+
+`mine-fontsinuse.mjs` builds a second, usage-based fixture
+(`fixtures/fontsinuse-pairings.json`) from the supplementary data of Choi &
+Hyun, "Typeface network and the principle of font pairing" (Sci Rep 14:30820,
+2024; use cases collected from fontsinuse.com): pairs observed in real design
+work where both faces resolve to the shipped catalog. Pairs are unordered, so
+each is emitted in both directions, with `uses` and per-medium counts for
+slicing. A small documented alias map substitutes open revivals or
+metric-compatible faces for commercial names (Futura -> Jost, Arial -> Arimo,
+...); contested lookalikes (Helvetica, Univers, Gotham) are not aliased. The
+raw CSV is not committed (the article is CC BY-NC-ND); the generator
+re-downloads it, or reads `FONTSINUSE_CSV=<path>`.
+
+`benchmark.mjs` scores any fixture via the `FIXTURE` env var. `nullmodel.mjs`
+runs the paper's null-model test: real pairs must outscore frequency-conserving
+random pairs (the primary baseline, since usage data is popularity-skewed) and
+uniform random pairs (secondary). Slices de-skew the usage data: `refined`
+keeps repeated, high-lift, non-kin pairs (deliberate choices, not popularity
+residue); `endorsed` keeps pairs the curated fixture also endorses (usage plus
+judgment, the highest-confidence slice).
+
+This fixture is a stress test, not the yardstick: the curated benchmark remains
+that. Current status on the shipped space: against the frequency null the
+metric shows no separation on the all, Web, digital, or refined slices
+(|z| < 0.1); only the 36-pair endorsed slice separates, and mostly against the
+uniform null (z 0.47, AUC 0.62). Real-world usage co-occurrence, even
+lift-filtered, is not what the metric tracks; curated endorsement is.
+
+    node model/validate/mine-fontsinuse.mjs   # rebuild the usage fixture (network)
+    FIXTURE=fontsinuse-pairings.json node model/validate/benchmark.mjs
+    node model/validate/nullmodel.mjs
+
+## Backbone challengers (`make_space.py`, `diagnostics.py`)
+
+`make_space.py <dinov2|vgg16|fontclip|dual>` builds a challenger space aligned
+to the shipped catalog's instance order (the index contract the `SPACE_BIN` /
+`SPACE_META` / `SPACE_NAME` overrides in benchmark.mjs and nullmodel.mjs rely
+on), caching raw backbone features under `.cache`. The PCA is fitted on
+google-source rows only; house faces are projected through the fitted basis,
+matching the pipeline invariant (never refit on house faces). `fontclip` is
+FontCLIP (Tatsukawa et al. 2024, MIT; visual tower of the official ViT-B/32
+checkpoint, cached at `.cache/fontclip/model.pt`); `dual` is the FontFusion-style
+(arXiv:2606.06066) concat of unit-normalized dinov2 + fontclip blocks, PCA
+refit to 200.
+
+A caution on reading benchmark deltas across fits: with identical features and
+instance order, refitting the PCA on a different instance snapshot moved the
+curated benchmark by several hit@50 points (18 vs 23) while leaving the null
+model essentially flat, so differences of that size are basis sensitivity, not
+evidence of a better space.
+
+`diagnostics.py` screens spaces with the paper's cluster metrics (silhouette by
+category, 1-NN category accuracy, retrieval P@10 over eligible instances).
+
+Result of the 2026-10-09 bake-off (curated benchmark, shipped metric + body
+guard; endorsed-slice null model vs uniform):
+
+| space           | 1NN cat | P@10  | hit@50 | median rank | endorsed z / AUC |
+|-----------------|---------|-------|--------|-------------|------------------|
+| dinov2 (refit)  | 0.864   | 0.775 | 23/101 | 276         | 0.51 / 0.63      |
+| vgg16           | 0.906   | 0.816 | 11/101 | 362         | 0.22 / 0.59      |
+| fontclip        | 0.831   | 0.774 | 7/101  | 749         | -0.04 / 0.50     |
+| dinov2+fontclip | 0.864   | 0.784 | 1/101  | 588         | -0.12 / 0.48     |
+
+The dual-encoder result does not transfer to pairing: the shipped metric's
+contrast form (|N| * P over per-dimension signed products) needs each dimension
+to carry one opinion, and mixing two geometries per dimension washes that out;
+the dual is the worst space on both downstream measures despite mid-tier
+cluster metrics. FontCLIP alone, though purpose-built for font retrieval, is
+uniformly high-cosine and poor contrast geometry. dinov2 stays the backbone;
+vgg16 has the best category structure but weaker downstream scores. The cluster
+diagnostics anti-predicted pairing quality, so they remain a screen, never the
+decision.
+
 ## Learned re-ranker (`reranker.py`, candidate, not shipped)
 
 `reranker.py` is the "attack hit@10 with a learned re-ranker" experiment: a
