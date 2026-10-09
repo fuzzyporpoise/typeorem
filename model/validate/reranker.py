@@ -261,7 +261,7 @@ def fit_and_write():
         "trained": {"headings": len(pairs), "positives": sum(len(ps) for _, ps, _ in pairs),
                     "negativePerHeading": 50, "seeds": 8, "date": "2026-10-07"},
         "note": "pointwise logistic re-ranker over embedding + axis features, fit on the "
-                "multi-partner fonts-pairings benchmark; see .todo/metric-research.md",
+                "multi-partner fonts-pairings benchmark",
     }, indent=2) + "\n")
     CASES.write_text(json.dumps({"note": "JS/Python parity cases for site/js/reranker.js", "cases": cases}, indent=1) + "\n")
     print(f"wrote site/data/reranker.json and {len(cases)} parity cases")

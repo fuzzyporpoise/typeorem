@@ -36,7 +36,7 @@ const corpus = loadCorpus();
 // Multi-partner benchmark: each heading carries every body partner the public
 // sources endorse (see mine-pairings.mjs). Scoring is strict: a partner family
 // only counts at its canonical 400-normal instance (the loose any-instance rule
-// flattered every metric; see .todo/metric-research.md, sixth pass).
+// flattered every metric).
 const fixtures = JSON.parse(fs.readFileSync(path.join(DIR, 'fixtures', 'fonts-pairings.json'), 'utf8'));
 const fam = i => corpus.instances[i].family;
 
@@ -67,8 +67,7 @@ function canonId(family) {
 
 // Score with the legacy embedding contrast, the shipped metric (asymmetric role
 // + multi-axis terms), and the shipped metric over the body-weight-guarded pool
-// (the tool restricts body recommendations to text weights). See
-// .todo/metric-research.md.
+// (the tool restricts body recommendations to text weights).
 const METRICS = [
   ['product (legacy)', i => contrastAt(corpus.units, corpus.dim, corpus._hi, i), false],
   ['shipped (role+axis)', i => roleScore(corpus, cmax, corpus._hi, i, 1, 'body'), false],

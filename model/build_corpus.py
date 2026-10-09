@@ -30,7 +30,8 @@ SITE = paths.site_data()
 # site/fonts, so the corpus appends it as a "local" family: rendered from the
 # same woff2 the browser uses, embedded with the frozen backbone, and projected
 # through the SAVED catalog PCA. Never refit the PCA on the house faces: a refit
-# would shift every shipped vector. See .todo/custom-fonts-plan.md.
+# would shift every shipped vector, so the append reuses out/pca_model.npz as-is
+# and only adds the trailing house block.
 # ---------------------------------------------------------------------------
 HOUSE_FAMILY = "Commit Mono"
 HOUSE_WOFF2 = paths.house_font()

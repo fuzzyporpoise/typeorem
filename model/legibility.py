@@ -97,7 +97,7 @@ def render_axes(instances, png_dir=PNG_DIR):
     """Per-instance render axes for the shipped multi-axis pairing metric.
 
     Only x-height is shipped today: it is the skeleton gate the serif-contrast
-    term fires on (see .todo/metric-research.md). Returns {instance id: {"xh":..}}.
+    term fires on. Returns {instance id: {"xh":..}}.
     """
     out = {}
     for inst in instances:
