@@ -50,6 +50,7 @@ CORPUS_FILES = [
     "data/pca.json",
     "data/corpus.version.json",
     "data/reranker.json",
+    "data/pairgraph.json",
 ]
 POINTER = "model.json"
 ALLOWED_SOURCES = {"google", "local"}

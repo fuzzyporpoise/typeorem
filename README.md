@@ -13,7 +13,8 @@ Google Fonts  ->  glyph grid  ->  DINOv2 ViT-S/14  ->  PCA (200d)  ->  corpus
 The corpus is a handful of static files: an int8 vector per font instance, a catalog that
 names them, the PCA projection that produced them, and a version file that pins the contract.
 [`docs/roll-your-own.md`](docs/roll-your-own.md) covers building one and serving it from your
-own front-end.
+own front-end, and [`docs/sources.md`](docs/sources.md) maps the literature this is built on
+to the one piece taken from each paper.
 
 ## Why this exists
 
@@ -44,6 +45,7 @@ model/
   validate/           the metric harnesses (README.md in there)
 docs/
   roll-your-own.md    the full guide: rebuild, validate, publish, extend
+  sources.md          the papers this is built on, and the one piece taken from each
 ```
 
 ## Quickstart

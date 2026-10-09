@@ -43,8 +43,11 @@ def load_corpus():
     meta = json.loads((DATA / "vectors.meta.json").read_text())
     catalog = json.loads((DATA / "catalog.json").read_text())["instances"]
     raw = np.frombuffer((DATA / "vectors.i8.bin").read_bytes(), dtype=np.int8)
-    raw = raw.reshape(meta["count"], meta["dim"]).astype(np.float32)
-    V = raw * np.array(meta["scale"]["values"], dtype=np.float32)[:, None]
+    # float64, matching the browser's Float64Array units: the DS-kNN k2
+    # tie-break is exact-equality sensitive, and float32 noise would break it
+    # differently than the shipped JS (reranker.test.mjs pins the two).
+    raw = raw.reshape(meta["count"], meta["dim"]).astype(np.float64)
+    V = raw * np.array(meta["scale"]["values"], dtype=np.float64)[:, None]
     V /= np.linalg.norm(V, axis=1, keepdims=True) + 1e-9
     return catalog, V
 
