@@ -32,7 +32,7 @@ import torch
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "model"))
 from metric_ab import load_corpus, build_features  # noqa: E402
-from reranker import Features, build_pairs, hand_score  # noqa: E402
+from reranker import Features, build_pairs, hand_score, dsknn_score  # noqa: E402
 
 K = 32
 GAMMA = 1.0
@@ -93,28 +93,6 @@ def asml_score(X, L, R, hi, rows):
     return f.numpy()
 
 
-def dsknn_score(F, V, train, hi, rows, k1=K1, k2=K2):
-    """Dual-space k-NN (Eq. 1): pair with what similar headings pair with."""
-    vl = V  # load_corpus unit-normalizes rows
-    heads = np.array([h for h, _, _ in train if h != hi])
-    sims = vl[heads] @ vl[hi]
-    near = heads[np.argsort(-sims)[:k1]]
-    cand, cw = [], []
-    for h in near:
-        _, ps, _ = next(p for p in train if p[0] == h)
-        for p in ps:
-            cand.append(p)
-            cw.append(float(vl[h] @ vl[hi]))
-    cand = np.array(cand)
-    cw = np.array(cw)
-    sim_b = vl[rows][:, :] @ vl[cand].T
-    out = []
-    for j in range(len(rows)):
-        top = np.argsort(-sim_b[j])[:k2]
-        out.append(float(np.mean(sim_b[j][top] * cw[top])) if len(top) else 0.0)
-    return np.array(out)
-
-
 def main():
     catalog, V = load_corpus()
     feats = build_features(catalog)
@@ -153,7 +131,7 @@ def main():
         return eval_fold(make, train, test)
 
     def dsknn_eval(seed, train, test):
-        return eval_fold(lambda hi, rows, tr: dsknn_score(F, V, tr, hi, rows), train, test)
+        return eval_fold(lambda hi, rows, tr: dsknn_score(V, tr, hi, rows), train, test)
 
     def loocv(fn, seed):
         out = []

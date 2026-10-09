@@ -174,3 +174,51 @@ pinned by `tests/reranker.test.mjs`.
 
     model/.venv/bin/python model/validate/reranker.py          # evaluate
     model/.venv/bin/python model/validate/reranker.py --fit     # refit + export
+
+`reranker.py`'s evaluation also carries the eighth pass's lead (TSK-020): two
+more columns, `dsknn` and `has_graph`, from the paper's training-free dual-space
+k-NN (arXiv:1811.08015 sec. IV-A Eq. 1, `dsknn_score`: pair with what visually
+similar headings pair with, K1 = K2 = 10). The `dsknn` column reads the shipped
+pair graph (the union of both fixtures, 191 headings), so it is built per fold,
+never from the global feature cache; the graph (the k1 nearest train headings'
+partners) is memoized per fold and reused across seeds and feature subsets.
+`has_graph` flags an empty fold graph (the cold-start fallback: score 0), which
+the model can learn to distrust; it stays 1 on both committed fixtures, so it
+only matters for off-graph or custom-font headings at runtime. The run also
+cross-checks the usage fixture (`fixtures/fontsinuse-pairings.json`) with the
+same folds and hygiene.
+
+Adding `dsknn` beats the shipped-feature re-ranker out-of-sample on both
+fixtures, under the strict canonical rule (mean over negative-sampling seeds
+0-7; reference seventh-pass rows in the research log). The loose rule regresses
+(training on all-instances-of-a-partner-family fights the canonical graph), so
+the strict rule, the yardstick, is what the model ships on:
+
+| fixture / rule      | model            | hit@10 | hit@50 | hit@100 | median |
+|---------------------|------------------|--------|--------|---------|--------|
+| endorsement, LOOCV  | 10 features      | 24.6   | 44.6   | 59.5    | 76     |
+| endorsement, LOOCV  | + dsknn          | 30.6   | 60.2   | 76.0    | 31     |
+| endorsement, split  | 10 features      | 24.0   | 43.1   | 59.5    | 72     |
+| endorsement, split  | + dsknn          | 29.6   | 58.0   | 73.4    | 34     |
+| usage, LOOCV        | 10 features      | 15.0   | 43.5   | 60.4    | 140    |
+| usage, LOOCV        | + dsknn          | 23.5   | 54.6   | 74.4    | 82     |
+| usage, split        | 10 features      | 14.8   | 43.2   | 58.1    | 152    |
+| usage, split        | + dsknn          | 20.9   | 52.6   | 67.5    | 116    |
+
+### Ship vehicle (`make_pairgraph.py`, `reranker.js`)
+
+`--fit` now fits the 12-feature model against the shipped union graph and writes
+`site/data/reranker.json` (v2) plus `fixtures/reranker-cases.json`. `dsknn`
+needs the pair graph at runtime, so `make_pairgraph.py` builds the family-level
+`site/data/pairgraph.json` (191 headings, ~1000 partners, 28 KB) from the
+committed fixtures only; instance indices never leak into the artifact, the
+runtime resolves families to canonical instances. `site/js/reranker.js` computes
+one heading's whole-pool column (`resolveGraph` / `dsknnColumn`) as a per-seed
+pre-pass `rankLearned` folds in, since it is not a per-pair feature. `--cases`
+writes `fixtures/pairgraph-cases.json`; `reranker.test.mjs` pins the JS column
+and the 12-feature score against Python. `pairgraph.json` ships as a corpus
+release member (`release_corpus.py`), the same channel as `reranker.json`.
+
+    model/.venv/bin/python model/validate/make_pairgraph.py --cases   # graph + parity cases
+    model/.venv/bin/python model/validate/reranker.py --fit           # refit the 12-feature model
+    node model/validate/reranker.test.mjs                             # cross-repo parity
