@@ -64,11 +64,12 @@ re-ranker's JS/Python parity in `reranker.test.mjs` here.
 with the legacy embedding contrast (`product`) and the shipped metric
 (`roleScore`: role legibility plus a gated serif/skeleton axis term), plus the
 shipped metric over the body-weight guarded pool (the tool restricts body
-recommendations to text weights). The match rule is **strict**: a partner
-family counts only at its canonical 400-normal instance. Per heading it reports
-**hit@k** (at least one acceptable partner ranks <= k), **recall@k** (fraction
-of acceptable partners ranked <= k), and **nDCG@k** (binary-relevance), plus
-the median best-partner rank.
+recommendations to text weights) and over that pool with the stroke-weight
+ordering guard (body not heavier than the heading; see below). The match rule is
+**strict**: a partner family counts only at its canonical 400-normal instance.
+Per heading it reports **hit@k** (at least one acceptable partner ranks <= k),
+**recall@k** (fraction of acceptable partners ranked <= k), and **nDCG@k**
+(binary-relevance), plus the median best-partner rank.
 
 `metric_ab.py` is the challenger A/B that produced the shipped metric: it scores
 the original 40 pairs (`fixtures/known-pairings.json`, kept as the mining seed)
@@ -85,6 +86,30 @@ fixture is committed; re-mining refreshes it from live sources.
     node model/validate/mine-pairings.mjs   # re-mine the fixture (network)
     node model/validate/benchmark.mjs
     model/.venv/bin/python model/validate/metric_ab.py
+
+### Stroke-weight ordering guard (direction 3)
+
+The Microsoft Designer paper (Singh and Bhakthavatsalam, arXiv:2501.10969) adds a
+hard rule: the subheading must not be heavier than the heading. It ships as
+`bodyOrdered(corpus, heading, pool)` in `site/js/engine.js`, applied to the body
+pool in `generate` and in the tool's body recommendations, with a
+satisfiable-fallback when the heading is lighter than every text weight (an
+ultra-light display face). It clears the metric protocol (moves the benchmark,
+holds the engine evaluate):
+
+| benchmark (strict)   | shipped + body guard | + stroke order |
+|----------------------|----------------------|----------------|
+| endorsement hit@50   | 18/101               | 23/101         |
+| endorsement hit@100  | 27/101               | 33/101         |
+| endorsement median   | 286                  | 184            |
+| usage hit@100        | 19/138               | 24/138         |
+| usage median         | 816                  | 532            |
+
+`engine_interaction.mjs`'s shipped row is the evaluate check: balance 0.810 ->
+0.801, so it does not repeat the axis term's collapse (0.82 -> 0.65). Caveat:
+the strict rule canonicalizes headings to their 400-normal instance, so on the
+fixture the guard reads as "body not heavier than 400"; at runtime the rule is
+heading-relative.
 
 ## Usage-mined pairs and null models (`mine-fontsinuse.mjs`, `nullmodel.mjs`)
 
@@ -161,6 +186,34 @@ vgg16 has the best category structure but weaker downstream scores. The cluster
 diagnostics anti-predicted pairing quality, so they remain a screen, never the
 decision.
 
+### Style-vs-content screen (`style_content.py`)
+
+After FontBench / FRB (arXiv:2603.08497): an encoder can read the text content
+and ignore the font (a Stroop-style confound), so a backbone swap can improve
+retrieval while regressing style. `style_content.py` renders several texts in
+each of several category-spanning fonts (the corpus holds one render per
+instance, so this pass renders its own), embeds them with the backbone, and asks
+which grouping the space reflects: the per-render "style wins" rate (a render's
+best same-font, different-text neighbour beats its best same-text, different-font
+neighbour) and the nearest-neighbour composition against chance. It needs the
+Google Fonts clone and the backbone, so it is not a CI test.
+
+Current baseline (12 fonts x 4 texts = 48 renders; chance same-font 6%, same-text
+23%):
+
+| backbone | same-font sim | same-text sim | style bias | style wins | same-font NN | same-text NN |
+|----------|---------------|---------------|------------|-----------|--------------|--------------|
+| dinov2   | +0.910        | +0.890        | +0.020     | 23%       | 17%          | 71%          |
+| vgg16    | +0.754        | +0.807        | -0.054     | 12%       | 12%          | 88%          |
+
+Both are **content-dominant**: the space keys mostly on the text, not the font,
+so neither is a reliable style encoder on this axis. That is the guard for a
+backbone swap (paired-glyph matching, sweep direction 1): the replacement must
+raise the style-win rate, not just the benchmark.
+
+    model/.venv/bin/python model/validate/style_content.py
+    model/.venv/bin/python model/validate/style_content.py --backbone vgg16
+
 ## Learned re-ranker (`reranker.py`, candidate, not shipped)
 
 `reranker.py` is the "attack hit@10 with a learned re-ranker" experiment: a
@@ -222,3 +275,37 @@ release member (`release_corpus.py`), the same channel as `reranker.json`.
     model/.venv/bin/python model/validate/make_pairgraph.py --cases   # graph + parity cases
     model/.venv/bin/python model/validate/reranker.py --fit           # refit the 12-feature model
     node model/validate/reranker.test.mjs                             # cross-repo parity
+
+## Engine interaction and app wiring (`engine_interaction.mjs`)
+
+The learned re-ranker ships as a **ranking-time** scorer. The app ranks its
+recommendation rows through `site/js/reranker.js`'s `rankSlot`, which uses the
+learned model when the fit and the DS-kNN graph are present and falls back to
+the shipped hand metric (`rankFor`) otherwise: `site/js/data.js`'s `loadReranker`
+fetches `reranker.json` and `pairgraph.json`, and `learnedReady` rejects a
+missing graph or an older 10-feature fit.
+
+`engine_interaction.mjs` is the check that keeps it out of `generate()`'s
+objective. It runs the 60-heading `evaluate.mjs` set two ways: the shipped
+`generate()` and a variant whose body/accent candidate lists come from
+`rankLearned` while the objective, family-diversity loop and defaults stay the
+engine's. The learned pre-filter collapses the engine's balance (min/max
+contrast over the triple) and spread:
+
+| variant               | bodyLegibility | overallContrast | balance | spread |
+|-----------------------|----------------|-----------------|---------|--------|
+| shipped `generate()`  | 0.976          | 0.495           | 0.801   | 2.07   |
+| + learned pre-filter  | 0.970          | 0.307           | 0.495   | 1.78   |
+
+That is a worse regression than the multi-axis term that first motivated the
+constraint (0.82 -> 0.65 in the metric research log), so the re-ranker is
+confined to the recommendation rows: a ranking-time scorer, not a generate
+objective. The same run reports how far the top-4 recommendation rows move from
+`rankFor` (mean overlap 0.07/4, every heading reordered), which is the point of
+the swap.
+
+    node model/validate/engine_interaction.mjs   # requires a consumer checkout
+
+The app half of the contract is pinned by the consumer's `tests/reranker.test.mjs`:
+the runtime load path (`loadReranker`), the learned-vs-fallback dispatch
+(`rankSlot`/`learnedReady`), and the feature-list parity above.
