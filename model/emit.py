@@ -17,7 +17,7 @@ def label_of(inst):
     return f"{inst['family']} {inst['weight']}{suffix}"
 
 
-def emit(site_dir, instances, families, q, scale, pca, version, legibility=None, xh=None):
+def emit(site_dir, instances, families, q, scale, pca, version, legibility=None, xh=None, width=None):
     site_dir = Path(site_dir)
     site_dir.mkdir(parents=True, exist_ok=True)
     dim = q.shape[1]
@@ -39,6 +39,7 @@ def emit(site_dir, instances, families, q, scale, pca, version, legibility=None,
             "coords": inst["coords"],
             "legibility": round(float(legibility[i]), 4) if legibility is not None else None,
             "xh": round(float(xh[i]), 4) if xh is not None and xh[i] is not None else None,
+            "width": round(float(width[i]), 4) if width is not None and width[i] is not None else None,
             "search": f"{inst['family']} {label_of(inst)} {inst['category']}".lower(),
         })
     write_json(site_dir / "catalog.json", {"v": 1, "count": len(catalog), "instances": catalog})

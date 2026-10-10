@@ -20,7 +20,7 @@ at one weight and style) has:
   count, and per-row quantization scale, plus the backbone and preprocessing that produced it.
 - `catalog.json`: one row per instance, aligned to the vector rows, carrying `family`, `label`,
   `weight`, `style`, `category`, `source`, `subsets`, `eligible`, `css2`, `coords`,
-  `legibility`, `xh`, and a `search` string.
+  `legibility`, `xh`, `width`, and a `search` string.
 - `pca.bin` and `pca.json`: the projection (mean plus components) and its layout, so a face
   added later is projected the same way the catalog was.
 - `corpus.version.json`: the contract. The backbone, the preprocessing, the catalog commit, the
@@ -80,6 +80,7 @@ write.
 | `model/render.py`, `embed.py`, `reduce.py` | the glyph grid, the frozen backbone, PCA |
 | `model/legibility.py`, `emit.py` | the body-legibility proxy and the corpus writer |
 | `model/build_corpus.py` | the pipeline entry point |
+| `model/private_corpus.py` | the local-only corpus for your own (possibly licensed) faces |
 | `model/export_onnx.py`, `publish_model.py` | the browser backbone: export and publish |
 | `model/validate/` | the metric harnesses (see its own `README.md`) |
 | `model/tests/` | pipeline tests |
@@ -112,7 +113,7 @@ Nine stages, in order. Each is a plain module you can run or import on its own.
 7. **Emit** (`model/emit.py`). Writes the corpus into `<checkout>/site/data/`:
    `vectors.i8.bin`, `vectors.meta.json` (dim, count, per-row int8 scale, backbone,
    preprocess), `catalog.json` (one row per instance, including `source`, `css2`,
-   `coords`, `legibility`, `xh`), `pca.bin` + `pca.json` (the projection and its
+   `coords`, `legibility`, `xh`, `width`), `pca.bin` + `pca.json` (the projection and its
    layout), and `corpus.version.json`, which carries the corpus contract (backbone,
    preprocess, and the `glyphGrid` geometry). It also writes `model/out/pca_model.npz`
    (the saved projection) and `model/out/render-hashes.json`.
@@ -195,6 +196,34 @@ message when that file is absent, so a build with no bundled face is fine. Never
 on locally added faces: a refit shifts every shipped vector. Rows like these carry
 `css2: null` so the front-end skips the CDN and uses the self-hosted `@font-face`, and no
 legibility score so the centroid fallback covers the body term.
+
+### Your own faces, locally (a private corpus)
+
+A `local` source is for faces you bundle and ship. For faces you can use but must not
+ship (including commercial ones), there is a second, local-only corpus: a private run
+writes it **outside** both checkouts, and its rows carry `source: "private"`, which the
+allowlist above rejects, so it can never reach a release, `site/data`, or a deploy.
+
+```bash
+mkdir -p ~/.cache/typeorem/fonts         # stage your .ttf/.otf/.woff/.woff2 files under fonts/
+model/.venv/bin/python model/build_corpus.py --private
+```
+
+The private root defaults to `~/.cache/typeorem` (`$XDG_CACHE_HOME/typeorem` when set),
+a machine-local cache: not a dotfiles tree, not a cloud-sync folder, and alongside the
+caches the pipeline already uses. The writer refuses a root inside a git work tree or a
+cloud-sync folder, so a licensed font cannot be committed or synced off the machine; pass
+`--private <dir>` or set `TYPEOREM_PRIVATE_DIR` to point elsewhere.
+
+It scans `<dir>/fonts/` (or `<dir>` itself when there is no `fonts/`), reads each face's
+name, weight, style, category, and variable axes, renders through the same glyph grid,
+embeds with the frozen backbone, and projects through the **saved** PCA, exactly as the
+house faces do. It writes `<dir>/corpus/{vectors.i8.bin,catalog.json,vectors.meta.json,
+corpus.version.json}` with only the private rows, each carrying `css2: null` and a
+`fontUrl` relative to the private root. A front-end overlays those rows on the shipped
+catalog for a local dev run; the writer refuses any output path inside an app checkout,
+and the private meta records the sha256 of the projection it used so a corpus left in an
+old space after a rebuild is detectable. Re-running replaces the corpus.
 
 ### Publish the browser backbone (only when it changes)
 

@@ -24,5 +24,9 @@ jobs:
         run: python model/tests/test_catalog.py
       - name: The corpus release boundary
         run: python model/tests/test_release.py
+      - name: The private corpus writer's guards
+        run: python model/tests/test_private.py
+      - name: A private run leaves the checkouts untouched
+        run: python model/tests/test_private_isolated.py
       - name: Every module imports
         run: python -m compileall -q model
