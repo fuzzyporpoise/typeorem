@@ -83,6 +83,8 @@ model/.venv/bin/python model/tests/test_catalog.py             # catalog parse +
 model/.venv/bin/python model/tests/test_release.py             # the release boundary: the corpus checks + the archive
 model/.venv/bin/python model/tests/test_corpus_determinism.py  # render determinism (needs a pipeline run)
 node model/validate/reranker.test.mjs                          # JS/Python re-ranker parity (needs a consumer checkout)
+node model/validate/engine_interaction.mjs                     # engine-interaction check: is the learned scorer safe inside generate()? (needs a consumer checkout)
+model/.venv/bin/python model/validate/style_content.py         # style-vs-content screen: does the backbone track the font or the text?
 ```
 
 `.github/workflows/gate.yml` runs the standalone tests on every push and pull request;

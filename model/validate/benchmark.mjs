@@ -69,23 +69,28 @@ function canonId(family) {
 }
 
 // Score with the legacy embedding contrast, the shipped metric (asymmetric role
-// + multi-axis terms), and the shipped metric over the body-weight-guarded pool
-// (the tool restricts body recommendations to text weights).
-const METRICS = [
-  ['product (legacy)', i => contrastAt(corpus.units, corpus.dim, corpus._hi, i), false],
-  ['shipped (role+axis)', i => roleScore(corpus, cmax, corpus._hi, i, 1, 'body'), false],
-  ['shipped + body guard', i => roleScore(corpus, cmax, corpus._hi, i, 1, 'body'), true],
-];
-
+// + multi-axis terms), and the shipped metric over guarded pools (the tool
+// restricts body recommendations to text weights; the Microsoft rule additionally
+// asks that the body not be heavier than the heading, arXiv:2501.10969).
 // The body guardrail mirrors BODY_WEIGHT_MIN/MAX in site/js/engine.js.
 const BODY_MIN = 300, BODY_MAX = 700;
+const bodyGuard = inst => inst.weight >= BODY_MIN && inst.weight <= BODY_MAX;
+const strokeOrder = (inst, heading) => inst.weight <= heading.weight;
+
+const METRICS = [
+  ['product (legacy)', i => contrastAt(corpus.units, corpus.dim, corpus._hi, i), null, false],
+  ['shipped (role+axis)', i => roleScore(corpus, cmax, corpus._hi, i, 1, 'body'), null, false],
+  ['shipped + body guard', i => roleScore(corpus, cmax, corpus._hi, i, 1, 'body'), bodyGuard, true],
+  ['shipped + body + stroke', i => roleScore(corpus, cmax, corpus._hi, i, 1, 'body'),
+    (inst, heading) => bodyGuard(inst) && strokeOrder(inst, heading), false],
+];
 
 // Per heading: rank every eligible instance of other families, then measure
 // the acceptable partners' canonical instances against that ranking.
 //   hit@k    at least one acceptable partner ranks <= k
 //   recall@k fraction of acceptable partners ranking <= k
 //   nDCG@k   binary-relevance nDCG over the top k of the ranking
-function evaluate(scoreOf, guard) {
+function evaluate(scoreOf, filter) {
   const rows = [];
   const missing = new Set();
   for (const { heading, acceptable } of fixtures.pairings) {
@@ -100,7 +105,7 @@ function evaluate(scoreOf, guard) {
     const cand = [];
     for (let i = 0; i < corpus.count; i++) {
       if (!corpus.instances[i].eligible || fam(i) === heading) continue;
-      if (guard && (corpus.instances[i].weight < BODY_MIN || corpus.instances[i].weight > BODY_MAX)) continue;
+      if (filter && !filter(corpus.instances[i], corpus.instances[hi])) continue;
       cand.push(i);
     }
     const ranked = cand.map(i => ({ i, s: scoreOf(i) })).sort((a, b) => b.s - a.s);
@@ -134,15 +139,15 @@ function summarise(rows) {
 console.log(`multi-partner pairings benchmark, space = ${SPACE_NAME}`);
 console.log(`${fixtures.pairings.length} headings, ${fixtures.pairings.reduce((n, e) => n + e.acceptable.length, 0)} acceptable partners (strict: canonical 400-normal instance)\n`);
 
-for (const [name, scoreOf, guard] of METRICS) {
-  const { rows, missing, used } = evaluate(scoreOf, guard);
+for (const [name, scoreOf, filter, detail] of METRICS) {
+  const { rows, missing, used } = evaluate(scoreOf, filter);
   const s = summarise(rows);
   const f3 = x => x.toFixed(3);
   console.log(`${name}  (${used} headings)`);
   console.log(`  hit@10 ${s.at(10)}/${used}   hit@50 ${s.at(50)}/${used}   hit@100 ${s.at(100)}/${used}   median best-rank ${s.median}`);
   console.log(`  recall@10 ${f3(s.recallAt(10))}   recall@50 ${f3(s.recallAt(50))}   recall@100 ${f3(s.recallAt(100))}`);
   console.log(`  nDCG@10  ${f3(s.ndcgAt(10))}   nDCG@50  ${f3(s.ndcgAt(50))}   nDCG@100  ${f3(s.ndcgAt(100))}`);
-  if (guard) {
+  if (detail) {
     console.log(`\n  ${'heading'.padEnd(24)}${'#acc'.padStart(5)}${'best'.padStart(7)}${'rec@100'.padStart(9)}${'of'.padStart(8)}`);
     for (const r of [...rows].sort((a, b) => a.best - b.best)) {
       const rec = r.ranks.filter(x => x <= 100).length / r.n;

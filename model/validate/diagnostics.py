@@ -8,6 +8,10 @@ pairing quality (the paper's own dual encoder trades silhouette for better
 downstream behavior), so the decision metric stays downstream: benchmark.mjs
 hit@k and nullmodel.mjs against the frequency null.
 
+`style_content.py` is the companion style-vs-content screen (does the space track
+the font or the text?). It needs its own renders, not a precomputed space, so it
+lives in its own module.
+
 Run: model/.venv/bin/python model/validate/diagnostics.py [space ...]
 Defaults to every space in model/out/spaces/.
 """

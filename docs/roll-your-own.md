@@ -228,6 +228,8 @@ node model/validate/benchmark.mjs        # hit@k / recall@k / nDCG@k on the mine
 node model/validate/mine-pairings.mjs    # re-mine that fixture from public sources (network)
 node model/validate/evaluate.mjs         # engine: legible-body rate, balance, spread
 node model/validate/reranker.test.mjs    # JS/Python re-ranker parity + the endorsed-partner check
+node model/validate/engine_interaction.mjs  # is the learned scorer safe inside generate()?
+model/.venv/bin/python model/validate/style_content.py  # style-vs-content screen: font or text?
 model/.venv/bin/python model/validate/reranker.py   # the learned re-ranker candidate
 ```
 

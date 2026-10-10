@@ -68,6 +68,7 @@ def fixture(root, **over):
     write(root, "data/pca.json", {"v": 1, "dim": DIM, "backboneDim": BACKBONE_DIM, "bin": "pca.bin"})
     write(root, "data/corpus.version.json", version)
     write(root, "data/reranker.json", {"v": 1, "features": [], "weights": [], "bias": 0.0})
+    write(root, "data/pairgraph.json", {"v": 1, "k1": 10, "k2": 10, "headings": []})
     write(root, "model.json", {
         "v": 1, "backbone": BACKBONE, "preprocess": PREPROCESS, "dim": BACKBONE_DIM,
         "file": "dinov2_vits14.fp16.onnx", "bytes": 1, "sha256": "0" * 64,
