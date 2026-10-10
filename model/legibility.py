@@ -93,17 +93,35 @@ def normalize(values):
     return (order / max(len(values) - 1, 1)).tolist()
 
 
+def o_aspect(path):
+    """Width/height of the 'o' ink: a proportion axis (condensed vs wide)."""
+    ink = np.asarray(Image.open(path).convert("L")) < 128
+    x0, y0, x1, y1 = cell_bounds(O)
+    oc = ink[y0:y1, x0:x1]
+    cols, rows = np.where(oc.any(axis=0))[0], np.where(oc.any(axis=1))[0]
+    if not len(cols) or not len(rows):
+        return None
+    return round(float((cols.max() - cols.min() + 1) / (rows.max() - rows.min() + 1)), 4)
+
+
 def render_axes(instances, png_dir=PNG_DIR):
     """Per-instance render axes for the shipped multi-axis pairing metric.
 
-    Only x-height is shipped today: it is the skeleton gate the serif-contrast
-    term fires on. Returns {instance id: {"xh":..}}.
+    Shipped: x-height (the skeleton gate and the linear structural match) and
+    width ('o' aspect, the proportion match). Returns
+    {instance id: {"xh":.., "width":..}}.
     """
     out = {}
     for inst in instances:
-        f = features_for(png_dir / f"{inst['id']}.png")
-        if f is not None:
-            out[inst["id"]] = {"xh": f["xh"]}
+        p = png_dir / f"{inst['id']}.png"
+        f = features_for(p)
+        if f is None:
+            continue
+        row = {"xh": f["xh"]}
+        w = o_aspect(p)
+        if w is not None:
+            row["width"] = w
+        out[inst["id"]] = row
     return out
 
 

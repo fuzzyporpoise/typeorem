@@ -150,6 +150,7 @@ def append_house_faces(pca=None):
     base = len(instances)
     for k, inst in enumerate(hinst):
         xh = axes.get(inst["id"], {}).get("xh")
+        width = axes.get(inst["id"], {}).get("width")
         instances.append({
             "id": base + k,
             "family": inst["family"],
@@ -164,6 +165,7 @@ def append_house_faces(pca=None):
             "source": "local",
             "legibility": None,
             "xh": round(float(xh), 4) if xh is not None else None,
+            "width": round(float(width), 4) if width is not None else None,
             "search": f"{inst['family']} {label_of(inst)} {inst['category']}".lower(),
         })
 
@@ -227,7 +229,9 @@ def main():
     print("legibility proxy fit")
     axes = render_axes(instances, CACHE / "224")
     xh = [axes.get(i["id"], {}).get("xh") for i in instances]
-    print(f"render axes: xh for {sum(v is not None for v in xh)}/{len(xh)} instances")
+    width = [axes.get(i["id"], {}).get("width") for i in instances]
+    print(f"render axes: xh for {sum(v is not None for v in xh)}/{len(xh)} instances, "
+          f"width for {sum(v is not None for v in width)}/{len(width)}")
     emit(SITE, instances, families, q, scale, pca, {
         "policyVersion": POLICY_VERSION, "glyphSetVersion": GLYPH_SET_VERSION,
         # The glyph grid travels with the corpus as its geometry contract: the
@@ -240,7 +244,7 @@ def main():
         "backbone": BACKBONE, "preprocess": PREPROCESS, "pcaSeed": 0,
         "googleFontsCommit": google_fonts_commit(CACHE / "google-fonts"),
         "count": int(q.shape[0]), "dim": DIM,
-    }, legibility, xh)
+    }, legibility, xh, width)
     np.savez(OUT / "pca_model.npz", mean=pca.mean_, components=pca.components_)
     write_json(OUT / "render-hashes.json", hashes)
     if house_font_available():
@@ -251,8 +255,22 @@ def main():
     report(SITE)
 
 
+def private_arg(argv):
+    """The directory for a `--private` run: the flag's value, else None (the
+    caller falls back to TYPEOREM_PRIVATE_DIR). `--private` alone is allowed when
+    the env var is set."""
+    if "--private" not in argv:
+        return None
+    rest = argv[argv.index("--private") + 1:]
+    return rest[0] if rest and not rest[0].startswith("-") else None
+
+
 if __name__ == "__main__":
-    if "--house" in sys.argv[1:]:
+    argv = sys.argv[1:]
+    if "--private" in argv:
+        import private_corpus
+        private_corpus.write_private_corpus(private_corpus.resolve_root(private_arg(argv)))
+    elif "--house" in argv:
         paths.require_site("the house append writes into the site's site/data")
         append_house_faces()
     else:

@@ -73,6 +73,13 @@ function canonId(family) {
 // restricts body recommendations to text weights; the Microsoft rule additionally
 // asks that the body not be heavier than the heading, arXiv:2501.10969).
 // The body guardrail mirrors BODY_WEIGHT_MIN/MAX in site/js/engine.js.
+//
+// The contrast control `t`: the app's recommendation rows rank at t=1 (app.js
+// `rankSlot(..., 1, slot, learned)`, the hand fallback to the learned re-ranker),
+// so t=1 is the shipped ranking this benchmark measures. `generate`'s 3-slot
+// objective uses t=0 (its default, app.js state.t), which those rows do not. The
+// `generate t=0` control below reports the same metric at the engine default, to
+// keep the difference visible rather than folded into the baseline.
 const BODY_MIN = 300, BODY_MAX = 700;
 const bodyGuard = inst => inst.weight >= BODY_MIN && inst.weight <= BODY_MAX;
 const strokeOrder = (inst, heading) => inst.weight <= heading.weight;
@@ -81,6 +88,7 @@ const METRICS = [
   ['product (legacy)', i => contrastAt(corpus.units, corpus.dim, corpus._hi, i), null, false],
   ['shipped (role+axis)', i => roleScore(corpus, cmax, corpus._hi, i, 1, 'body'), null, false],
   ['shipped + body guard', i => roleScore(corpus, cmax, corpus._hi, i, 1, 'body'), bodyGuard, true],
+  ['shipped + body guard (generate t=0)', i => roleScore(corpus, cmax, corpus._hi, i, 0, 'body'), bodyGuard, false],
   ['shipped + body + stroke', i => roleScore(corpus, cmax, corpus._hi, i, 1, 'body'),
     (inst, heading) => bodyGuard(inst) && strokeOrder(inst, heading), false],
 ];

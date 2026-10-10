@@ -47,6 +47,7 @@ verify with `node model/validate/fetch-fixtures.mjs`.
     node model/validate/replay.mjs --seed "Lora regular" --top 10
     node model/validate/replay.mjs --form min
     node model/validate/reranker.test.mjs
+    node model/validate/private.test.mjs
 
 The harnesses need the app checkout (TSK-016), because they score the metric the
 browser ships and read the corpus the app serves. `TYPEOREM_SITE_DIR` wins when set
@@ -99,17 +100,106 @@ holds the engine evaluate):
 
 | benchmark (strict)   | shipped + body guard | + stroke order |
 |----------------------|----------------------|----------------|
-| endorsement hit@50   | 18/101               | 23/101         |
-| endorsement hit@100  | 27/101               | 33/101         |
-| endorsement median   | 286                  | 184            |
-| usage hit@100        | 19/138               | 24/138         |
-| usage median         | 816                  | 532            |
+| endorsement hit@50   | 22/101               | 27/101         |
+| endorsement hit@100  | 31/101               | 36/101         |
+| endorsement median   | 306                  | 179            |
+| usage hit@100        | 22/138               | 28/138         |
+| usage median         | 781                  | 476            |
+
+(Numbers as of 2026-10-10, after the structural terms shipped in `roleScore`: x-height
+`STRUCT_WEIGHT = 0.5` (a wash) and width `WIDTH_WEIGHT = 0.5` (a clean win). See below.)
 
 `engine_interaction.mjs`'s shipped row is the evaluate check: balance 0.810 ->
 0.801, so it does not repeat the axis term's collapse (0.82 -> 0.65). Caveat:
 the strict rule canonicalizes headings to their 400-normal instance, so on the
 fixture the guard reads as "body not heavier than 400"; at runtime the rule is
 heading-relative.
+
+The rows above use the contrast control `t=1`, the app's recommendation ranking
+(`app.js` `rankSlot(..., 1, slot, learned)`), so the baseline is what ships.
+`benchmark.mjs` also prints `shipped + body guard (generate t=0)`, the same metric
+at `generate`'s default control, which ranks endorsed partners much higher
+(hit@50 31/101, hit@100 43/101, median 186). That gap is a candidate change in the
+app (rank recommendations at `state.t`, default 0), not a harness fix.
+
+## Private corpus tuning (`private.mjs`)
+
+`private.mjs` scores the shipped metric and a set of challengers over the owner's
+own pairings, against the owner's own (possibly licensed) faces. Those faces never
+ship: they live in a private corpus written outside both checkouts
+(`model/build_corpus.py --private`, science `TSK-001`), and the harness merges
+that corpus with the shipped one exactly as the app's dev overlay will (public
+rows, then private rows), so it measures the ranking the tool actually runs.
+
+It resolves the labels against the merged corpus (the multi-partner schema or the
+legacy heading + partners list, with an optional `aliases` map, `dropped` entries,
+and a per-partner `role` of `body` or `accent`), ranks every eligible other-family
+instance per heading under the strict canonical-400-normal rule, and reports
+**hit@k**, **recall@k**, **nDCG@k**, and the median best rank per candidate, plus a
+per-pairing pass/fail table and, for each change, which pairings it breaks or fixes.
+Each partner is measured in its own slot: a `body` partner in the text-weight pool
+with the role legibility term, an `accent` partner in the unrestricted pool, so a
+role is never penalized by the other slot's guards. `--sweep` adds a grid over the
+shipped constants (role lambda, serif weight, contrast `t`, xh sigma); `--family-level`
+scores a family by its best role-eligible cut (see below). It also refuses a
+private corpus whose recorded PCA sha256 does not match the shipped `pca.bin`, so a
+corpus left in an old projection space after a rebuild is caught rather than
+silently mis-scored. It reads and prints only; the chosen constants are copied into
+`site/js/engine.js` by hand and the run goes into the private `.todo/metric-research.md`.
+
+    node model/validate/private.mjs
+    node model/validate/private.mjs --private ~/.cache/typeorem --sweep --k 10
+    node model/validate/private.test.mjs
+
+Labels default to `<private-root>/pairings.json`, else `fixtures/user-pairings.json`.
+The private root itself defaults to `~/.cache/typeorem` (machine-local, no dotfiles,
+no cloud sync); the writer refuses a root inside a git work tree or a cloud-sync
+folder. Eleven headings is a smoke alarm ("did this change break a pairing I love?"),
+not a training target: one pairing is roughly 7% of the signal, so constants chosen
+here are validated against the public benchmark, which stays the arbiter of general
+quality.
+
+**Granularity: family vs instance.** The labels name families ("Grenette",
+"Styrene"), but the tool ranks instances (family x weight x style), and a family can
+ship many cuts (Arizona Flare 30, Styrene 24, Sweet Sans 18). By default the harness
+scores at the instance level with the strict canonical-400-normal rule the public
+benchmark uses. `--family-level` (or `evaluateFamilies`) instead scores a family by
+its best role-eligible cut and treats a partner family as relevant however its cut is
+named: the granularity the labels are written at, and it removes head crowding (on
+the shipped metric a heading's instance-level top-50 covers only ~24 families). It
+lifts the public benchmark a lot (hit@50 18 -> 61 at the app's config), but part of
+that is the "any cut counts" relevance the benchmark deliberately treats as
+flattering, so keep the instance-level benchmark as the discriminative measure and
+use family-level to match the tool and the gold set.
+
+## Axis diagnostic (`features.py`, `axes.mjs`)
+
+Which signals do we already measure but never score? `features.py` dumps the
+renderer's per-instance axes (x-height, stroke contrast, aperture, 'o' aspect) for
+the shipped corpus and, with `--private`, a private corpus, into one JSON aligned to
+the order `axes.mjs` merges them. `axes.mjs` then ranks candidates under each axis
+alone and as additions to the shipped metric, reporting hit@k / recall@k / nDCG@k /
+median per axis, plus a per-heading rank matrix. It reproduces `benchmark.mjs`'s
+"shipped + body guard" row exactly, so its numbers are comparable.
+
+    TYPEOREM_SITE_DIR=... model/.venv/bin/python model/validate/features.py --private
+    TYPEOREM_SITE_DIR=... node model/validate/axes.mjs --labels fixtures/user-pairings.json
+    TYPEOREM_SITE_DIR=... node model/validate/axes.mjs --shipped-only \
+        --labels fixtures/fonts-pairings.json --features /tmp/shipped-features.json
+
+Result (2026-10-10): width/proportion and x-height match are unscored and carry signal.
+Both shipped in the engine as bounded structural matches. x-height alone
+(`STRUCT_WEIGHT = 0.5`) was a wash across the two fixtures (endorsement hit@100 27 -> 29,
+usage 19 -> 16, both ~1-2 SE). Width (`WIDTH_WEIGHT = 0.5`) is the clean win: endorsement
+29 -> 31 and usage 16 -> 22, net +4 endorsement / +3 usage hit@100 over the old baseline.
+The width axis is emitted by the pipeline (`legibility.render_axes` + `emit.py`) and
+backfilled into the current `site/data/catalog.json` by `model/export_axes.py` (re-emits
+`xh` + `width` from the cached renders; no re-embed, no PCA refit). Stroke contrast and
+aperture do not help. The diagnostic also makes the contrast-control gap visible: at the
+engine default `t=0` the metric scores 42/101 hit@100 against the app's recommendation
+ranking at `t=1` (31/101). See the app's `.todo/metric-research.md`, "Structural terms".
+The feature dump is derived from licensed renders with `--private`, so keep its output
+under the private root.
 
 ## Usage-mined pairs and null models (`mine-fontsinuse.mjs`, `nullmodel.mjs`)
 
