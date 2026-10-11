@@ -102,10 +102,23 @@ export function familiesMatching(instances, elig, name, aliases = {}) {
   return [...(exact.size ? exact : prefix)].sort();
 }
 
-function repId(instances, elig, family) {
+// The instance a `cut` names within `family` ({ weight, style }), else the
+// canonical 400-normal cut. A cut the family does not carry falls back to the
+// canonical one with a warning, so a typo does not silently render the wrong
+// face.
+export function pickCut(instances, elig, family, cut, warn = () => {}) {
   const cands = elig.filter(i => instances[i].family === family);
   if (!cands.length) return null;
-  return cands.find(i => instances[i].weight === 400 && instances[i].style === 'normal') ?? cands[0];
+  if (cut && (cut.weight != null || cut.style != null)) {
+    const weight = cut.weight ?? null;
+    const style = cut.style == null ? 'normal' : (cut.style === 'italic' ? 'italic' : 'normal');
+    let hit = cands.find(i => (weight == null || instances[i].weight === weight)
+      && instances[i].style === style);
+    if (hit == null && cut.style == null) hit = cands.find(i => weight == null || instances[i].weight === weight);
+    if (hit != null) return hit;
+    warn(`no ${[cut.weight, cut.style].filter(v => v != null).join(' ')} cut of "${family}"; using the canonical cut`);
+  }
+  return canonId(instances, elig, family);
 }
 
 // Families whose name looks like a missing label name, for a helpful "did you
@@ -127,8 +140,12 @@ function canonId(instances, elig, family) {
 
 // Resolve the labels (the multi-partner schema, or the legacy heading + partners
 // list) to instance ids over the merged corpus. `dropped` entries are honoured so
-// a face the owner no longer has does not read as a metric miss.
-export function resolveLabels(corpus, labels, warn = () => {}) {
+// a face the owner no longer has does not read as a metric miss. A per-partner
+// `cut` ({ weight, style }) picks a specific instance; without it the role picks
+// the canonical 400-normal cut. `sameFamily` keeps partners in the heading's own
+// family (the browser's family-diversity rule excludes them, so the harness
+// defaults to false and the by-eye sheet sets it true).
+export function resolveLabels(corpus, labels, warn = () => {}, { sameFamily = false } = {}) {
   const elig = eligibleIds(corpus);
   const aliases = labels.aliases || {};
   const dropped = new Set();
@@ -141,7 +158,7 @@ export function resolveLabels(corpus, labels, warn = () => {}) {
     const heading = isList ? entry[0] : entry.heading;
     const partnerSpecs = (isList ? entry.slice(1) : (entry.acceptable || []))
       .map(a => (typeof a === 'string' ? { family: a, role: 'body' }
-        : { family: a.family, role: a.role || 'body' }))
+        : { family: a.family, role: a.role || 'body', cut: a.cut }))
       .filter(p => !dropped.has(`${norm(heading)}|${norm(p.family)}`)
         && !dropped.has(`${norm(heading)}|`));
     if (!partnerSpecs.length) continue;
@@ -150,15 +167,15 @@ export function resolveLabels(corpus, labels, warn = () => {}) {
     if (!hFams.length) { missing.push(heading); continue; }
     if (hFams.length > 1) warn(`heading "${heading}" matches ${hFams.join(', ')}; using "${hFams[0]}" (add an alias to pick a cut)`);
     const headingFamily = hFams[0];
-    const hi = repId(corpus.instances, elig, headingFamily);
+    const hi = pickCut(corpus.instances, elig, headingFamily, entry.cut, warn);
 
     const partners = new Map();
     for (const spec of partnerSpecs) {
       const fams = familiesMatching(corpus.instances, elig, spec.family, aliases);
       if (!fams.length) { missing.push(spec.family); continue; }
       for (const f of fams) {
-        const c = canonId(corpus.instances, elig, f);
-        if (c != null && corpus.instances[c].family !== headingFamily) {
+        const c = pickCut(corpus.instances, elig, f, spec.cut, warn);
+        if (c != null && (sameFamily || corpus.instances[c].family !== headingFamily)) {
           partners.set(c, { id: c, family: f, role: spec.role, label: spec.family });
         }
       }

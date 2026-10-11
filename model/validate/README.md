@@ -48,6 +48,7 @@ verify with `node model/validate/fetch-fixtures.mjs`.
     node model/validate/replay.mjs --form min
     node model/validate/reranker.test.mjs
     node model/validate/private.test.mjs
+    node model/validate/specimen.test.mjs
 
 The harnesses need the app checkout (TSK-016), because they score the metric the
 browser ships and read the corpus the app serves. `TYPEOREM_SITE_DIR` wins when set
@@ -115,12 +116,14 @@ the strict rule canonicalizes headings to their 400-normal instance, so on the
 fixture the guard reads as "body not heavier than 400"; at runtime the rule is
 heading-relative.
 
-The rows above use the contrast control `t=1`, the app's recommendation ranking
-(`app.js` `rankSlot(..., 1, slot, learned)`), so the baseline is what ships.
-`benchmark.mjs` also prints `shipped + body guard (generate t=0)`, the same metric
-at `generate`'s default control, which ranks endorsed partners much higher
-(hit@50 31/101, hit@100 43/101, median 186). That gap is a candidate change in the
-app (rank recommendations at `state.t`, default 0), not a harness fix.
+The rows above use the contrast control `t=1`, which is the benchmark's own
+baseline. The app's recommendation rows used to hardcode `t=1`
+(`rankSlot(..., 1, ...)`) while `generate` runs at its own default `t=0`;
+`rankSlot` now passes `state.t` (default 0), so the recommendations honour the
+contrast slider. `benchmark.mjs` also prints `shipped + body guard (generate
+t=0)`, the same metric at that control, which ranks endorsed partners much higher
+(hit@50 31/101, hit@100 43/101, median 186) than the `t=1` baseline (18/27/286).
+That is the ranking a deploy falls back to when it lacks the learned re-ranker.
 
 ## Private corpus tuning (`private.mjs`)
 
@@ -133,8 +136,9 @@ rows, then private rows), so it measures the ranking the tool actually runs.
 
 It resolves the labels against the merged corpus (the multi-partner schema or the
 legacy heading + partners list, with an optional `aliases` map, `dropped` entries,
-and a per-partner `role` of `body` or `accent`), ranks every eligible other-family
-instance per heading under the strict canonical-400-normal rule, and reports
+a per-partner `role` of `body` or `accent`, and an optional `cut` ({ weight, style })
+naming the exact instance; without a cut it takes the canonical 400-normal), ranks
+every eligible other-family instance per heading, and reports
 **hit@k**, **recall@k**, **nDCG@k**, and the median best rank per candidate, plus a
 per-pairing pass/fail table and, for each change, which pairings it breaks or fixes.
 Each partner is measured in its own slot: a `body` partner in the text-weight pool
@@ -157,7 +161,12 @@ no cloud sync); the writer refuses a root inside a git work tree or a cloud-sync
 folder. Eleven headings is a smoke alarm ("did this change break a pairing I love?"),
 not a training target: one pairing is roughly 7% of the signal, so constants chosen
 here are validated against the public benchmark, which stays the arbiter of general
-quality.
+quality. The owner's gold set names cuts (Grenette 300; Tobias thin) and, for some
+pairings, the heading's own family as the body (a monochromatic display+text
+pairing). A cut is honoured by both the harness and the sheet. A same-family body
+partner is kept only under `sameFamily` (the sheet sets it); the harness excludes
+it by default, matching the browser's family-diversity rule, so the run scores nine
+of the ten headings (Signifier's only partner is its own family).
 
 **Granularity: family vs instance.** The labels name families ("Grenette",
 "Styrene"), but the tool ranks instances (family x weight x style), and a family can
@@ -171,6 +180,27 @@ lifts the public benchmark a lot (hit@50 18 -> 61 at the app's config), but part
 that is the "any cut counts" relevance the benchmark deliberately treats as
 flattering, so keep the instance-level benchmark as the discriminative measure and
 use family-level to match the tool and the gold set.
+
+## Private specimen sheet (`specimen.mjs`)
+
+`private.mjs` prints ranks; `specimen.mjs` prints faces. The glyph grid is a
+fingerprint, not a specimen, so a by-eye review of the owner's pairings (plan B3)
+needs the real faces set in real text. The generator reads the labels and both
+catalogs and writes a self-contained page into the private root
+(`~/.cache/typeorem/specimen.html`): an `@font-face` per private cut it uses and
+the Google css2 links for any public partner, one section per pairing with the
+heading at display size and each partner at its role's size. It honours label
+cuts and renders same-family body partners, so the sheet shows the pairing as
+labelled even where the harness cannot score it.
+
+    node model/validate/specimen.mjs
+    node model/validate/specimen.mjs --private /some/where --out /some/where/sheet.html
+    python3 -m http.server -d ~/.cache/typeorem 8000   # then open /specimen.html
+
+It writes ONLY inside the private root and refuses an output path in either
+checkout, so a sheet of licensed faces can never land where it could be committed
+or published. `specimen.test.mjs` covers the escaping, the merge, the write
+guard, and the emitted page.
 
 ## Axis diagnostic (`features.py`, `axes.mjs`)
 

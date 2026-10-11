@@ -57,6 +57,29 @@ ok('an alias resolves a name', JSON.stringify(P.familiesMatching(corpus.instance
 ok('an unknown name resolves to nothing', P.familiesMatching(corpus.instances, elig, 'Zeta').length === 0);
 ok('nearestFamilies suggests a near miss', P.nearestFamilies(corpus.instances, elig, 'Bet').includes('Beta'));
 
+// --- cuts name an instance; a same-family body partner is opt-in ---------------
+const famCorpus = { dim: 0, count: 4, instances: [
+  inst({ family: 'Fam', weight: 400, style: 'normal' }),
+  inst({ family: 'Fam', weight: 400, style: 'italic' }),
+  inst({ family: 'Fam', weight: 300, style: 'normal' }),
+  inst({ family: 'Other', weight: 400, style: 'normal' }),
+] };
+famCorpus.instances.forEach((c, i) => { c.id = i; });
+const famElig = P.eligibleIds(famCorpus);
+ok('a cut picks the named weight', P.pickCut(famCorpus.instances, famElig, 'Fam', { weight: 300 }) === 2);
+ok('a cut prefers normal when the style is unstated', P.pickCut(famCorpus.instances, famElig, 'Fam', { weight: 400 }) === 0);
+ok('a cut can name the italic', P.pickCut(famCorpus.instances, famElig, 'Fam', { weight: 400, style: 'italic' }) === 1);
+ok('no cut falls back to the canonical 400-normal', P.pickCut(famCorpus.instances, famElig, 'Fam', null) === 0);
+const cutLabels = { pairings: [
+  { heading: 'Fam', acceptable: [{ family: 'Other' }, { family: 'Fam', role: 'body', cut: { weight: 300 } }] },
+] };
+const cutDefault = P.resolveLabels(famCorpus, cutLabels);
+ok('the harness drops a same-family partner by default',
+  cutDefault.rows[0].partners.length === 1 && cutDefault.rows[0].partners[0].family === 'Other');
+const cutSame = P.resolveLabels(famCorpus, cutLabels, () => {}, { sameFamily: true });
+ok('sameFamily keeps the heading family as a partner', cutSame.rows[0].partners.length === 2);
+ok('the same-family partner honours its cut', cutSame.rows[0].partners.some(p => p.id === 2 && p.role === 'body'));
+
 // --- labels: multi-partner, legacy list, dropped, aliases, missing ------------
 const labels = {
   aliases: { Bee: 'Beta' },
