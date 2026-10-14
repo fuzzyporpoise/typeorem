@@ -57,7 +57,7 @@ function axisCandidates(corpus, cmax, E, features) {
   const apertureMatch = (i, hi) => match(feat(hi, 'aperture'), feat(i, 'aperture'), 0.3);
   const catSplit = (i, hi) => (inst(hi).category !== inst(i).category ? 1 : 0);
   const legibility = i => E.legibility(corpus, null, i);
-  const bodyGuard = x => x.weight >= E.BODY_WEIGHT_MIN && x.weight <= E.BODY_WEIGHT_MAX;
+  const bodyGuard = x => E.bodySuitable(x);
   const roleGuard = (inst, h, role) => role !== 'body' || bodyGuard(inst);
   const bench = (i, hi) => E.roleScore(corpus, cmax, hi, i, 1, 'body');
 
