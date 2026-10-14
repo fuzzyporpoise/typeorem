@@ -87,6 +87,11 @@ private = work / "private"
 (private / "fonts").mkdir(parents=True)
 make_font(private / "fonts" / "Alpha-Regular.otf", "Alpha", "Regular", 400)
 make_font(private / "fonts" / "Beta-Bold.otf", "Beta", "Bold", 700)
+# The width-trial shape: name 16 is the bare family, the width lives only in
+# the file stem (the subfamily records are abbreviated). The writer must fold
+# the qualifier into the family instead of collapsing the widths away.
+make_font(private / "fonts" / "ZX-Grotesk-Bold-Trial.otf", "ZX Grotesk Trial", "Bd", 700)
+make_font(private / "fonts" / "ZX-Grotesk-Compressed-Bold-Trial.otf", "ZX Grotesk Trial", "Cm Bd", 700)
 
 os.environ["TYPEOREM_SITE_DIR"] = str(app)
 pc.load_pca = lambda: (np.zeros(384, dtype=np.float32),
@@ -96,7 +101,16 @@ app_before, sci_before, work_before = snapshot(app), snapshot(science), snapshot
 catalog = pc.write_private_corpus(private, embedder=StubEmbedder())
 app_after, sci_after, work_after = snapshot(app), snapshot(science), snapshot(work)
 
-ok("the run produced the private rows", len(catalog) == 2)
+ok("the run produced the private rows", len(catalog) == 4)
+families = {c["family"] for c in catalog}
+ok("a width-named file folds the qualifier into the family",
+   "ZX Grotesk Trial Compressed" in families and "ZX Grotesk Trial" in families)
+ok("the qualifier reads the stem, not the abbreviated name records",
+   pc._qualifier("ZX Grotesk Trial", "ZX-Grotesk-X-Compressed-Black-Italic-Trial.otf") == "X Compressed")
+ok("a qualifier the family already names is not repeated",
+   pc._qualifier("FD Serif Compressed Trial", "FdSerifCompressedTrial-Bold.otf") is None)
+ok("an unknown leftover leaves the base family standing",
+   pc._qualifier("Alpha", "Alpha-Swash-400.otf") is None)
 ok("the app tree is byte-identical", app_before == app_after)
 ok("the science tree is byte-identical", sci_before == sci_after)
 

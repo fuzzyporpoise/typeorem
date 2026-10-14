@@ -57,11 +57,23 @@ SKIP_DIRS = {CORPUS_DIRNAME, CACHE_DIRNAME}
 WGHT_LADDER = (300, 400, 700, 900)
 
 WEIGHT_WORDS = {
-    "thin": 100, "extralight": 200, "ultralight": 200, "light": 300,
-    "regular": 400, "normal": 400, "book": 400, "medium": 500,
+    "thin": 100, "extralight": 200, "ultralight": 200, "lazer": 250,
+    "light": 300, "regular": 400, "normal": 400, "book": 400, "medium": 500,
     "semibold": 600, "demibold": 600, "bold": 700,
     "extrabold": 800, "ultrabold": 800, "black": 900, "heavy": 900,
 }
+
+# Width and mono qualifiers fold into the family, the public catalog's convention
+# (Archivo Narrow is its own family next to Archivo), so a width-named file does
+# not collapse onto the base family's weight ladder. The file stem is the source,
+# never the name records: trial cuts abbreviate their subfamilies (name 16 is
+# "ZX Grotesk Trial" with name 17 "X Cm Bl It"), so only the stem spells the
+# qualifier out.
+QUALIFIER_WORDS = {
+    "x", "mono", "compressed", "condensed", "narrow", "extended",
+    "expanded", "wide",
+}
+QUALIFIER_STYLE_WORDS = {"italic", "oblique", "roman", "trial", "demo"}
 
 
 def pca_bin_bytes(mean, components):
@@ -225,6 +237,27 @@ def _name(font, *name_ids):
     return None
 
 
+def _stem_words(text):
+    """Lowercase word tokens: split camel boundaries, then any non-letter."""
+    text = re.sub(r"([a-z])([A-Z])", r"\1 \2", text)
+    return [w.lower() for w in re.split(r"[^A-Za-z]+", text) if w]
+
+
+def _qualifier(family, source_path):
+    """The width/mono qualifier the file stem carries beyond the family name
+    ("ZX-Grotesk-X-Compressed-Bold-Trial" under "ZX Grotesk Trial" -> "X
+    Compressed"), or None. Conservative: every leftover word must be qualifier
+    vocabulary (an unknown leftover means the stem is ambiguous and the base
+    family stands), and a qualifier the family already names is not repeated."""
+    drop = set(_stem_words(family)) | set(WEIGHT_WORDS) | QUALIFIER_STYLE_WORDS
+    rest = [w for w in _stem_words(Path(source_path).stem) if w not in drop]
+    if not rest or not set(rest) - {"x"}:
+        return None
+    if any(w not in QUALIFIER_WORDS for w in rest):
+        return None
+    return " ".join(w.capitalize() for w in rest)
+
+
 def _family_name(font, path, fallback_path=None):
     """The face's family. Prefers the font's own name record; when that is missing
     or junk, falls back to the containing directory (the owner organizes fonts by
@@ -268,6 +301,9 @@ def font_metadata(path, fallback_path=None):
     font = TTFont(str(path), lazy=True)
     try:
         family = _family_name(font, path, fallback_path)
+        qualifier = _qualifier(family, fallback_path or path)
+        if qualifier:
+            family = f"{family} {qualifier}"
         subfamily = _name(font, 17, 2) or ""
         weight = 400
         try:

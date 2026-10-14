@@ -196,8 +196,8 @@ export function resolveLabels(corpus, labels, warn = () => {}, { sameFamily = fa
 export function buildCandidates(corpus, cmax, E, { sweeps = false } = {}) {
   const serifSplit = (a, b) => (corpus.instances[a].category === 'serif')
     !== (corpus.instances[b].category === 'serif');
-  const bodyGuard = inst => inst.weight >= E.BODY_WEIGHT_MIN && inst.weight <= E.BODY_WEIGHT_MAX;
-  const stroke = (inst, heading) => inst.weight <= heading.weight;
+  const bodyGuard = inst => E.bodySuitable(inst);
+  const stroke = (inst, heading) => E.isCustomRow(inst) || inst.weight <= heading.weight;
   const variant = ({ t = 0, lambda = E.ROLE_LAMBDA, serif = E.SERIF_WEIGHT,
                      sigma = E.XH_GATE_SIGMA, leg = 'stored' }) => (i, hi, role) => {
     let s = E.pairScore(corpus, cmax, hi, i, t)
@@ -233,8 +233,11 @@ export function buildCandidates(corpus, cmax, E, { sweeps = false } = {}) {
 // slot: a `body` partner is measured in the body ranking (text-weight pool, the
 // role legibility term), an `accent` partner in the accent ranking, so a role is
 // never penalized by the other slot's guards. Reports hit@k, recall@k, nDCG@k, and
-// the best rank per pairing.
-export function evaluate(candidates, corpus, rows, K) {
+// the best rank per pairing. `sameFamily` admits instances of the heading's own
+// family to the pool (the heading instance itself is always excluded, so a partner
+// naming the heading's exact cut stays unscorable instead of a vacuous rank 1);
+// the default follows the browser's family-diversity rule.
+export function evaluate(candidates, corpus, rows, K, { sameFamily = false } = {}) {
   const inst = i => corpus.instances[i];
   const results = new Map();
   for (const [name, spec] of candidates) {
@@ -246,7 +249,8 @@ export function evaluate(candidates, corpus, rows, K) {
       for (const role of row.roles) {
         const cand = [];
         for (let i = 0; i < corpus.count; i++) {
-          if (!inst(i).eligible || inst(i).family === hfam) continue;
+          if (!inst(i).eligible || i === hi) continue;
+          if (!sameFamily && inst(i).family === hfam) continue;
           if (spec.keep && !spec.keep(inst(i), inst(hi), role)) continue;
           cand.push(i);
         }
@@ -347,7 +351,8 @@ export function summarise(per, K) {
 
 function parseArgs(argv) {
   const out = { private: process.env.TYPEOREM_PRIVATE_DIR || null,
-    labels: process.env.TYPEOREM_PRIVATE_LABELS || null, k: 10, sweep: false, familyLevel: false };
+    labels: process.env.TYPEOREM_PRIVATE_LABELS || null, k: 10, sweep: false, familyLevel: false,
+    sameFamily: false };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === '--private') out.private = argv[++i];
@@ -355,6 +360,7 @@ function parseArgs(argv) {
     else if (a === '--k') out.k = parseInt(argv[++i], 10);
     else if (a === '--sweep') out.sweep = true;
     else if (a === '--family-level') out.familyLevel = true;
+    else if (a === '--same-family') out.sameFamily = true;
     else throw new Error(`unknown argument ${a}`);
   }
   return out;
@@ -411,7 +417,8 @@ export async function main(argv = process.argv.slice(2)) {
   const cmax = E.maxContrast(corpus, eligibleIds(corpus));
 
   const labels = readJson(resolvedLabels);
-  const { rows, missing } = resolveLabels(corpus, labels, m => console.error(`  ! ${m}`));
+  const { rows, missing } = resolveLabels(corpus, labels, m => console.error(`  ! ${m}`),
+    { sameFamily: args.sameFamily });
   console.log(`private corpus ${corpusDir}`);
   console.log(`  shipped ${shipped.count} rows + private ${priv.count} rows = ${corpus.count} (dim ${corpus.dim})`);
   if (pcaSha) console.log(`  projection pca.bin sha256 ${pcaSha.slice(0, 16)} (matches the shipped space)`);
@@ -432,7 +439,9 @@ export async function main(argv = process.argv.slice(2)) {
   console.log('');
 
   const candidates = buildCandidates(corpus, cmax, E, { sweeps: args.sweep });
-  const results = (args.familyLevel ? evaluateFamilies : evaluate)(candidates, corpus, rows, args.k);
+  const results = args.familyLevel
+    ? evaluateFamilies(candidates, corpus, rows, args.k)
+    : evaluate(candidates, corpus, rows, args.k, { sameFamily: args.sameFamily });
   const f3 = x => (Number.isFinite(x) ? x.toFixed(3) : '-');
   const baselineName = 'shipped (role+axis)';
   const baseline = results.get(baselineName);
