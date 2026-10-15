@@ -231,6 +231,20 @@ ranking at `t=1` (31/101). See the app's `.todo/metric-research.md`, "Structural
 The feature dump is derived from licensed renders with `--private`, so keep its output
 under the private root.
 
+`axes.mjs --screen` appends a bounded, pre-registered list of candidates built for
+the label review's reading (quiet neutral counterpoint, role convention): a
+body-centroid legibility for rows with no stored score, a workhorse-centroid
+similarity, a neutrality term (1 - extremity), an embedding typicality (mean cosine
+to the 20 nearest neighbours), a render plainness (closeness to the corpus median
+stroke contrast and 'o' aspect), and a similarity + typicality combination, each
+scored alone, as an addition to the shipped metric, and as an addition to the
+benchmark's own config (contrast t=1 + body guard). The list, the bar, and the
+off-ramp are pre-registered in the app's `.todo/metric-research.md`, "TSK-004
+screen"; the flag exists so the other runs are unchanged. Result (2026-10-14): none
+of the six carries the gold signal (0/13 hit@10 for every candidate against a bar of
+3); the off-ramp was taken, so the prosumer taste lever is more owner labels feeding
+the learned path, not another hand axis.
+
 ## Usage-mined pairs and null models (`mine-fontsinuse.mjs`, `nullmodel.mjs`)
 
 `mine-fontsinuse.mjs` builds a second, usage-based fixture

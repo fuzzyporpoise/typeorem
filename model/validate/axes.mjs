@@ -16,6 +16,11 @@ import { loadSpace, mergeCorpora, eligibleIds, resolveLabels, evaluate, evaluate
 //   model/.venv/bin/python model/validate/features.py --out ~/.cache/typeorem/features.json
 //   node model/validate/axes.mjs --private ~/.cache/typeorem --features ~/.cache/typeorem/features.json
 //   node model/validate/axes.mjs --labels model/validate/fixtures/fonts-pairings.json
+//   node model/validate/axes.mjs --screen --labels model/validate/fixtures/user-pairings.json
+//
+// `--screen` appends the bounded TSK-004 pre-registered candidates (see the
+// app's .todo/metric-research.md, "TSK-004 screen"); every other run is
+// unchanged.
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..', '..');
@@ -23,7 +28,7 @@ const DEFAULT_LABELS = path.join(ROOT, 'model', 'validate', 'fixtures', 'user-pa
 
 function parseArgs(argv) {
   const out = { private: process.env.TYPEOREM_PRIVATE_DIR || null, labels: null,
-    features: null, k: 10, matrix: true, shippedOnly: false, familyLevel: false };
+    features: null, k: 10, matrix: true, shippedOnly: false, familyLevel: false, screen: false };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === '--private') out.private = argv[++i];
@@ -33,6 +38,7 @@ function parseArgs(argv) {
     else if (a === '--no-matrix') out.matrix = false;
     else if (a === '--shipped-only') out.shippedOnly = true;
     else if (a === '--family-level') out.familyLevel = true;
+    else if (a === '--screen') out.screen = true;
     else throw new Error(`unknown argument ${a}`);
   }
   return out;
@@ -43,7 +49,97 @@ const num = v => typeof v === 'number' && Number.isFinite(v);
 // (so a missing feature never beats a real match).
 const match = (a, b, span) => (num(a) && num(b)) ? 1 - Math.min(1, Math.abs(a - b) / span) : -1;
 
-function axisCandidates(corpus, cmax, E, features) {
+// The TSK-004 screen (2026-10-14): a bounded, pre-registered candidate list
+// built for the label review's reading (quiet neutral counterpoint, role
+// convention). Appended only under `--screen` so the diagnostic table is
+// unchanged for every other run. See the app's .todo/metric-research.md,
+// "TSK-004 screen": one pass, six candidates, each scored alone and as an
+// addition to roleScore; the bar and the off-ramp are pre-registered there.
+function screenCandidates(corpus, cmax, E, features) {
+  const { dim, units } = corpus;
+  const axis = (name, score) => [name, { score }];
+  const shippedBase = (i, hi, role) => E.roleScore(corpus, cmax, hi, i, 0, role ?? 'body');
+  const centroid = E.centroid;
+  const dotVec = (i, vec) => { let s = 0; const o = i * dim; for (let j = 0; j < dim; j++) s += units[o + j] * vec[j]; return s; };
+  const centroidSim = i => (dotVec(i, centroid) + 1) / 2;
+  const neutrality = (i, hi) => 1 - E.contrastAt(units, dim, hi, i) / cmax;
+
+  // E1: the body legibility term reads the stored per-instance score and falls
+  // back to 0.5 when it is absent; private rows carry none, so they are
+  // structurally disfavored. The body-centroid projection is the recorded lever.
+  const bodyLegCentroid = (i, hi, role) => {
+    let s = E.pairScore(corpus, cmax, hi, i, 0)
+      + E.SERIF_WEIGHT * E.serifContrast(corpus, hi, i)
+      + E.STRUCT_WEIGHT * E.xhMatch(corpus, hi, i)
+      + E.WIDTH_WEIGHT * E.widthMatch(corpus, hi, i);
+    if (role === 'body') s += E.ROLE_LAMBDA * E.legibility(corpus, centroid, i);
+    return s;
+  };
+
+  // E4: typicality, the mean cosine to the K nearest eligible neighbours. A
+  // quiet face sits in a dense region of the space, an extreme one is an outlier.
+  const K = 20;
+  const elig = eligibleIds(corpus);
+  const typical = new Float64Array(corpus.count);
+  for (const i of elig) {
+    const sims = [];
+    const oi = i * dim;
+    for (const j of elig) {
+      if (j === i) continue;
+      let s = 0; const oj = j * dim;
+      for (let d = 0; d < dim; d++) s += units[oi + d] * units[oj + d];
+      sims.push(s);
+    }
+    sims.sort((a, b) => b - a);
+    const m = Math.min(K, sims.length);
+    let s = 0; for (let k = 0; k < m; k++) s += sims[k];
+    typical[i] = m ? s / m : 0;
+  }
+
+  // E5: render plainness, closeness to the corpus median stroke contrast and 'o'
+  // aspect (a plain, unremarkable face). 0 when the render features are absent.
+  const feat = (i, key) => (features ? features[i]?.[key] ?? null : null);
+  const median = vals => {
+    const a = vals.filter(Number.isFinite).sort((x, y) => x - y);
+    return a.length ? a[Math.floor(a.length / 2)] : null;
+  };
+  const medContrast = features ? median(elig.map(i => feat(i, 'contrast'))) : null;
+  const medAspect = features ? median(elig.map(i => feat(i, 'o_aspect'))) : null;
+  const SPAN = 0.3;
+  const plainness = i => {
+    const c = feat(i, 'contrast'), w = feat(i, 'o_aspect');
+    if (medContrast == null || medAspect == null || c == null || w == null) return 0;
+    return 1 - 0.5 * (Math.min(1, Math.abs(c - medContrast) / SPAN)
+      + Math.min(1, Math.abs(w - medAspect) / SPAN));
+  };
+
+  const W = 0.5;
+  const bench = (i, hi) => E.roleScore(corpus, cmax, hi, i, 1, 'body');
+  const roleGuard = (inst, h, role) => role !== 'body' || E.bodySuitable(inst);
+  return [
+    axis('E1 shipped + body-centroid leg', (i, hi, role) => bodyLegCentroid(i, hi, role)),
+    axis('E2 workhorse centroid', i => centroidSim(i)),
+    axis('E2 shipped + 0.5 centroid', (i, hi, role) => shippedBase(i, hi, role) + W * centroidSim(i)),
+    axis('E3 neutrality', (i, hi) => neutrality(i, hi)),
+    axis('E3 shipped + 0.5 neutral', (i, hi, role) => shippedBase(i, hi, role) + W * neutrality(i, hi)),
+    axis('E4 typicality', i => typical[i]),
+    axis('E4 shipped + 0.5 typical', (i, hi, role) => shippedBase(i, hi, role) + W * typical[i]),
+    axis('E5 render plainness', i => plainness(i)),
+    axis('E5 shipped + 0.5 plain', (i, hi, role) => shippedBase(i, hi, role) + W * plainness(i)),
+    axis('E6 similarity + typicality', (i, hi) => E.dotAt(units, dim, hi, i) + typical[i]),
+    axis('E6 shipped + 0.5 (cos+typ)', (i, hi, role) => shippedBase(i, hi, role) + W * (E.dotAt(units, dim, hi, i) + typical[i])),
+    // The public-guard variants: each term added to the benchmark's own config
+    // (contrast t=1 + body-weight guard), the row the bar is read against.
+    ['E1 guard + body-centroid leg', { score: bodyLegCentroid, keep: roleGuard }],
+    ['E2 guard + 0.5 centroid', { score: (i, hi, role) => bench(i, hi) + W * centroidSim(i), keep: roleGuard }],
+    ['E3 guard + 0.5 neutral', { score: (i, hi, role) => bench(i, hi) + W * neutrality(i, hi), keep: roleGuard }],
+    ['E4 guard + 0.5 typical', { score: (i, hi, role) => bench(i, hi) + W * typical[i], keep: roleGuard }],
+    ['E5 guard + 0.5 plain', { score: (i, hi, role) => bench(i, hi) + W * plainness(i), keep: roleGuard }],
+    ['E6 guard + 0.5 (cos+typ)', { score: (i, hi, role) => bench(i, hi) + W * (E.dotAt(units, dim, hi, i) + typical[i]), keep: roleGuard }],
+  ];
+}
+
+function axisCandidates(corpus, cmax, E, features, { screen = false } = {}) {
   const inst = i => corpus.instances[i];
   const feat = (i, key) => (features ? features[i]?.[key] ?? null : null);
   const xh = i => inst(i).xh;
@@ -94,6 +190,7 @@ function axisCandidates(corpus, cmax, E, features) {
     ['bench + 0.5 width', { score: (i, hi) => bench(i, hi) + 0.5 * widthMatch(i, hi), keep: roleGuard }],
     ['bench + 0.75 width', { score: (i, hi) => bench(i, hi) + 0.75 * widthMatch(i, hi), keep: roleGuard }],
   ];
+  if (screen) list.push(...screenCandidates(corpus, cmax, E, features));
   return list;
 }
 
@@ -133,7 +230,7 @@ async function main(argv = process.argv.slice(2)) {
   if (!rows.length) { console.log('no labels resolved'); return; }
   console.log('');
 
-  const candidates = axisCandidates(corpus, cmax, E, features);
+  const candidates = axisCandidates(corpus, cmax, E, features, { screen: args.screen });
   const results = (args.familyLevel ? evaluateFamilies : evaluate)(candidates, corpus, rows, args.k);
   const f3 = x => (Number.isFinite(x) ? x.toFixed(3) : '-');
 
@@ -149,6 +246,7 @@ async function main(argv = process.argv.slice(2)) {
     // the missing signal: structure (xh/width/stroke), category split, and combos.
     const cols = ['shipped (role+axis)', 'x-height match', 'width match', 'stroke-contrast match',
       'category split', 'split * xh match', 'split * (xh+width+stroke)', 'contrast + xh match'];
+    if (args.screen) cols.push('E3 shipped + 0.5 neutral', 'E5 shipped + 0.5 plain', 'E6 shipped + 0.5 (cos+typ)');
     const idx = Object.fromEntries([...results].map(([name, per]) => [name, new Map(per.map(r => [r.name, r]))]));
     console.log(`\nbest partner rank per axis (of ~${corpus.count} candidates):`);
     console.log(`  ${'heading'.padEnd(16)}` + cols.map(c => abbr(c).padStart(9)).join(''));
