@@ -5,7 +5,7 @@ graph, which the browser cannot rebuild from the corpus, so the pipeline
 precomputes it as a compact family-level artifact. Source is the committed
 fixtures only (`fonts-pairings.json` + `fontsinuse-pairings.json`), never the
 corpus: GF family names, no commercial names, so the artifact carries no
-provenance debt. See `.todo/tsk-020-ship-design.md` in the app checkout.
+provenance debt.
 
     model/.venv/bin/python model/validate/make_pairgraph.py            # write the artifact
     model/.venv/bin/python model/validate/make_pairgraph.py --cases    # also write parity cases

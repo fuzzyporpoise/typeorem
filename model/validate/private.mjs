@@ -15,7 +15,7 @@ import { SITE_DATA, requireSite, siteModule } from './site.mjs';
 //
 // It reads and prints only. The numbers it prints are the durable output: the
 // chosen constants are copied into site/js/engine.js by hand, and the run goes
-// into the app's private .todo/metric-research.md. Nothing here ships.
+// into the local metric research log (never committed). Nothing here ships.
 //
 //   node model/validate/private.mjs                       # defaults to ~/.cache/typeorem
 //   node model/validate/private.mjs --private /some/where --labels pairings.json --sweep

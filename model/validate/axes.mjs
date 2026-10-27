@@ -18,9 +18,9 @@ import { loadSpace, mergeCorpora, eligibleIds, resolveLabels, evaluate, evaluate
 //   node model/validate/axes.mjs --labels model/validate/fixtures/fonts-pairings.json
 //   node model/validate/axes.mjs --screen --labels model/validate/fixtures/user-pairings.json
 //
-// `--screen` appends the bounded TSK-004 pre-registered candidates (see the
-// app's .todo/metric-research.md, "TSK-004 screen"); every other run is
-// unchanged.
+// `--screen` appends the bounded TSK-004 pre-registered candidates; every
+// other run is unchanged by it. `--screen-weight <w>` rescales the "shipped +
+// w * term" screen rows (default 0.5), the knob the E6 public-only A/B sweeps.
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..', '..');
@@ -28,7 +28,8 @@ const DEFAULT_LABELS = path.join(ROOT, 'model', 'validate', 'fixtures', 'user-pa
 
 function parseArgs(argv) {
   const out = { private: process.env.TYPEOREM_PRIVATE_DIR || null, labels: null,
-    features: null, k: 10, matrix: true, shippedOnly: false, familyLevel: false, screen: false };
+    features: null, k: 10, matrix: true, shippedOnly: false, familyLevel: false,
+    screen: false, screenWeight: 0.5 };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === '--private') out.private = argv[++i];
@@ -39,6 +40,7 @@ function parseArgs(argv) {
     else if (a === '--shipped-only') out.shippedOnly = true;
     else if (a === '--family-level') out.familyLevel = true;
     else if (a === '--screen') out.screen = true;
+    else if (a === '--screen-weight') out.screenWeight = parseFloat(argv[++i]);
     else throw new Error(`unknown argument ${a}`);
   }
   return out;
@@ -52,10 +54,9 @@ const match = (a, b, span) => (num(a) && num(b)) ? 1 - Math.min(1, Math.abs(a - 
 // The TSK-004 screen (2026-10-14): a bounded, pre-registered candidate list
 // built for the label review's reading (quiet neutral counterpoint, role
 // convention). Appended only under `--screen` so the diagnostic table is
-// unchanged for every other run. See the app's .todo/metric-research.md,
-// "TSK-004 screen": one pass, six candidates, each scored alone and as an
-// addition to roleScore; the bar and the off-ramp are pre-registered there.
-function screenCandidates(corpus, cmax, E, features) {
+// unchanged for every other run: one pass, six candidates, each scored alone
+// and as an addition to roleScore.
+function screenCandidates(corpus, cmax, E, features, W = 0.5) {
   const { dim, units } = corpus;
   const axis = (name, score) => [name, { score }];
   const shippedBase = (i, hi, role) => E.roleScore(corpus, cmax, hi, i, 0, role ?? 'body');
@@ -113,33 +114,32 @@ function screenCandidates(corpus, cmax, E, features) {
       + Math.min(1, Math.abs(w - medAspect) / SPAN));
   };
 
-  const W = 0.5;
   const bench = (i, hi) => E.roleScore(corpus, cmax, hi, i, 1, 'body');
   const roleGuard = (inst, h, role) => role !== 'body' || E.bodySuitable(inst);
   return [
     axis('E1 shipped + body-centroid leg', (i, hi, role) => bodyLegCentroid(i, hi, role)),
     axis('E2 workhorse centroid', i => centroidSim(i)),
-    axis('E2 shipped + 0.5 centroid', (i, hi, role) => shippedBase(i, hi, role) + W * centroidSim(i)),
+    axis(`E2 shipped + ${W} centroid`, (i, hi, role) => shippedBase(i, hi, role) + W * centroidSim(i)),
     axis('E3 neutrality', (i, hi) => neutrality(i, hi)),
-    axis('E3 shipped + 0.5 neutral', (i, hi, role) => shippedBase(i, hi, role) + W * neutrality(i, hi)),
+    axis(`E3 shipped + ${W} neutral`, (i, hi, role) => shippedBase(i, hi, role) + W * neutrality(i, hi)),
     axis('E4 typicality', i => typical[i]),
-    axis('E4 shipped + 0.5 typical', (i, hi, role) => shippedBase(i, hi, role) + W * typical[i]),
+    axis(`E4 shipped + ${W} typical`, (i, hi, role) => shippedBase(i, hi, role) + W * typical[i]),
     axis('E5 render plainness', i => plainness(i)),
-    axis('E5 shipped + 0.5 plain', (i, hi, role) => shippedBase(i, hi, role) + W * plainness(i)),
+    axis(`E5 shipped + ${W} plain`, (i, hi, role) => shippedBase(i, hi, role) + W * plainness(i)),
     axis('E6 similarity + typicality', (i, hi) => E.dotAt(units, dim, hi, i) + typical[i]),
-    axis('E6 shipped + 0.5 (cos+typ)', (i, hi, role) => shippedBase(i, hi, role) + W * (E.dotAt(units, dim, hi, i) + typical[i])),
+    axis(`E6 shipped + ${W} (cos+typ)`, (i, hi, role) => shippedBase(i, hi, role) + W * (E.dotAt(units, dim, hi, i) + typical[i])),
     // The public-guard variants: each term added to the benchmark's own config
     // (contrast t=1 + body-weight guard), the row the bar is read against.
     ['E1 guard + body-centroid leg', { score: bodyLegCentroid, keep: roleGuard }],
-    ['E2 guard + 0.5 centroid', { score: (i, hi, role) => bench(i, hi) + W * centroidSim(i), keep: roleGuard }],
-    ['E3 guard + 0.5 neutral', { score: (i, hi, role) => bench(i, hi) + W * neutrality(i, hi), keep: roleGuard }],
-    ['E4 guard + 0.5 typical', { score: (i, hi, role) => bench(i, hi) + W * typical[i], keep: roleGuard }],
-    ['E5 guard + 0.5 plain', { score: (i, hi, role) => bench(i, hi) + W * plainness(i), keep: roleGuard }],
-    ['E6 guard + 0.5 (cos+typ)', { score: (i, hi, role) => bench(i, hi) + W * (E.dotAt(units, dim, hi, i) + typical[i]), keep: roleGuard }],
+    [`E2 guard + ${W} centroid`, { score: (i, hi, role) => bench(i, hi) + W * centroidSim(i), keep: roleGuard }],
+    [`E3 guard + ${W} neutral`, { score: (i, hi, role) => bench(i, hi) + W * neutrality(i, hi), keep: roleGuard }],
+    [`E4 guard + ${W} typical`, { score: (i, hi, role) => bench(i, hi) + W * typical[i], keep: roleGuard }],
+    [`E5 guard + ${W} plain`, { score: (i, hi, role) => bench(i, hi) + W * plainness(i), keep: roleGuard }],
+    [`E6 guard + ${W} (cos+typ)`, { score: (i, hi, role) => bench(i, hi) + W * (E.dotAt(units, dim, hi, i) + typical[i]), keep: roleGuard }],
   ];
 }
 
-function axisCandidates(corpus, cmax, E, features, { screen = false } = {}) {
+function axisCandidates(corpus, cmax, E, features, { screen = false, screenWeight = 0.5 } = {}) {
   const inst = i => corpus.instances[i];
   const feat = (i, key) => (features ? features[i]?.[key] ?? null : null);
   const xh = i => inst(i).xh;
@@ -178,8 +178,7 @@ function axisCandidates(corpus, cmax, E, features, { screen = false } = {}) {
     // Additions to the shipped metric: does a signal it ignores lift it? A half
     // weight keeps the addition comparable to the ~1.0-1.9 shipped score. x-height
     // is already in the shipped score (STRUCT_WEIGHT), so only width/stroke/
-    // aperture are additions here; width is the remaining lead (see the app's
-    // metric-research "Structural term sweep").
+    // aperture are additions here; width is the remaining lead.
     axis('shipped + 0.5 width', (i, hi, role) => shipped(i, hi, role) + 0.5 * widthMatch(i, hi)),
     axis('shipped + 0.5 stroke', (i, hi, role) => shipped(i, hi, role) + 0.5 * strokeMatch(i, hi)),
     axis('shipped + 0.5 aperture', (i, hi, role) => shipped(i, hi, role) + 0.5 * apertureMatch(i, hi)),
@@ -190,7 +189,7 @@ function axisCandidates(corpus, cmax, E, features, { screen = false } = {}) {
     ['bench + 0.5 width', { score: (i, hi) => bench(i, hi) + 0.5 * widthMatch(i, hi), keep: roleGuard }],
     ['bench + 0.75 width', { score: (i, hi) => bench(i, hi) + 0.75 * widthMatch(i, hi), keep: roleGuard }],
   ];
-  if (screen) list.push(...screenCandidates(corpus, cmax, E, features));
+  if (screen) list.push(...screenCandidates(corpus, cmax, E, features, screenWeight));
   return list;
 }
 
@@ -230,7 +229,7 @@ async function main(argv = process.argv.slice(2)) {
   if (!rows.length) { console.log('no labels resolved'); return; }
   console.log('');
 
-  const candidates = axisCandidates(corpus, cmax, E, features, { screen: args.screen });
+  const candidates = axisCandidates(corpus, cmax, E, features, { screen: args.screen, screenWeight: args.screenWeight });
   const results = (args.familyLevel ? evaluateFamilies : evaluate)(candidates, corpus, rows, args.k);
   const f3 = x => (Number.isFinite(x) ? x.toFixed(3) : '-');
 
@@ -246,7 +245,10 @@ async function main(argv = process.argv.slice(2)) {
     // the missing signal: structure (xh/width/stroke), category split, and combos.
     const cols = ['shipped (role+axis)', 'x-height match', 'width match', 'stroke-contrast match',
       'category split', 'split * xh match', 'split * (xh+width+stroke)', 'contrast + xh match'];
-    if (args.screen) cols.push('E3 shipped + 0.5 neutral', 'E5 shipped + 0.5 plain', 'E6 shipped + 0.5 (cos+typ)');
+    if (args.screen) {
+      const w = args.screenWeight;
+      cols.push(`E3 shipped + ${w} neutral`, `E5 shipped + ${w} plain`, `E6 shipped + ${w} (cos+typ)`);
+    }
     const idx = Object.fromEntries([...results].map(([name, per]) => [name, new Map(per.map(r => [r.name, r]))]));
     console.log(`\nbest partner rank per axis (of ~${corpus.count} candidates):`);
     console.log(`  ${'heading'.padEnd(16)}` + cols.map(c => abbr(c).padStart(9)).join(''));
