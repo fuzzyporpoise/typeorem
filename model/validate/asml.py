@@ -1,6 +1,6 @@
 """ASML prototype: asymmetric similarity metric learning for pairing.
 
-Candidate direction 2 from the literature sweep (.todo/model-refinement.md):
+Candidate direction 2 from the literature sweep:
 Jiang et al.'s ASML (arXiv:1811.08015), the learned asymmetric challenger to
 the hand-built roleScore. The score is
 

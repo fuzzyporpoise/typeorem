@@ -149,7 +149,8 @@ scores a family by its best role-eligible cut (see below). It also refuses a
 private corpus whose recorded PCA sha256 does not match the shipped `pca.bin`, so a
 corpus left in an old projection space after a rebuild is caught rather than
 silently mis-scored. It reads and prints only; the chosen constants are copied into
-`site/js/engine.js` by hand and the run goes into the private `.todo/metric-research.md`.
+`site/js/engine.js` by hand and the run goes into the local metric research log
+(never committed).
 
     node model/validate/private.mjs
     node model/validate/private.mjs --private ~/.cache/typeorem --sweep --k 10
@@ -227,7 +228,7 @@ backfilled into the current `site/data/catalog.json` by `model/export_axes.py` (
 `xh` + `width` from the cached renders; no re-embed, no PCA refit). Stroke contrast and
 aperture do not help. The diagnostic also makes the contrast-control gap visible: at the
 engine default `t=0` the metric scores 42/101 hit@100 against the app's recommendation
-ranking at `t=1` (31/101). See the app's `.todo/metric-research.md`, "Structural terms".
+ranking at `t=1` (31/101).
 The feature dump is derived from licensed renders with `--private`, so keep its output
 under the private root.
 
@@ -239,11 +240,24 @@ to the 20 nearest neighbours), a render plainness (closeness to the corpus media
 stroke contrast and 'o' aspect), and a similarity + typicality combination, each
 scored alone, as an addition to the shipped metric, and as an addition to the
 benchmark's own config (contrast t=1 + body guard). The list, the bar, and the
-off-ramp are pre-registered in the app's `.todo/metric-research.md`, "TSK-004
-screen"; the flag exists so the other runs are unchanged. Result (2026-10-14): none
-of the six carries the gold signal (0/13 hit@10 for every candidate against a bar of
-3); the off-ramp was taken, so the prosumer taste lever is more owner labels feeding
-the learned path, not another hand axis.
+off-ramp are pre-registered; the flag exists so the other runs are unchanged. Result
+(2026-10-14): none of the six carries the gold signal (0/13 hit@10 for every candidate
+against a bar of 3); the off-ramp was taken, so the prosumer taste lever is more owner
+labels feeding the learned path, not another hand axis.
+
+`--screen-weight w` rescales the "shipped + w * term" screen rows (default 0.5),
+the knob the E6 A/B sweeps; every other run is unchanged. Result (2026-10-15,
+TSK-005): the similarity + typicality candidate was re-scored public-only, since the
+gold it was set aside for is no longer the target. It lifts both fixtures at hit@100
+over the t=1 baseline at every grid weight (endorsement 31 -> 39 at w=0.5, ~1.7 SE,
+usage 22 -> 26, no regression), but the lift is its cosine half only: the typicality
+half is inert (added alone it moves nothing, 31/101 and 22/138), and it dilutes the
+cosine (bench + 0.5 cos = 41/101, 28/138 vs the composite's 39/101, 26/138). The
+cosine direction is the shipped contrast control `t`, and a plain `t=-0.5` dominates
+the composite (49/101, 44/138), as does the app's default `t=0` (42/101, 34/138).
+Dropped: the term is a suboptimal similarity nudge with no unshipped half, so the
+similarity direction stays the `t` control and the prosumer lever stays the learned
+path, which closes the hand-feature search.
 
 ## Usage-mined pairs and null models (`mine-fontsinuse.mjs`, `nullmodel.mjs`)
 
